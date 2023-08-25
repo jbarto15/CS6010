@@ -53,16 +53,17 @@ void boolToString(bool isCapitalizedResult) {
 
 bool isPrime(int number) {
     int numberDividedByTwo = number / 2;
-    bool isNumberPrime = true;
+    if (number == 0) {
+        return false;
+    } else if (number == 1) {
+        return true;
+    }
     for (int i = 2; i <= numberDividedByTwo; i++) {
-        if (numberDividedByTwo % i != 0) {
-            isNumberPrime = false;
-            break;
-        } else if (numberDividedByTwo % i == 0) {
-            isNumberPrime = true;
+        if (number % i == 0) {
+            return false;
         }
     }
-    return isNumberPrime;
+    return true;
 }
 
 
@@ -123,6 +124,7 @@ int main(int argc, const char * argv[]) {
     //The functions being called in the above code are std::time as well as std::asctime and std::localtime.
     
     std::cout << calculateHypotenuseLength(2, 4);
+    std::cout << "\n";
     
     
     //create variable for userString
