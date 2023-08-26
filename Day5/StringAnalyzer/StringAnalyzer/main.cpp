@@ -20,6 +20,8 @@ bool isTerminator(char c) {
         terminator = true;
     } else if (c == '!') {
         terminator = true;
+    } else {
+        return false;
     }
     return terminator;
 }
@@ -33,6 +35,8 @@ bool isPunctuation(char c) {
         punctuation = true;
     } else if (c == '!') {
         punctuation = true;
+    } else if (c == ',') {
+        punctuation = true;
     } else {
         punctuation = false;
     }
@@ -43,9 +47,6 @@ bool isPunctuation(char c) {
 
 //When writing your IsVowel() function, be sure to check for uppercase and lowercase versions of each vowel. (Or better yet, before you check a letter, convert it to a lowercase letter.)
 bool isVowel(char c) {
-    //vowels == a, e, i, o, u, y.
-    //check for a, e, i, o, u, and y in the sentence string.
-    //use a for loop to
     for (int i = 65; i <= 121; i++) {
         if (c == 65 || c == 97 || c == 69 || c == 101 || c == 73 || c == 105 || c == 79 || c == 111 || c == 85 || c == 117 || c == 89 || c == 121) {
             return true;
@@ -77,11 +78,36 @@ int numWords(std::string s) {
 
 //int NumSentences(string s) - Returns the number of sentences in the string. This function can make use of the IsPunctuation helper.
 int numSentences(std::string s) {
-    if (isPunctuation(s))
+    int numberOfSentences = 0;
+    for (int i = 0; i < s.length(); i++) {
+        if (isTerminator(s[i])) {
+            numberOfSentences += 1;
+        }
+    }
+    return numberOfSentences;
 }
 
 //int NumVowels(string s) - Returns the number of vowels in the string. This function can make use of the IsVowel helper.
+int numVowels(std::string s) {
+    int numberOfVowels = 0;
+    for (int i = 0; i < s.length(); i++) {
+        if (isVowel(s[i])) {
+            numberOfVowels += 1;
+        }
+    }
+    return numberOfVowels;
+}
 //int NumConsonants(string s) - Returns the number of consonants in the string. This function can make use of the IsConsonant helper.
+int numConsonants(std::string s) {
+    int numberOfConsonants = 0;
+    for (int i = 0; i < s.length(); i++) {
+        if (isConsonant(s[i])) {
+            numberOfConsonants += 1;
+        }
+    }
+    return numberOfConsonants;
+}
+
 //double AverageWordLength(string s) - Returns the average length of all words in the string. This function can make use of the IsVowel , IsConsonant , and NumWords helpers, as discussed in the Analysis section above.
 //double AverageVowelsPerWord(string s) - Returns the average number of vowels per word in the string. This function can make use of the IsVowel and NumWords helpers, as discussed in the Analysis section above.
 
@@ -107,8 +133,22 @@ int main(int argc, const char * argv[]) {
     std::string input;
     std::getline( std::cin, input);
     // After the user types something and presses enter, the variable "input" will contain the line of text they typed.
+    
+    //print number of words
     std::cout << "Number of Words: ";
-    std::cout << numWords(input);
+    std::cout << numWords(input) << std::endl;
+    
+    //print number of sentences
+    std::cout << "Number of Sentences: ";
+    std::cout << numSentences(input) << std::endl;
+    
+    //print number of vowels
+    std::cout << "Number of Vowels: ";
+    std::cout << numVowels(input) << std::endl;
+    
+    //print number of consonants
+    std::cout << "Number of Consonants: ";
+    std::cout << numConsonants(input) << std::endl;
     
     
     return 0;
