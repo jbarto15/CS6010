@@ -27,7 +27,7 @@
 		609B4EDE2A9D310F00743A77 /* VectorHW */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = VectorHW; sourceTree = BUILT_PRODUCTS_DIR; };
 		609B4EE82A9D327E00743A77 /* VectorTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VectorTest.cpp; path = ../../../../../Downloads/VectorTest.cpp; sourceTree = "<group>"; };
 		609B4EEA2A9D32A700743A77 /* VectorUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VectorUtil.cpp; path = ../../../../../Downloads/VectorUtil.cpp; sourceTree = "<group>"; };
-		609B4EEC2A9D32B000743A77 /* VectorUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VectorUtil.h; path = ../../../../../Downloads/VectorUtil.h; sourceTree = "<group>"; };
+		609B4EED2A9D5A5E00743A77 /* VectorUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VectorUtil.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 			children = (
 				609B4EE82A9D327E00743A77 /* VectorTest.cpp */,
 				609B4EEA2A9D32A700743A77 /* VectorUtil.cpp */,
-				609B4EEC2A9D32B000743A77 /* VectorUtil.h */,
+				609B4EED2A9D5A5E00743A77 /* VectorUtil.h */,
 			);
 			path = VectorHW;
 			sourceTree = "<group>";
@@ -101,7 +101,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 609B4ED92A9D310F00743A77 /* Build configuration list for PBXProject "VectorHW" */;
+			buildConfigurationList = 609B4ED92A9D310F00743A77 /* Build configuration list for PBXProject "VectorHomework" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -260,7 +260,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		609B4ED92A9D310F00743A77 /* Build configuration list for PBXProject "VectorHW" */ = {
+		609B4ED92A9D310F00743A77 /* Build configuration list for PBXProject "VectorHomework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				609B4EE32A9D310F00743A77 /* Debug */,
