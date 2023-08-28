@@ -101,7 +101,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 609B4ED92A9D310F00743A77 /* Build configuration list for PBXProject "VectorHomework" */;
+			buildConfigurationList = 609B4ED92A9D310F00743A77 /* Build configuration list for PBXProject "VectorHW" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -260,7 +260,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		609B4ED92A9D310F00743A77 /* Build configuration list for PBXProject "VectorHomework" */ = {
+		609B4ED92A9D310F00743A77 /* Build configuration list for PBXProject "VectorHW" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				609B4EE32A9D310F00743A77 /* Debug */,
