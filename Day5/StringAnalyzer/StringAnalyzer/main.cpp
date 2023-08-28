@@ -18,7 +18,7 @@ bool isTerminator(char c) {
         terminator = true;
     } else if (c == '?') {
         terminator = true;
-    } else if (c == '!') {
+    } else if (c =='!') {
         terminator = true;
     } else {
         return false;
@@ -58,7 +58,7 @@ bool isVowel(char c) {
 
 //bool IsConsonant(char c) - Returns whether or not the character is a consonant. DO NOT write code that checks if the character is equal to every consonant. In our simple sentences, there are four classifications of characters: spaces, punctuation, vowels, and consonants. If a character is not one of the first three, then it must be a consonant. Use the previous two functions as helpers to determine this. This function can be completed in one simple line of code.
 bool isConsonant(char c) {
-    if (c != isVowel(c) && c != isTerminator(c) && c != isPunctuation(c)) {
+    if (!isVowel(c) && !isTerminator(c) && !isPunctuation(c) && c != ' ') {
         return true;
     }
     return false;
@@ -102,6 +102,7 @@ int numConsonants(std::string s) {
     int numberOfConsonants = 0;
     for (int i = 0; i < s.length(); i++) {
         if (isConsonant(s[i])) {
+            
             numberOfConsonants += 1;
         }
     }
