@@ -98,7 +98,7 @@ int Average( vector<int> input )
         additionOfVectorValues = additionOfVectorValues + value;
     }
     float averageOfVectorValues = additionOfVectorValues / input.size();
-    std::cout << averageOfVectorValues;
+    std::cout << averageOfVectorValues << std::endl;
   return averageOfVectorValues;
 }
 /*
