@@ -26,6 +26,9 @@ int main(int argc, const char * argv[]) {
     Javacans(politiciansList);
     std::vector javacansList = Javacans(politiciansList);
     
+    std::cout << javacansList.size() << std::endl;
+    
+    
     //test for seeing if Javacans vector is equal to 2.
     if (javacansList.size() == 2) {
         std::cout << "The function worked!" << std::endl;
@@ -37,6 +40,8 @@ int main(int argc, const char * argv[]) {
     //create a series of tests to test federalCplusers function
     federalCplusers(politiciansList);
     std::vector cplusersList = federalCplusers(politiciansList);
+    
+    std::cout << cplusersList.size() << std::endl;
     
     //test for seeing if cplusers vector is equal to 2.
     if (cplusersList.size() == 2) {
