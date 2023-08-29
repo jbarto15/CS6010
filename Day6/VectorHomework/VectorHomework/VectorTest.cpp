@@ -95,6 +95,10 @@ int main()
         ErrorExit("Average() - not computing average correctly");
     }
     
+    if (Average(v1) == 2) {
+        ErrorExit("AVerage() - not computing average correctly");
+    }
+    
   //Error message that prints whether or not v1 is sorted or not. If it is not sorted it will display the error message. 
     if (!IsSorted(v2)) {
         ErrorExit("isSorted() - false");
