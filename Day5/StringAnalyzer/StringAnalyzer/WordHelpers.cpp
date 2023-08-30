@@ -64,7 +64,7 @@ double averageWordLength(std::string s) {
     return averageWordLength;
 }
 
-//double AverageVowelsPerWord(string s) - Returns the average number of vowels per word in the string. This function can make use of the IsVowel and NumWords helpers, as discussed in the Analysis section above.
+//double AverageVowelsPerWord(string s) - Returns the //average number of vowels per word in the string. This //function can make use of the IsVowel and NumWords //helpers, as discussed in the Analysis section above.
 double averageVowelsPerWord(std::string s) {
     int numberOfVowels = numVowels(s);
     int numberOfWords = numWords(s);
@@ -72,3 +72,6 @@ double averageVowelsPerWord(std::string s) {
     
     return averageVowelsPerWord;
 }
+
+
+/*when naming functions, it's helpful to name them as actions. So for example: countNumOfWords is better than numOfWords because it tells you what the function is doing. */

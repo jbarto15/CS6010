@@ -8,7 +8,7 @@
 #include "LetterHelpers.hpp"
 
 //write functions
-//bool IsTerminator(char c) - Returns whether or not the character is ., ?, or !.
+//bool IsTerminator(char c) - Returns whether or not the character is ., ?, or !
 bool isTerminator(char c) {
     //is character ., ?, or !.
     bool terminator = true;
@@ -24,7 +24,7 @@ bool isTerminator(char c) {
     return terminator;
 }
 
-//bool IsPunctuation(char c) - Returns whether or not the character is ., ?, !, or ,.
+//bool IsPunctuation(char c) - Returns whether or not the character is ., ?, !, or ,
 bool isPunctuation(char c) {
     bool punctuation = true;
     if (c == '.') {
@@ -45,11 +45,11 @@ bool isPunctuation(char c) {
 
 //When writing your IsVowel() function, be sure to check for uppercase and lowercase versions of each vowel. (Or better yet, before you check a letter, convert it to a lowercase letter.)
 bool isVowel(char c) {
-    for (int i = 65; i <= 121; i++) {
+//for (int i = 65; i <= 121; i++) {
         if (c == 65 || c == 97 || c == 69 || c == 101 || c == 73 || c == 105 || c == 79 || c == 111 || c == 85 || c == 117 || c == 89 || c == 121) {
             return true;
         }
-    }
+ //   }
     
     return false;
 }
