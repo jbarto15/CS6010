@@ -14,5 +14,11 @@ int main(int argc, const char * argv[]) {
     deckOfCards(cards);
     printDeckOfCards(cards);
     
+    shuffleDeckOfCards(cards);
+    printDeckOfCards(cards);
+    
+    std::vector<Card> testDeck = {};
+    testDeckOne(testDeck);
+    
     return 0;
 }
