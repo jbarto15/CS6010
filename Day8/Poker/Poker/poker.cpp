@@ -12,13 +12,14 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     std::vector<Card> cards = {};
     deckOfCards(cards);
-    printDeckOfCards(cards);
+    //printDeckOfCards(cards);
     
     shuffleDeckOfCards(cards);
-    printDeckOfCards(cards);
+    //printDeckOfCards(cards);
     
     std::vector<Card> testDeck = {};
     testDeckOne(testDeck);
+    printDeckOfFiveCards(testDeck);
     
     return 0;
 }

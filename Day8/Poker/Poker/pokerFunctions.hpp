@@ -33,7 +33,7 @@ void shuffleDeckOfCards (std::vector<Card>& deckOfCards);
 //write swap function
 
 //create a function that creates a deck of five cards to test isFlush, isStraight, isStraightFlush and isRoyalFlush
-std::vector<Card> testDeckOne(std::vector<Card> testDeck);
+std::vector<Card> testDeckOne(std::vector<Card>& testDeck);
 
 
 //function that prints the test deck of 5 cards
@@ -41,23 +41,23 @@ void printDeckOfFiveCards(std::vector<Card> deckOfCards);
 
 
 //isFlush: are all the cards the same suit?
-void isFlush(std::vector<Card> fiveCards);
+bool isFlush(std::vector<Card> fiveCards);
 
 
 //isStraight: are all 5 cards in numerical order (note this is a little tricky because the hand is unsorted!)
-void isStraight(std::vector<Card> fiveCards);
+bool isStraight(std::vector<Card> fiveCards);
 
 
 //isStraightFlush: is this hand both a straight and a flush?
-void isStraightFlush(std::vector<Card> fiveCards);
+bool isStraightFlush(std::vector<Card> fiveCards);
 
 
 //isRoyalFlush: is this hand a straight flush whose low card is a ten?
-void isRoyalFlush(std::vector<Card> fiveCards);
+bool isRoyalFlush(std::vector<Card> fiveCards);
 
 
 //isFullHouse: are there 3 of one rank, and 2 of another (for example: 3 aces and 2 fives)
-void isFullHouse(std::vector<Card> fiveCards);
+bool isFullHouse(std::vector<Card> fiveCards);
 
 
 

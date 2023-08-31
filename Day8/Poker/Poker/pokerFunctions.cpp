@@ -81,7 +81,7 @@ void shuffleDeckOfCards (std::vector<Card>& deckOfCards) {
 
 
 //write a function for creating a deck of 5 cards to test for isFlush, isStraight, isStraightFlush, and isRoyalFlush
-std::vector<Card> testDeckOne(std::vector<Card> testDeck) {
+std::vector<Card> testDeckOne(std::vector<Card>& testDeck) {
     
     //create vector of the different suits.
     std::vector<std::string> typeOfSuit = {"Diamond"};
@@ -122,32 +122,50 @@ void printDeckOfFiveCards(std::vector<Card> deckOfCards) {
 
 
 //implementation of the isFlush function. are all the cards the same suit?
-void isFlush(std::vector<Card> fiveCards) {
-    //how do i take 5 cards out of the deck of cards?
-    //take the first 5 cards of the newly shuffled deck
+bool isFlush(std::vector<Card> fiveCards) {
+    //receive the shuffled deck
+    //go through the shuffled deck and select the first 5 cards
+    for (int i = 0; i < 5; i++) {
+        //store those cards
+        Card newCard = fiveCards[i];
+        fiveCards.push_back(newCard);
+    }
+    
+    for (int i = 0; i < fiveCards.size(); i++) {
+        //then check to see if those cards are all the same suit
+        if (fiveCards[i].suit == "Diamond") {
+            continue;
+        } else {
+            return false;
+        }
+    }
+    
+    //if they are print out "you have a flush"
+    //else print out "try again"
+    return true;
 }
 
 
 //implementation of the isStraight function: are all 5 cards in numerical order
-void isStraight(std::vector<Card> fiveCards) {
-    
+bool isStraight(std::vector<Card> fiveCards) {
+    return true;
 }
 
 
 //implementation of the isStraightFlush function: is this hand both a straight and a //flush?
-void isStraightFlush(std::vector<Card> fiveCards) {
-    
+bool isStraightFlush(std::vector<Card> fiveCards) {
+    return true;
 }
 
 
 //implementation of the isRoyalFlush function: is this hand a straight flush whose //low card is a ten?
-void isRoyalFlush(std::vector<Card> fiveCards) {
-    
+bool isRoyalFlush(std::vector<Card> fiveCards) {
+    return true;
 }
 
 
 //implementation of the isFullHouse function: are there 3 of one rank, and 2 of //another (for example: 3 aces and 2 fives)
-void isFullHouse(std::vector<Card> fiveCards) {
-    
+bool isFullHouse(std::vector<Card> fiveCards) {
+    return true;
 }
 
