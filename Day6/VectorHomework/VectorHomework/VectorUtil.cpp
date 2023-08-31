@@ -57,7 +57,6 @@ int Average( vector<int> input )
 //function that determines whether or not a vector is sorted in non-descending order
 bool IsSorted( vector<int> input )
 {
-  // TODO: Fill in implementation. Do not always return false.
     vector<int> input2 = {};
     input2.assign(input.begin(), input.end());
     std::sort(input.begin(), input.end());
