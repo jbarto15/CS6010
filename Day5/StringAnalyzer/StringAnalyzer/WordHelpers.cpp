@@ -10,7 +10,7 @@
 #include "LetterHelpers.hpp"
 
 //int NumWords(string s) - Returns the number of words in the string.
-int numWords(std::string s) {
+int getNumWords(std::string s) {
     int numberOfSpaces = 0;
     for (int i = 0; i < s.length(); i++) {
         if (s[i] == ' ') {
@@ -22,7 +22,7 @@ int numWords(std::string s) {
 }
 
 //int NumSentences(string s) - Returns the number of sentences in the string. This function can make use of the IsPunctuation helper.
-int numSentences(std::string s) {
+int getNumSentences(std::string s) {
     int numberOfSentences = 0;
     for (int i = 0; i < s.length(); i++) {
         if (isTerminator(s[i])) {
@@ -33,7 +33,7 @@ int numSentences(std::string s) {
 }
 
 //int NumVowels(string s) - Returns the number of vowels in the string. This function can make use of the IsVowel helper.
-int numVowels(std::string s) {
+int getNumVowels(std::string s) {
     int numberOfVowels = 0;
     for (int i = 0; i < s.length(); i++) {
         if (isVowel(s[i])) {
@@ -43,7 +43,7 @@ int numVowels(std::string s) {
     return numberOfVowels;
 }
 //int NumConsonants(string s) - Returns the number of consonants in the string. This function can make use of the IsConsonant helper.
-int numConsonants(std::string s) {
+int getNumConsonants(std::string s) {
     int numberOfConsonants = 0;
     for (int i = 0; i < s.length(); i++) {
         if (isConsonant(s[i])) {
@@ -55,19 +55,19 @@ int numConsonants(std::string s) {
 }
 
 //double AverageWordLength(string s) - Returns the average length of all words in the string. This function can make use of the IsVowel , IsConsonant , and NumWords helpers, as discussed in the Analysis section above.
-double averageWordLength(std::string s) {
-    int numberOfVowels = numVowels(s);
-    int numberOfConsonants = numConsonants(s);
-    int numberOfWords = numWords(s);
+double calculateAverageWordLength(std::string s) {
+    int numberOfVowels = getNumVowels(s);
+    int numberOfConsonants = getNumConsonants(s);
+    int numberOfWords = getNumWords(s);
     double averageWordLength = (numberOfVowels + numberOfConsonants) / numberOfWords;
     
     return averageWordLength;
 }
 
 //double AverageVowelsPerWord(string s) - Returns the //average number of vowels per word in the string. This //function can make use of the IsVowel and NumWords //helpers, as discussed in the Analysis section above.
-double averageVowelsPerWord(std::string s) {
-    int numberOfVowels = numVowels(s);
-    int numberOfWords = numWords(s);
+double calculateAverageVowelsPerWord(std::string s) {
+    int numberOfVowels = getNumVowels(s);
+    int numberOfWords = getNumWords(s);
     double averageVowelsPerWord = numberOfVowels / numberOfWords;
     
     return averageVowelsPerWord;
