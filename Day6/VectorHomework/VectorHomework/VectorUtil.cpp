@@ -44,11 +44,11 @@ int FindMax( vector<int> input ){
 //function that determines the average of all values in a vector
 int Average( vector<int> input )
 {
-    float additionOfVectorValues = 0;
+    int additionOfVectorValues = 0;
     for (int value: input) {
         additionOfVectorValues = additionOfVectorValues + value;
     }
-    float averageOfVectorValues = additionOfVectorValues / input.size();
+    int averageOfVectorValues = additionOfVectorValues / input.size();
     std::cout << averageOfVectorValues << std::endl;
   return averageOfVectorValues;
 }
@@ -57,13 +57,14 @@ int Average( vector<int> input )
 //function that determines whether or not a vector is sorted in non-descending order
 bool IsSorted( vector<int> input )
 {
-    vector<int> input2 = {};
-    input2.assign(input.begin(), input.end());
-    std::sort(input.begin(), input.end());
-    if (input == input2) {
-        return true;
+    bool isSorted = false;
+    for (int value: input) {
+        if (value < input[value + 1]) {
+            isSorted = true;
     }
-  return false;
+    
+    }
+  return isSorted;
 }
 
 
