@@ -82,7 +82,6 @@ void shuffleDeckOfCards (std::vector<Card>& deckOfCards) {
 
 //write a function for creating a deck of 5 cards to test for isFlush, isStraight, isStraightFlush, and isRoyalFlush
 std::vector<Card> testDeckOne(std::vector<Card>& testDeck) {
-    
     //create vector of the different suits.
     std::vector<std::string> typeOfSuit = {"Diamond"};
 
@@ -94,10 +93,9 @@ std::vector<Card> testDeckOne(std::vector<Card>& testDeck) {
         for (int j = 0; j < allRanks.size(); j++) {
             Card newCard = {typeOfSuit[i], allRanks[j]};
             testDeck.push_back(newCard);
+            
         }
     }
-    
-    
     return testDeck;
 }
 
@@ -122,12 +120,12 @@ void printDeckOfFiveCards(std::vector<Card> deckOfCards) {
 
 
 //implementation of the isFlush function. are all the cards the same suit?
-bool isFlush(std::vector<Card>& fiveCards) {
-    for (int i = 0; i < fiveCards.size(); i++) {
+bool isFlush(std::vector<Card> deckOfCards) {
+    for (int i = 0; i < deckOfCards.size(); i++) {
         //create variable that stores the first suit of the deck of cards
-        std::string targetSuit = fiveCards[0].suit;
+        std::string targetSuit = deckOfCards[0].suit;
         //then check to see if those cards are all the same suit
-        if (fiveCards[i].suit == targetSuit) {
+        if (deckOfCards[i].suit == targetSuit) {
             continue;
         } else {
             return false;
@@ -138,25 +136,37 @@ bool isFlush(std::vector<Card>& fiveCards) {
 
 
 //implementation of the isStraight function: are all 5 cards in numerical order
-bool isStraight(std::vector<Card> fiveCards) {
+bool isStraight(std::vector<Card> deckOfCards) {
+    //create variable that stores the first rank of the deck of cards
+    int targetRank = deckOfCards[0].rank;
+    //go through the deck of cards one by one.
+    for (int i = 0; i < deckOfCards.size(); i++) {
+        //then check to see if those cards are a straight
+        if (deckOfCards[i].rank == targetRank) {
+            targetRank += 1;
+            //continue;
+        } else {
+            return false;
+        }
+    }
     return true;
 }
 
 
 //implementation of the isStraightFlush function: is this hand both a straight and a //flush?
-bool isStraightFlush(std::vector<Card> fiveCards) {
+bool isStraightFlush(std::vector<Card> deckOfCards) {
     return true;
 }
 
 
 //implementation of the isRoyalFlush function: is this hand a straight flush whose //low card is a ten?
-bool isRoyalFlush(std::vector<Card> fiveCards) {
+bool isRoyalFlush(std::vector<Card> deckOfCards) {
     return true;
 }
 
 
 //implementation of the isFullHouse function: are there 3 of one rank, and 2 of //another (for example: 3 aces and 2 fives)
-bool isFullHouse(std::vector<Card> fiveCards) {
+bool isFullHouse(std::vector<Card> deckOfCards) {
     return true;
 }
 
