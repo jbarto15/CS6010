@@ -155,7 +155,8 @@ bool isStraight(std::vector<Card> deckOfCards) {
 
 //implementation of the isStraightFlush function: is this hand both a straight and a //flush?
 bool isStraightFlush(std::vector<Card> deckOfCards) {
-    return true;
+    //return the results of isFlush and isStraight, if both of them are true //isStraightFlush will be true
+    return (isFlush(deckOfCards) && isStraight(deckOfCards));
 }
 
 

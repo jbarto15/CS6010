@@ -21,16 +21,19 @@ int main(int argc, const char * argv[]) {
     std::vector<Card> testDeck;
 
     //testDeckOne(testDeck);
-    printDeckOfFiveCards(testDeck);
+    //printDeckOfFiveCards(testDeck);
     
-    //check if is flush function is working with testDeckOne function
+    //check if isFlush function is working with testDeckOne function
     //std::cout << isFlush(testDeckOne(testDeck));
     
     //try a randomized deck in isFlush
     //std::cout << isFlush(deckOfCards(cards));
     
     //printing out whether or not isStraight function is true
-    std::cout << isStraight(testDeckOne(testDeck));
+    //std::cout << isStraight(testDeckOne(testDeck));
+    
+    //printing out whether or not isStraightFlush function is true
+    std::cout << isStraightFlush(testDeckOne(testDeck));
     
     return 0;
 }
