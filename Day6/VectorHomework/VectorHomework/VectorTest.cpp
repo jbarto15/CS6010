@@ -1,20 +1,7 @@
-/*
-  Author: Daniel Kopta and ??
-  July 2017
-  
-  CS 6010 Fall 2019
-  Vector util library tests
-  Compile this file together with your VectorUtil library with the following command:
-  clang++ -std=c++11 VectorTest.cpp VectorUtil.cpp
-  Most of the provided tests will fail until you have provided correct 
-  implementations for the VectorUtil library functions.
-  You will need to provide more thorough tests.
-*/
+
 
 #include <iostream>
 #include <string>
-
-// Include the VectorUtil library
 #include "VectorUtil.h"
 
 /*
@@ -69,10 +56,9 @@ int main()
   if( Contains(empty, 99) ) {
     ErrorExit("Contains() - empty");
   }
+
   
-  // TODO: Add your own tests that thoroughly exercise your VectorUtil library.
-  
-  //edge case test for the FindMin function
+  //test for if the FindMin function is sorting properly
     if (FindMin(v1) != -1) {
         ErrorExit("FindMin() - not sorting correctly");
     }
@@ -80,7 +66,7 @@ int main()
     if (FindMin(v1) != -1) {
         ErrorExit("FindMin() is incorrect");
     }
-  //edge case test for the FindMax function
+  //test if the FindMax function is sorting correctly
     if (FindMax(v1) == 3) {
         ErrorExit("FindMax() - not sorting correctly");
     }
@@ -116,7 +102,7 @@ int main()
         ErrorExit("isSorted() - false");
     }
 
-  // Since any failed test exits the program, if we made it this far, we passed all tests.
+  //Since any failed test exits the program, if we made it this far, we passed all tests.
   std::cout << "All tests passed!\n";
 
   
