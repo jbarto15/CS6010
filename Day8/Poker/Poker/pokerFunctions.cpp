@@ -122,26 +122,17 @@ void printDeckOfFiveCards(std::vector<Card> deckOfCards) {
 
 
 //implementation of the isFlush function. are all the cards the same suit?
-bool isFlush(std::vector<Card> fiveCards) {
-    //receive the shuffled deck
-    //go through the shuffled deck and select the first 5 cards
-    for (int i = 0; i < 5; i++) {
-        //store those cards
-        Card newCard = fiveCards[i];
-        fiveCards.push_back(newCard);
-    }
-    
+bool isFlush(std::vector<Card>& fiveCards) {
     for (int i = 0; i < fiveCards.size(); i++) {
+        //create variable that stores the first suit of the deck of cards
+        std::string targetSuit = fiveCards[0].suit;
         //then check to see if those cards are all the same suit
-        if (fiveCards[i].suit == "Diamond") {
+        if (fiveCards[i].suit == targetSuit) {
             continue;
         } else {
             return false;
         }
     }
-    
-    //if they are print out "you have a flush"
-    //else print out "try again"
     return true;
 }
 
