@@ -33,7 +33,12 @@ int main(int argc, const char * argv[]) {
     //std::cout << isStraight(testDeckOne(testDeck));
     
     //printing out whether or not isStraightFlush function is true
-    std::cout << isStraightFlush(testDeckOne(testDeck));
+    //std::cout << isStraightFlush(testDeckOne(testDeck));
+    
+    //call isRoyalFlush function and print it
+    std::cout << isRoyalFlush(testDeckOne(testDeck));
+    
+
     
     return 0;
 }

@@ -59,5 +59,27 @@ bool isRoyalFlush(std::vector<Card> deckOfCards);
 bool isFullHouse(std::vector<Card> deckOfCards);
 
 
+//STATISTICAL ANALYSIS FUNCTIONS
+
+//Finally, we're going to do some statistical analysis. In main(), create a deck. Then, shuffle it many times. After each shuffle, check whether the hand is one of the hands you test for above and keep track of the total numbers of flushes, straights, royal flushes, etc, you see.
+//
+//Print out what fraction of hands are one of the above. You probably will not see a royal flush until you examine 100k to 1 milion hands!
+//
+//At the top of your code (in comments), record the percentage you see each type of hand.
+
+//function to keep track of number of isFlush's
+int getNumOfFlush(bool isFlush);
+
+//function to keep track of number of isStraight's
+int getNumOfStraights(bool isStraight);
+
+//function to keep track of number of isStraightFlush
+int getNumOfStraightFlush(bool isStraightFlush);
+
+//function to keep track of number of Royal Flush's
+int getNumOfRoyalFlush(bool isRoyalFlush);
+
+//function to keep track of number of Full House's
+int getNumOfFullHouse(bool isHouseFlush);
 
 #endif /* pokerFunctions_hpp */

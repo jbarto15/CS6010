@@ -162,12 +162,72 @@ bool isStraightFlush(std::vector<Card> deckOfCards) {
 
 //implementation of the isRoyalFlush function: is this hand a straight flush whose //low card is a ten?
 bool isRoyalFlush(std::vector<Card> deckOfCards) {
-    return true;
-}
+    //create boolean variable that will store if the lowest card is a 10
+    bool isLowestCardRankTen = false;
+
+    // Return whether it's a royal flush
+    return (isFlush(deckOfCards) && isStraight(deckOfCards) && isLowestCardRankTen);
+    }
+
+//    bool isLowestCardRankTen = false;
+//    Card newDeck;
+//    int firstCardRank = deckOfCards[0].rank;
+//    std::cout << "firstCardRank" << firstCardRank << std::endl;
+//    for (int i = 0; i < deckOfCards.size(); i++) {
+//        if (firstCardRank < deckOfCards[i].rank) {
+//            firstCardRank = deckOfCards[i].rank;
+//            deckOfCards[i].rank = deckOfCards[firstCardRank].rank;
+//            deckOfCards[firstCardRank].rank = firstCardRank;
+//            std::cout << "The value of firstCardRank" << firstCardRank << std::endl;
+//        }
+//    }
+////    return (isFlush(deckOfCards) && isStraight(deckOfCards) && isLowestCardRankTen);
+//    return true;
+//}
 
 
 //implementation of the isFullHouse function: are there 3 of one rank, and 2 of //another (for example: 3 aces and 2 fives)
 bool isFullHouse(std::vector<Card> deckOfCards) {
+    //three
     return true;
 }
+
+
+//IMPLEMENTATION OF STATISTICAL ANALYSIS FUNCTIONS
+//function to keep track of number of isFlush's
+int getNumOfFlush(bool isFlush) {
+    int numberOfFlush = 0;
+    
+    
+    return numberOfFlush;
+}
+
+//function to keep track of number of isStraight's
+int getNumOfStraights(bool isStraight) {
+    int numberOfStraights = 0;
+    
+    return numberOfStraights;
+}
+
+//function to keep track of number of isStraightFlush
+int getNumOfStraightFlush(bool isStraightFlush) {
+    int numberOfStraightFlush = 0;
+    
+    return numberOfStraightFlush;
+}
+
+//function to keep track of number of Royal Flush's
+int getNumOfRoyalFlush(bool isRoyalFlush) {
+    int numberOfRoyalFlush = 0;
+    
+    return numberOfRoyalFlush;
+}
+
+//function to keep track of number of Full House's
+int getNumOfFullHouse(bool isHouseFlush) {
+    int numberOfFullHouse = 0;
+    
+    return numberOfFullHouse;
+}
+
 
