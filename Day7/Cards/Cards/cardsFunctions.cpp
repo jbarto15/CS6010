@@ -52,5 +52,3 @@ void printDeckOfCards(std::vector<Card> deckOfCards) {
             }
     }
 }
-
-

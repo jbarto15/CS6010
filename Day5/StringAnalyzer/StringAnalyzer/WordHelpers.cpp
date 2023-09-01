@@ -59,7 +59,7 @@ double calculateAverageWordLength(std::string s) {
     int numberOfVowels = getNumVowels(s);
     int numberOfConsonants = getNumConsonants(s);
     int numberOfWords = getNumWords(s);
-    double averageWordLength = (numberOfVowels + numberOfConsonants) / numberOfWords;
+    double averageWordLength = static_cast<double> (numberOfVowels) + numberOfConsonants / numberOfWords;
     
     return averageWordLength;
 }
@@ -68,7 +68,7 @@ double calculateAverageWordLength(std::string s) {
 double calculateAverageVowelsPerWord(std::string s) {
     int numberOfVowels = getNumVowels(s);
     int numberOfWords = getNumWords(s);
-    double averageVowelsPerWord = numberOfVowels / numberOfWords;
+    double averageVowelsPerWord = static_cast<double> (numberOfVowels) / numberOfWords;
     
     return averageVowelsPerWord;
 }
