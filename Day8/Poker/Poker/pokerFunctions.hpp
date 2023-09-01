@@ -28,7 +28,7 @@ void printDeckOfCards(std::vector<Card> deckOfCards);
 
 
 //definition of a function that creates a hand of cards
-std::vector<Card> handOfCards(std::vector<Card> deckOfCards);
+std::vector<Card> createHandOfCards(std::vector<Card> deckOfCards);
 
 
 /*write a function to shuffle the deck. It should modify its parameter and return void. */
@@ -75,9 +75,9 @@ bool isHandFullHouse(std::vector<Card> handOfCards);
 std::vector<Card> createNewFiveCards(std::vector<Card> deckOfCards);
 
 //create a sort function for the ranks that returns integers
-int sortRanks(std::vector<Card> handOfCards);
+std::vector<int> sortCardsByRanks(std::vector<Card> handOfCards);
 
 //create a sort function for the suits
-int sortSuits(std::vector<Card> handOfCards);
+std::vector<std::string> sortCardsBySuits(std::vector<Card> handOfCards);
 
 #endif /* pokerFunctions_hpp */

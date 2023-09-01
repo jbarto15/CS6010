@@ -57,7 +57,7 @@ void printDeckOfCards(std::vector<Card> deckOfCards) {
 }
 
 //implement a function that creates a hand of cards
-std::vector<Card> handOfCards(std::vector<Card> deckOfCards) {
+std::vector<Card> createHandOfCards(std::vector<Card> deckOfCards) {
     //create a variable to store the hand of five cards
     //create a hand of cards by taking the first 5 cars of the deck of cards
     std::vector<Card> handOfCards = {deckOfCards[0], deckOfCards[1], deckOfCards[2], deckOfCards[3], deckOfCards[4]};
@@ -176,6 +176,11 @@ bool isHandRoyalFlush(std::vector<Card> handOfCards) {
     //create boolean variable that will store if the lowest card is a 10
     bool isLowestCardRankTen = false;
     
+    //check if lowest card in the sorted deck is equal to 10
+    if (sortCardsByRanks(handOfCards)[0] == 10) {
+        isLowestCardRankTen = true;
+    }
+    
     // Return whether it's a royal flush
     return (isHandFlush(handOfCards) && isHandStraight(handOfCards) && isLowestCardRankTen);
     }
@@ -188,6 +193,34 @@ bool isHandFullHouse(std::vector<Card> handOfCards) {
 }
 
 
+//create a sort function for the ranks that returns integers
+std::vector<int> sortCardsByRanks(std::vector<Card> handOfCards) {
+    //create an integer varible to save the sorted card ranks
+    std::vector<int> cardsByRank = {};
+    //go through the handOfCards
+    for (Card newCard: handOfCards) {
+        cardsByRank.push_back(newCard.rank);
+    }
+    
+    //take the hand of cards and sort them
+    std::sort(cardsByRank.begin(), cardsByRank.end());
+    
+    return cardsByRank;
+}
 
+//create a sort function for the suits
+std::vector<std::string> sortCardsBySuits(std::vector<Card> handOfCards) {
+    //create a string varible to save the sorted card suits
+    std::vector<std::string> cardsBySuit = {};
+    //go through the handOfCards
+    for (Card newCard: handOfCards) {
+        cardsBySuit.push_back(newCard.suit);
+    }
+    
+    //take the hand of cards and sort them
+    std::sort(cardsBySuit.begin(), cardsBySuit.end());
+    
+    return cardsBySuit;
+}
 
 
