@@ -36,7 +36,10 @@ int main(int argc, const char * argv[]) {
     //std::cout << isStraightFlush(testDeckOne(testDeck));
     
     //call isRoyalFlush function and print it
-    std::cout << isRoyalFlush(testDeckOne(testDeck));
+    std::cout << isHandRoyalFlush(testHandOne(testDeck));
+    
+    //create counter variables
+    int isFlush = 0;
     
 
     
