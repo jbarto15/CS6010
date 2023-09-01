@@ -57,10 +57,10 @@ void printDeckOfCards(std::vector<Card> deckOfCards) {
 }
 
 //implement a function that creates a hand of cards
-std::vector<Card> createHandOfCards(std::vector<Card> deckOfCards) {
+std::vector<Card> createHandOfCards(std::vector<Card>& deckOfCards) {
     //create a variable to store the hand of five cards
     //create a hand of cards by taking the first 5 cars of the deck of cards
-    std::vector<Card> handOfCards = {deckOfCards[0], deckOfCards[1], deckOfCards[2], deckOfCards[3], deckOfCards[4]};
+    std::vector<Card> handOfCards = {deckOfCards[0], deckOfCards[6], deckOfCards[11], deckOfCards[16], deckOfCards[21]};
     
     //return the 5 cards
     return handOfCards;
@@ -80,7 +80,8 @@ std::vector<Card> createHandOfCards(std::vector<Card> deckOfCards) {
 void shuffleDeckOfCards (std::vector<Card>& deckOfCards) {
     for (unsigned long int i = deckOfCards.size() - 1; i > 0; i--) {
         //j is a random generated number
-        int j = std::rand() % (i + 1);
+        std::srand(5);
+        int j = rand() % (i + 1);
         //i want to swap j with i
         //swap array elements i and j
         Card temp = deckOfCards[i];
@@ -130,7 +131,7 @@ void printHandOfFiveCards(std::vector<Card> deckOfCards) {
 
 
 //implementation of the isFlush function. are all the cards the same suit?
-bool isHandFlush(std::vector<Card> handOfCards) {
+bool isHandFlush(std::vector<Card>& handOfCards) {
     for (int i = 0; i < handOfCards.size(); i++) {
         //create variable that stores the first suit of the deck of cards
         std::string targetSuit = handOfCards[0].suit;
@@ -146,7 +147,7 @@ bool isHandFlush(std::vector<Card> handOfCards) {
 
 
 //implementation of the isStraight function: are all 5 cards in numerical order
-bool isHandStraight(std::vector<Card> handOfCards) {
+bool isHandStraight(std::vector<Card>& handOfCards) {
     //create variable that stores the first rank of the deck of cards
     int targetRank = handOfCards[0].rank;
     //go through the deck of cards one by one.
@@ -164,7 +165,7 @@ bool isHandStraight(std::vector<Card> handOfCards) {
 
 
 //implementation of the isStraightFlush function: is this hand both a straight and a //flush?
-bool isHandStraightFlush(std::vector<Card> handOfCards) {
+bool isHandStraightFlush(std::vector<Card>& handOfCards) {
   
     //return the results of isFlush and isStraight, if both of them are true //isStraightFlush will be true
     return (isHandFlush(handOfCards) && isHandStraight(handOfCards));
@@ -172,7 +173,7 @@ bool isHandStraightFlush(std::vector<Card> handOfCards) {
 
 
 //implementation of the isRoyalFlush function: is this hand a straight flush whose //low card is a ten?
-bool isHandRoyalFlush(std::vector<Card> handOfCards) {
+bool isHandRoyalFlush(std::vector<Card>& handOfCards) {
     //create boolean variable that will store if the lowest card is a 10
     bool isLowestCardRankTen = false;
     
@@ -187,14 +188,13 @@ bool isHandRoyalFlush(std::vector<Card> handOfCards) {
 
 
 //implementation of the isFullHouse function: are there 3 of one rank, and 2 of //another (for example: 3 aces and 2 fives)
-bool isHandFullHouse(std::vector<Card> handOfCards) {
-    //three
-    return true;
+bool isHandFullHouse(std::vector<Card>& handOfCards) {
+    return (sortCardsByRanks(handOfCards)[0] == sortCardsByRanks(handOfCards)[1] && sortCardsByRanks(handOfCards)[0] == sortCardsByRanks(handOfCards)[2]);
 }
 
 
 //create a sort function for the ranks that returns integers
-std::vector<int> sortCardsByRanks(std::vector<Card> handOfCards) {
+std::vector<int> sortCardsByRanks(std::vector<Card>& handOfCards) {
     //create an integer varible to save the sorted card ranks
     std::vector<int> cardsByRank = {};
     //go through the handOfCards
@@ -209,7 +209,7 @@ std::vector<int> sortCardsByRanks(std::vector<Card> handOfCards) {
 }
 
 //create a sort function for the suits
-std::vector<std::string> sortCardsBySuits(std::vector<Card> handOfCards) {
+std::vector<std::string> sortCardsBySuits(std::vector<Card>& handOfCards) {
     //create a string varible to save the sorted card suits
     std::vector<std::string> cardsBySuit = {};
     //go through the handOfCards
