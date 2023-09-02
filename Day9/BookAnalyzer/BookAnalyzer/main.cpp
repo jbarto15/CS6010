@@ -26,7 +26,7 @@ int main(int argc, const char * argv[]) {
 
     }
     
-    //create a string varible that the file text will go into
+    //create a string varible that each word of the file text will be read into
     std::string word;
 
     //stream in the book to the variable
@@ -37,13 +37,11 @@ int main(int argc, const char * argv[]) {
 
     //use a while loop to stream in the entire book
     while (inputBookStream >> word) {
-        std::cout << "Read in: " << word << "\n";
+        //std::cout << "Read in: " << word << "\n";
         allWordsOfBook.push_back(word);
     }
     
     std::cout << findBookTitle(allWordsOfBook) << std::endl;
-
-    
     
     return 0;
 }
