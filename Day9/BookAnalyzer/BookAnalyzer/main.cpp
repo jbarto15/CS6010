@@ -41,7 +41,14 @@ int main(int argc, const char * argv[]) {
         allWordsOfBook.push_back(word);
     }
     
+    //print out Book Title
     std::cout << findBookTitle(allWordsOfBook) << std::endl;
+    
+    //print out Book Author
+    std::cout << findBookAuthor(allWordsOfBook) << std::endl;
+    
+    //print out number of words in the file
+    std::cout << "Number of words: " << calculateTotalNumOfWordsInFile(allWordsOfBook) << std::endl;
     
     return 0;
 }
