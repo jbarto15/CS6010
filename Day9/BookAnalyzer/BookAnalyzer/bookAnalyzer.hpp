@@ -9,5 +9,9 @@
 #define bookAnalyzer_hpp
 
 #include <stdio.h>
+#include <string>
+
+//function to find the title of the book
+std::string findBookTitle(std::vector<std::string>& textOfEntireBook);
 
 #endif /* bookAnalyzer_hpp */

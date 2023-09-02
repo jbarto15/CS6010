@@ -9,6 +9,7 @@
 #include <fstream> //file stream
 #include <cstdlib> // For exit() function
 #include <vector>
+#include "bookAnalyzer.hpp"
 
 int main(int argc, const char * argv[]) {
     // insert code here...
@@ -39,6 +40,8 @@ int main(int argc, const char * argv[]) {
         std::cout << "Read in: " << word << "\n";
         allWordsOfBook.push_back(word);
     }
+    
+    std::cout << findBookTitle(allWordsOfBook) << std::endl;
 
     
     
