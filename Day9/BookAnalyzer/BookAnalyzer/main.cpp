@@ -50,5 +50,8 @@ int main(int argc, const char * argv[]) {
     //print out number of words in the file
     std::cout << "Number of words: " << calculateTotalNumOfWordsInFile(allWordsOfBook) << std::endl;
     
+    //print out number of characters in the file
+    std::cout << "Number of characters: " << calculateTotalNumOfCharactersInFile(allWordsOfBook) << std::endl;
+    
     return 0;
 }

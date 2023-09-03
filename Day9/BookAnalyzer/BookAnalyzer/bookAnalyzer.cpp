@@ -7,6 +7,8 @@
 
 #include "bookAnalyzer.hpp"
 #include <iostream>
+#include <fstream>
+#include <vector>
 
 //function for finding the title index
 int findTitleIndex(std::vector<std::string>& textOfEntireBook) {
@@ -88,10 +90,49 @@ std::string findBookAuthor(std::vector<std::string>& textOfEntireBook) {
 
 
 
+
 //function to calculate the total number of words in the file
 int unsigned long calculateTotalNumOfWordsInFile(std::vector<std::string>& textOfEntireBook) {
     //create variable that will return the total number of words in file
     int unsigned long totalNumOfWordsInFile = textOfEntireBook.size();
     
     return totalNumOfWordsInFile;
+}
+
+
+
+
+//function to calculate the total number of characters in the file
+int unsigned long calculateTotalNumOfCharactersInFile(std::vector<std::string>& textOfEntireBook) {
+    //create a variable that will return the total number of characters in file
+    int unsigned long totalNumOfCharactersInFile = 0;
+    
+    //create stream variable that will input the book
+    std::ifstream inputBookStreamByCharacter;//("frankenstein.txt");
+    inputBookStreamByCharacter.open("/Users/joshbarton/Downloads/frankenstein.txt");
+    
+    //check to see if book stream opened properly
+    if( inputBookStreamByCharacter.fail() ) {
+        std::cout << "Failed to open file.\n";
+        // Kill the program and exit with a return value of 1
+        exit(1);
+    }
+    //create a char varible that each character of the file text will be read into
+    char character;
+    
+    //stream in the book to the variable
+    inputBookStreamByCharacter >> character;
+        
+    //create a vector to store the characters from the book
+    std::vector<char> allCharactersOfBook;
+        
+    //use a while loop to stream in the entire book
+    while (inputBookStreamByCharacter >> character) {
+        //std::cout << "Read in: " << word << "\n";
+        allCharactersOfBook.push_back(character);
+        }
+    
+    totalNumOfCharactersInFile = allCharactersOfBook.size();
+
+    return totalNumOfCharactersInFile;
 }

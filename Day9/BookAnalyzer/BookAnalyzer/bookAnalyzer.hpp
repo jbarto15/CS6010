@@ -33,5 +33,8 @@ std::string findBookAuthor(std::vector<std::string>& textOfEntireBook);
 //function to calculate the total number of words in the file
 int unsigned long calculateTotalNumOfWordsInFile(std::vector<std::string>& textOfEntireBook);
 
+//function to calculate the total number of characters in the file
+int unsigned long calculateTotalNumOfCharactersInFile(std::vector<std::string>& textOfEntireBook);
+
 
 #endif /* bookAnalyzer_hpp */
