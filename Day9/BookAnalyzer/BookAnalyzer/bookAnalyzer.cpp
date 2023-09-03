@@ -9,6 +9,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <string>
 
 //function for finding the title index
 int findTitleIndex(std::vector<std::string>& textOfEntireBook) {
@@ -128,11 +129,37 @@ int unsigned long calculateTotalNumOfCharactersInFile(std::vector<std::string>& 
         
     //use a while loop to stream in the entire book
     while (inputBookStreamByCharacter >> character) {
-        //std::cout << "Read in: " << word << "\n";
-        allCharactersOfBook.push_back(character);
+        if (character != ' ') {
+            allCharactersOfBook.push_back(character);
+        }
+        
         }
     
     totalNumOfCharactersInFile = allCharactersOfBook.size();
 
     return totalNumOfCharactersInFile;
+}
+
+
+//function to find the shortest word in the book
+std::string findShortestWordInBook(std::vector<std::string>& textOfEntireBook) {
+    //create variable to store the shortest word
+    std::string shortestWordInBook;
+    for (int i = 0; i < textOfEntireBook.size(); i++) {
+        if (textOfEntireBook[i].length() == 1) {
+            shortestWordInBook = textOfEntireBook[i];
+        }
+    }
+    
+    
+    return shortestWordInBook;
+}
+
+
+//function to find the longest word in the book
+std::string findLongestWordInBook(std::vector<std::string>& textOfEntireBook) {
+    //create variable to store the longest word
+    std::string longestWordInBook;
+    
+    return longestWordInBook;
 }

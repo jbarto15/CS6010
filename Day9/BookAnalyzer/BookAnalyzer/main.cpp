@@ -53,5 +53,8 @@ int main(int argc, const char * argv[]) {
     //print out number of characters in the file
     std::cout << "Number of characters: " << calculateTotalNumOfCharactersInFile(allWordsOfBook) << std::endl;
     
+    //print out the shortest word in the file
+    std::cout << "The shortest word is " << findShortestWordInBook(allWordsOfBook) << std::endl;
+    
     return 0;
 }

@@ -37,4 +37,11 @@ int unsigned long calculateTotalNumOfWordsInFile(std::vector<std::string>& textO
 int unsigned long calculateTotalNumOfCharactersInFile(std::vector<std::string>& textOfEntireBook);
 
 
+//function to find the shortest word in the book
+std::string findShortestWordInBook(std::vector<std::string>& textOfEntireBook);
+
+
+//function to find the longest word in the book
+std::string findLongestWordInBook(std::vector<std::string>& textOfEntireBook);
+
 #endif /* bookAnalyzer_hpp */
