@@ -128,14 +128,13 @@ int unsigned long calculateTotalNumOfCharactersInFile(std::vector<std::string>& 
     std::vector<char> allCharactersOfBook;
         
     //use a while loop to stream in the entire book
-    while (inputBookStreamByCharacter >> character) {
+    while (inputBookStreamByCharacter.get(character)) {
         if (character != ' ') {
-            allCharactersOfBook.push_back(character);
+            //std::cout << "read in: " << character << std::endl;
+            totalNumOfCharactersInFile++;
         }
         
         }
-    
-    totalNumOfCharactersInFile = allCharactersOfBook.size();
 
     return totalNumOfCharactersInFile;
 }

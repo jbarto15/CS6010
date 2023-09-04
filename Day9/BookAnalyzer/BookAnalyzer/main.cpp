@@ -65,7 +65,7 @@ int main(int argc, const char * argv[]) {
     std::cin >> keyWordFromUser;
     
     //print out the number of times the word appears in the book
-    std::cout << "The word " << keyWordFromUser << " appears " << findHowManyTimesKeyWordAppears(keyWordFromUser, allWordsOfBook) << " times." << std::endl;
+    std::cout << "The word " << keyWordFromUser << " appears " << findHowManyTimesKeyWordAppears(keyWordFromUser, allWordsOfBook) << " times:" << std::endl;
     
     
     return 0;
