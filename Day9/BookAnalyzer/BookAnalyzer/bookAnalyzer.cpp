@@ -160,6 +160,28 @@ std::string findShortestWordInBook(std::vector<std::string>& textOfEntireBook) {
 std::string findLongestWordInBook(std::vector<std::string>& textOfEntireBook) {
     //create variable to store the longest word
     std::string longestWordInBook;
+    for (int i = 0; i < textOfEntireBook.size(); i++) {
+        if (textOfEntireBook[i].length() > 25) {
+            longestWordInBook = textOfEntireBook[i];
+        }
+    }
     
     return longestWordInBook;
+}
+
+
+
+//function for finding how many times the key word appears
+int findHowManyTimesKeyWordAppears(std::string& keyWord, std::vector<std::string>& textOfEntireBook) {
+    
+    int numOfTimesKeyWordIsInBook = 0;
+    
+    //use a loop to find the keyword
+    for (int i = 0; i < textOfEntireBook.size(); i++) {
+        if (keyWord == textOfEntireBook[i]) {
+            numOfTimesKeyWordIsInBook += 1;
+        }
+    }
+    
+    return numOfTimesKeyWordIsInBook;
 }

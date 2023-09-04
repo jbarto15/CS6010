@@ -53,8 +53,20 @@ int main(int argc, const char * argv[]) {
     //print out number of characters in the file
     std::cout << "Number of characters: " << calculateTotalNumOfCharactersInFile(allWordsOfBook) << std::endl;
     
-    //print out the shortest word in the file
-    std::cout << "The shortest word is " << findShortestWordInBook(allWordsOfBook) << std::endl;
+    //print out the shortest word in the file and the longest word
+    std::cout << "The shortest word is: " << findShortestWordInBook(allWordsOfBook) << " and the longest word is: " << findLongestWordInBook(allWordsOfBook) << std::endl;
+    
+    //ask fo a key word
+    std::cout << "Please enter a word to search for:" << std::endl;
+    
+    //create a keyword variable that will store the input from the user
+    std::string keyWordFromUser;
+    //get the keyword from the user
+    std::cin >> keyWordFromUser;
+    
+    //print out the number of times the word appears in the book
+    std::cout << "The word " << keyWordFromUser << " appears " << findHowManyTimesKeyWordAppears(keyWordFromUser, allWordsOfBook) << " times." << std::endl;
+    
     
     return 0;
 }

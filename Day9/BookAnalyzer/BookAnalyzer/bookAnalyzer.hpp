@@ -44,4 +44,8 @@ std::string findShortestWordInBook(std::vector<std::string>& textOfEntireBook);
 //function to find the longest word in the book
 std::string findLongestWordInBook(std::vector<std::string>& textOfEntireBook);
 
+
+//function for finding the key word
+int findHowManyTimesKeyWordAppears(std::string& keyWord, std::vector<std::string>& textOfEntireBook);
+
 #endif /* bookAnalyzer_hpp */
