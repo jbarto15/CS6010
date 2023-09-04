@@ -103,53 +103,28 @@ int unsigned long calculateTotalNumOfWordsInFile(std::vector<std::string>& textO
 
 
 
-//function to calculate the total number of characters in the file
-int unsigned long calculateTotalNumOfCharactersInFile(std::vector<std::string>& textOfEntireBook) {
-    //create a variable that will return the total number of characters in file
-    int unsigned long totalNumOfCharactersInFile = 0;
-    
-    //create stream variable that will input the book
-    std::ifstream inputBookStreamByCharacter;//("frankenstein.txt");
-    inputBookStreamByCharacter.open("/Users/joshbarton/Downloads/frankenstein.txt");
-    
-    //check to see if book stream opened properly
-    if( inputBookStreamByCharacter.fail() ) {
-        std::cout << "Failed to open file.\n";
-        // Kill the program and exit with a return value of 1
-        exit(1);
-    }
-    //create a char varible that each character of the file text will be read into
-    char character;
-    
-    //stream in the book to the variable
-    inputBookStreamByCharacter >> character;
-        
-    //create a vector to store the characters from the book
-    std::vector<char> allCharactersOfBook;
-        
-    //use a while loop to stream in the entire book
-    while (inputBookStreamByCharacter.get(character)) {
-        if (character != ' ') {
-            //std::cout << "read in: " << character << std::endl;
-            totalNumOfCharactersInFile++;
-        }
-        
-        }
-
-    return totalNumOfCharactersInFile;
-}
+////function to calculate the total number of characters in the file
+//int unsigned long calculateTotalNumOfCharactersInFile(std::vector<std::string>& charactersOfEntireBook) {
+//    //create a variable that will return the total number of characters in file
+//    int unsigned long totalNumOfCharactersInFile = 0;
+//
+//    return totalNumOfCharactersInFile;
+//}
 
 
 //function to find the shortest word in the book
 std::string findShortestWordInBook(std::vector<std::string>& textOfEntireBook) {
     //create variable to store the shortest word
     std::string shortestWordInBook;
-    for (int i = 0; i < textOfEntireBook.size(); i++) {
-        if (textOfEntireBook[i].length() == 1) {
-            shortestWordInBook = textOfEntireBook[i];
+    //create a shortest word length variable to compare the shortest word with
+    int unsigned long shortestLength = 10;
+    
+    for (const std::string& word: textOfEntireBook) {
+        if (word.length() < shortestLength) {
+            shortestWordInBook = word;
+            shortestLength = word.length();
         }
     }
-    
     
     return shortestWordInBook;
 }
@@ -159,9 +134,14 @@ std::string findShortestWordInBook(std::vector<std::string>& textOfEntireBook) {
 std::string findLongestWordInBook(std::vector<std::string>& textOfEntireBook) {
     //create variable to store the longest word
     std::string longestWordInBook;
-    for (int i = 0; i < textOfEntireBook.size(); i++) {
-        if (textOfEntireBook[i].length() > 25) {
-            longestWordInBook = textOfEntireBook[i];
+    
+    //create a longest word length variable to compare the longest word with
+    int unsigned long longestLength = 0;
+    
+    for (const std::string& word: textOfEntireBook) {
+        if (word.length() > longestLength) {
+            longestWordInBook = word;
+            longestLength = word.length();
         }
     }
     
@@ -183,4 +163,52 @@ int findHowManyTimesKeyWordAppears(std::string& keyWord, std::vector<std::string
     }
     
     return numOfTimesKeyWordIsInBook;
+}
+
+
+
+//function finding the percentage of where the key word occurs
+void percentageOfWhereKeyWordOccursInFile(std::string& keyWord, int unsigned long& totalNumOfCharactersInFile, std::vector<char>& charactersOfEntireBook) {
+    
+    
+    //create a vector of characters
+    std::vector<char> vectorOfKeyWordCharacters;
+    
+    //parse the keyWord into characters
+    for (char keyWordCharacter: keyWord) {
+        vectorOfKeyWordCharacters.push_back(keyWordCharacter);
+    }
+    
+    //variable that will store the position of the first character in the word. Set to -1 because we don't want it storing any character at first
+    int positionOfCharacterOfKeyWord = -1;
+    
+    //variable to store if the character in the book is the same as the one in the key word
+    bool keyWordFound = true;
+    
+    //search for the characters of the key word in all of the characters of the book
+    for (int i = 0; i < charactersOfEntireBook.size(); i++) {
+        if (charactersOfEntireBook[i] == vectorOfKeyWordCharacters[0]) {
+            positionOfCharacterOfKeyWord = i;
+            std::cout << "character position: " << positionOfCharacterOfKeyWord << std::endl;
+        }
+        for (int j = 1; j < vectorOfKeyWordCharacters.size(); j++) {
+            if (vectorOfKeyWordCharacters[j] == charactersOfEntireBook[i + j]) {
+                keyWordFound = true;
+//                std::cout << "at " << positionOfCharacterOfKeyWord / totalNumOfCharactersInFile << "%: " << keyWord << std::endl;
+                
+            } else {
+                keyWordFound = false;
+                break;
+            }
+        }
+
+        while (keyWordFound) {
+            std::cout << "at " << positionOfCharacterOfKeyWord / totalNumOfCharactersInFile << "%: " << keyWord << std::endl;
+        }
+    }
+    
+//    std::cout << "First character position: " << positionOfFirstCharacerOfKeyWord << std::endl;
+    
+    
+    
 }

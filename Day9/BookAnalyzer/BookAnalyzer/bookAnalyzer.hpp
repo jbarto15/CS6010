@@ -34,7 +34,7 @@ std::string findBookAuthor(std::vector<std::string>& textOfEntireBook);
 int unsigned long calculateTotalNumOfWordsInFile(std::vector<std::string>& textOfEntireBook);
 
 //function to calculate the total number of characters in the file
-int unsigned long calculateTotalNumOfCharactersInFile(std::vector<std::string>& textOfEntireBook);
+int unsigned long calculateTotalNumOfCharactersInFile(std::vector<std::string>& charactersOfEntireBook);
 
 
 //function to find the shortest word in the book
@@ -47,5 +47,9 @@ std::string findLongestWordInBook(std::vector<std::string>& textOfEntireBook);
 
 //function for finding the key word
 int findHowManyTimesKeyWordAppears(std::string& keyWord, std::vector<std::string>& textOfEntireBook);
+
+
+//function finding the percentage of where the key word occurs
+void percentageOfWhereKeyWordOccursInFile(std::string& keyWord, int unsigned long& totalNumOfCharactersInFile, std::vector<char>& charactersOfEntireBook);
 
 #endif /* bookAnalyzer_hpp */
