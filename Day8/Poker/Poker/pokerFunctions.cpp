@@ -132,34 +132,37 @@ void printHandOfFiveCards(std::vector<Card> deckOfCards) {
 
 //implementation of the isFlush function. are all the cards the same suit?
 bool isHandFlush(std::vector<Card>& handOfCards) {
-    for (int i = 0; i < handOfCards.size(); i++) {
-        //create variable that stores the first suit of the deck of cards
-        std::string targetSuit = handOfCards[0].suit;
-        //then check to see if those cards are all the same suit
-        if (handOfCards[i].suit == targetSuit) {
-            continue;
-        } else {
+    //create variable that stores the first suit of the deck of cards
+    std::string targetSuit = handOfCards[0].suit;
+    for (int i = 1; i < handOfCards.size(); i++) {
+        //check to see if those cards are all the same suit
+        if (handOfCards[i].suit != targetSuit) {
             return false;
         }
     }
+    std::cout << "isHandFlush = true \n";
     return true;
 }
 
 
 //implementation of the isStraight function: are all 5 cards in numerical order
 bool isHandStraight(std::vector<Card>& handOfCards) {
+    //sort cards by rank
+    sortCardsByRanks(handOfCards);
+    
     //create variable that stores the first rank of the deck of cards
     int targetRank = handOfCards[0].rank;
     //go through the deck of cards one by one.
     for (int i = 0; i < handOfCards.size(); i++) {
         //then check to see if those cards are a straight
-        if (handOfCards[i].rank == targetRank) {
-            targetRank += 1;
+        if (handOfCards[i].rank != targetRank) {
+            return false;
             //continue;
         } else {
-            return false;
+            targetRank++;
         }
     }
+    std::cout<<"isHandStraight = true";
     return true;
 }
 
@@ -168,6 +171,7 @@ bool isHandStraight(std::vector<Card>& handOfCards) {
 bool isHandStraightFlush(std::vector<Card>& handOfCards) {
   
     //return the results of isFlush and isStraight, if both of them are true //isStraightFlush will be true
+    
     return (isHandFlush(handOfCards) && isHandStraight(handOfCards));
 }
 
@@ -180,6 +184,7 @@ bool isHandRoyalFlush(std::vector<Card>& handOfCards) {
     //check if lowest card in the sorted deck is equal to 10
     if (sortCardsByRanks(handOfCards)[0] == 10) {
         isLowestCardRankTen = true;
+        std::cout<<"lowest card = 10";
     }
     
     // Return whether it's a royal flush
