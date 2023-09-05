@@ -101,17 +101,6 @@ int unsigned long calculateTotalNumOfWordsInFile(std::vector<std::string>& textO
 }
 
 
-
-
-////function to calculate the total number of characters in the file
-//int unsigned long calculateTotalNumOfCharactersInFile(std::vector<std::string>& charactersOfEntireBook) {
-//    //create a variable that will return the total number of characters in file
-//    int unsigned long totalNumOfCharactersInFile = 0;
-//
-//    return totalNumOfCharactersInFile;
-//}
-
-
 //function to find the shortest word in the book
 std::string findShortestWordInBook(std::vector<std::string>& textOfEntireBook) {
     //create variable to store the shortest word
