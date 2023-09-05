@@ -31,10 +31,10 @@ std::string findBookAuthor(std::vector<std::string>& textOfEntireBook);
 
 
 //function to calculate the total number of words in the file
-int unsigned long calculateTotalNumOfWordsInFile(std::vector<std::string>& textOfEntireBook);
+unsigned long calculateTotalNumOfWordsInFile(std::vector<std::string>& textOfEntireBook);
 
 //function to calculate the total number of characters in the file
-int unsigned long calculateTotalNumOfCharactersInFile(std::vector<std::string>& charactersOfEntireBook);
+unsigned long calculateTotalNumOfCharactersInFile(std::vector<std::string>& textOfEntireBook);
 
 
 //function to find the shortest word in the book
@@ -49,7 +49,18 @@ std::string findLongestWordInBook(std::vector<std::string>& textOfEntireBook);
 int findHowManyTimesKeyWordAppears(std::string& keyWord, std::vector<std::string>& textOfEntireBook);
 
 
-//function finding the percentage of where the key word occurs
-void percentageOfWhereKeyWordOccursInFile(std::string& keyWord, int unsigned long& totalNumOfCharactersInFile, std::vector<char>& charactersOfEntireBook);
+
+//function that prints out the statistics
+void giveKeyWordStatisticsAndInformation(std::string& keyWord, unsigned long& totalNumOfCharactersInFile, std::vector<std::string>& textOfEntireBook);
+
+//function creating a vector of characters
+std::vector<char> allCharactersOfText(std::vector<std::string>& textOfEntireBook);
+
+
+//function to find the position of the key words first character
+int findPositionOfKeyWord(std::string keyword, std::vector<char> allCharactersOfText);
+
+////function finding the percentage of where the key word occurs
+//void percentageOfWhereKeyWordOccursInFile(std::string& keyWord, int unsigned long& totalNumOfCharactersInFile, std::vector<char>& charactersOfEntireBook);
 
 #endif /* bookAnalyzer_hpp */

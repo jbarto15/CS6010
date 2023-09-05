@@ -101,6 +101,23 @@ int unsigned long calculateTotalNumOfWordsInFile(std::vector<std::string>& textO
 }
 
 
+
+//function to calculate the total number of characters in the file
+unsigned long calculateTotalNumOfCharactersInFile(std::vector<std::string>& textOfEntireBook) {
+    //create totalNumOfCharacters variable
+    unsigned long totalNumOfCharacters = 0;
+    
+    //for each loop to go through the text of the entire book and put individual characters into the character vector
+    for (int i = 0; i < textOfEntireBook.size(); i++) {
+            totalNumOfCharacters += textOfEntireBook[i].length();
+        }
+    
+    return totalNumOfCharacters;
+}
+
+
+
+
 //function to find the shortest word in the book
 std::string findShortestWordInBook(std::vector<std::string>& textOfEntireBook) {
     //create variable to store the shortest word
@@ -155,49 +172,103 @@ int findHowManyTimesKeyWordAppears(std::string& keyWord, std::vector<std::string
 }
 
 
-
-//function finding the percentage of where the key word occurs
-void percentageOfWhereKeyWordOccursInFile(std::string& keyWord, int unsigned long& totalNumOfCharactersInFile, std::vector<char>& charactersOfEntireBook) {
+void giveKeyWordStatisticsAndInformation(std::string& keyWord, unsigned long& totalNumOfCharactersInFile, std::vector<std::string>& textOfEntireBook) {
+    //variable for word to the left and word to the right
+    std::string wordToLeft;
+    std::string wordToRight;
     
+    //variable to calculate the percentage
+    double percentage = 0;
     
-    //create a vector of characters
-    std::vector<char> vectorOfKeyWordCharacters;
-    
-    //parse the keyWord into characters
-    for (char keyWordCharacter: keyWord) {
-        vectorOfKeyWordCharacters.push_back(keyWordCharacter);
-    }
-    
-    //variable that will store the position of the first character in the word. Set to -1 because we don't want it storing any character at first
-    int positionOfCharacterOfKeyWord = -1;
-    
-    //variable to store if the character in the book is the same as the one in the key word
-    bool keyWordFound = true;
-    
-    //search for the characters of the key word in all of the characters of the book
-    for (int i = 0; i < charactersOfEntireBook.size(); i++) {
-        if (charactersOfEntireBook[i] == vectorOfKeyWordCharacters[0]) {
-            positionOfCharacterOfKeyWord = i;
-            std::cout << "character position: " << positionOfCharacterOfKeyWord << std::endl;
-        }
-        for (int j = 1; j < vectorOfKeyWordCharacters.size(); j++) {
-            if (vectorOfKeyWordCharacters[j] == charactersOfEntireBook[i + j]) {
-                keyWordFound = true;
-//                std::cout << "at " << positionOfCharacterOfKeyWord / totalNumOfCharactersInFile << "%: " << keyWord << std::endl;
-                
-            } else {
-                keyWordFound = false;
-                break;
-            }
-        }
-
-        while (keyWordFound) {
-            std::cout << "at " << positionOfCharacterOfKeyWord / totalNumOfCharactersInFile << "%: " << keyWord << std::endl;
+    //use a loop to find the keyword
+    for (int i = 0; i < textOfEntireBook.size(); i++) {
+        if (keyWord == textOfEntireBook[i] && i > 0 && i < textOfEntireBook.size()) {
+            wordToLeft = textOfEntireBook[i - 1];
+            wordToRight = textOfEntireBook[i + 1];
+            percentage = (50 / calculateTotalNumOfCharactersInFile(textOfEntireBook)) * 100;
+            std::cout << " at " << percentage << "%: " << wordToLeft + " " << keyWord + " " << wordToRight << std::endl;
         }
     }
-    
-//    std::cout << "First character position: " << positionOfFirstCharacerOfKeyWord << std::endl;
-    
-    
-    
 }
+
+
+//function creating a vector of characters
+std::vector<char> allCharactersOfText(std::vector<std::string>& textOfEntireBook) {
+    //variable to store the vector of characters
+    std::vector<char> allCharactersOfText;
+    
+    //loop to create character vector
+    for (std::string strings: textOfEntireBook) {
+        for (char c: allCharactersOfText) {
+            allCharactersOfText.push_back(c);
+        }
+    }
+    return allCharactersOfText;
+}
+
+//this function doesn't work yet
+//function to find the position of the key words first character
+int findPositionOfKeyWord(std::string keyword, std::vector<char> allCharactersOfText) {
+    //variable that will store position
+    int positionOfKeyWord = 0;
+    //variable that will store the characters of keyword
+    std::vector<char> charactersOfKeyWord;
+    //loop to loop through the key word and make it a vector of characters
+    for (char c: keyword) {
+        charactersOfKeyWord.push_back(c);
+    }
+    
+    for (int i = 0; i < charactersOfKeyWord.size(); i++) {
+        if (charactersOfKeyWord[i] == keyword[i]) {
+            positionOfKeyWord = i;
+            break;
+        }
+    }
+    return positionOfKeyWord;
+}
+
+////function finding the percentage of where the key word occurs
+//void percentageOfWhereKeyWordOccursInFile(std::string& keyWord, int unsigned long& totalNumOfCharactersInFile, std::vector<char>& charactersOfEntireBook) {
+//
+//
+//    //create a vector of characters
+//    std::vector<char> vectorOfKeyWordCharacters;
+//
+//    //parse the keyWord into characters
+//    for (char keyWordCharacter: keyWord) {
+//        vectorOfKeyWordCharacters.push_back(keyWordCharacter);
+//    }
+//
+//    //variable that will store the position of the first character in the word. Set to -1 because we don't want it storing any character at first
+//    int positionOfCharacterOfKeyWord = -1;
+//
+//    //variable to store if the character in the book is the same as the one in the key word
+//    bool keyWordFound = true;
+//
+//    //search for the characters of the key word in all of the characters of the book
+//    for (int i = 0; i < charactersOfEntireBook.size(); i++) {
+//        if (charactersOfEntireBook[i] == vectorOfKeyWordCharacters[0]) {
+//            positionOfCharacterOfKeyWord = i;
+//            std::cout << "character position: " << positionOfCharacterOfKeyWord << std::endl;
+//        }
+//        for (int j = 1; j < vectorOfKeyWordCharacters.size(); j++) {
+//            if (vectorOfKeyWordCharacters[j] == charactersOfEntireBook[i + j]) {
+//                keyWordFound = true;
+////                std::cout << "at " << positionOfCharacterOfKeyWord / totalNumOfCharactersInFile << "%: " << keyWord << std::endl;
+//
+//            } else {
+//                keyWordFound = false;
+//                break;
+//            }
+//        }
+//
+//        while (keyWordFound) {
+//            std::cout << "at " << positionOfCharacterOfKeyWord / totalNumOfCharactersInFile << "%: " << keyWord << std::endl;
+//        }
+//    }
+//
+////    std::cout << "First character position: " << positionOfFirstCharacerOfKeyWord << std::endl;
+//
+//
+//
+//}
