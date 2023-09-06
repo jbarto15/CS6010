@@ -61,7 +61,7 @@ int main(int argc, const char * argv[]) {
     int totalNumberOfHands = 0;
 
     //create a for loop that will shuffle the deck a lot of times and then keep track of the number of times each function returns true
-    for (int i = 0; i < 1000; i++) {
+    for (int i = 0; i < 10000; i++) {
         shuffleDeckOfCards(cards);
         createHandOfCards(cards);
         std::vector<Card> newHand = createHandOfCards(cards);
@@ -90,23 +90,23 @@ int main(int argc, const char * argv[]) {
     std::cout << numOfHandFullHouse << std::endl;
     
     //percentage of hands that are a flush and print percentage
-    float percentageOfHandsFlush = float (numOfHandFlush) / float (totalNumberOfHands);
+    float percentageOfHandsFlush = float ((numOfHandFlush) / float (totalNumberOfHands)) * 100;
     std::cout << "Percentage of Hands Flush: " << percentageOfHandsFlush << std::endl;
     
     //percentage of hands that are a straight and print percentage
-    float percentageOfHandsStraight = float (numOfHandStraight) / float (totalNumberOfHands);
+    float percentageOfHandsStraight = float ((numOfHandStraight) / float (totalNumberOfHands)) * 100;
     std::cout << "Percentage of Hands Straight: " << percentageOfHandsStraight << std::endl;
     
     //percentage of hands that are a straightflush and print percentage
-    float percentageOfHandsStraightFlush = float (numOfHandStraightFlush) / float (totalNumberOfHands);
+    float percentageOfHandsStraightFlush = float ((numOfHandStraightFlush) / float (totalNumberOfHands)) * 100;
     std::cout << "Percentage of Hands Straight Flush: " << percentageOfHandsStraightFlush << std::endl;
     
     //percentage of hands that are a royalflush and print percentage
-    float percentageOfHandsRoyalFlush = float (numOfHandRoyalFlush) / float (totalNumberOfHands);
+    float percentageOfHandsRoyalFlush = float ((numOfHandRoyalFlush) / float (totalNumberOfHands)) * 100;
     std::cout << "Percentage of Hands Royal Flush: " << percentageOfHandsRoyalFlush << std::endl;
     
     //percentage of hands that are a fullhouse and print percentage
-    float percentageOfHandsFullHouse = float (numOfHandFullHouse) / float (totalNumberOfHands);
+    float percentageOfHandsFullHouse = float ((numOfHandFullHouse) / float (totalNumberOfHands)) * 100;
     std::cout << "Percentage of Hands Full House: " << percentageOfHandsFullHouse << std::endl;
     
     

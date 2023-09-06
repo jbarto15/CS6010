@@ -11,6 +11,7 @@
 #include <vector>
 #include <cstdlib>
 #include <ctime>
+#include <algorithm>
 
 
 //implementation of creating a deck of cards
@@ -21,9 +22,6 @@ std::vector<Card> deckOfCards(std::vector<Card>& deckOfCards) {
 
     //create vector of the different card numbers
     std::vector<int> allRanks = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
-    
-    //create new vector to store the suits and ranks for each iteration
-    //std::vector<Card> deckOfCards = {};
     
 //    use a for loop and a nested for loop to create a type card with the type of suit and the rank
     for (int i = 0; i < typeOfSuit.size(); i++) {
@@ -67,16 +65,6 @@ std::vector<Card> createHandOfCards(std::vector<Card>& deckOfCards) {
 }
 
 //implementation of the shuffle a deck of cards function
-
-/* Below is a simple algorithm for shuffling an array or length N:
- 
-*/
-/* for i = N -1 down to 0
- 
- pick a random integer j between 0 and i
-
- swap array elements i and j*/
-
 void shuffleDeckOfCards (std::vector<Card>& deckOfCards) {
     for (unsigned long int i = deckOfCards.size() - 1; i > 0; i--) {
         //j is a random generated number
@@ -144,22 +132,16 @@ bool isHandFlush(std::vector<Card>& handOfCards) {
     return true;
 }
 
-
+//fix this one
 //implementation of the isStraight function: are all 5 cards in numerical order
 bool isHandStraight(std::vector<Card>& handOfCards) {
     //sort cards by rank
-    sortCardsByRanks(handOfCards);
+    std::vector<int> sortedByRank = sortCardsByRanks(handOfCards);
     
-    //create variable that stores the first rank of the deck of cards
-    int targetRank = handOfCards[0].rank;
-    //go through the deck of cards one by one.
-    for (int i = 0; i < handOfCards.size(); i++) {
-        //then check to see if those cards are a straight
-        if (handOfCards[i].rank != targetRank) {
+    //check if the integers in the sortedByRank vector have a difference of one between them.
+    for (int i = 0; i < sortedByRank.size() - 1; i++) {
+        if (sortedByRank[i + 1] - sortedByRank[i] != 1) {
             return false;
-            //continue;
-        } else {
-            targetRank++;
         }
     }
     std::cout<<"isHandStraight = true";
@@ -171,7 +153,6 @@ bool isHandStraight(std::vector<Card>& handOfCards) {
 bool isHandStraightFlush(std::vector<Card>& handOfCards) {
   
     //return the results of isFlush and isStraight, if both of them are true //isStraightFlush will be true
-    
     return (isHandFlush(handOfCards) && isHandStraight(handOfCards));
 }
 
@@ -181,8 +162,11 @@ bool isHandRoyalFlush(std::vector<Card>& handOfCards) {
     //create boolean variable that will store if the lowest card is a 10
     bool isLowestCardRankTen = false;
     
+    //sort cards by ranks saved in a variable
+    std::vector<int> sortedByRank = sortCardsByRanks(handOfCards);
+    
     //check if lowest card in the sorted deck is equal to 10
-    if (sortCardsByRanks(handOfCards)[0] == 10) {
+    if (sortedByRank[0] == 10) {
         isLowestCardRankTen = true;
         std::cout<<"lowest card = 10";
     }
@@ -194,14 +178,21 @@ bool isHandRoyalFlush(std::vector<Card>& handOfCards) {
 
 //implementation of the isFullHouse function: are there 3 of one rank, and 2 of //another (for example: 3 aces and 2 fives)
 bool isHandFullHouse(std::vector<Card>& handOfCards) {
-    return (sortCardsByRanks(handOfCards)[0] == sortCardsByRanks(handOfCards)[1] && sortCardsByRanks(handOfCards)[0] == sortCardsByRanks(handOfCards)[2]);
+    //vector to store the sorted ranks
+    std::vector<int> sortedByRanks = sortCardsByRanks(handOfCards);
+    
+    if ((sortedByRanks[0] == sortedByRanks[1] && sortedByRanks[0] == sortedByRanks[2] && sortedByRanks[3] == sortedByRanks[4]) || (sortedByRanks[0] == sortedByRanks[1] && sortedByRanks[2] == sortedByRanks[3] && sortedByRanks[3] == sortedByRanks[4])) {
+        return true;
+    }
+    
+    return false;
 }
 
 
 //create a sort function for the ranks that returns integers
 std::vector<int> sortCardsByRanks(std::vector<Card>& handOfCards) {
     //create an integer varible to save the sorted card ranks
-    std::vector<int> cardsByRank = {};
+    std::vector<int> cardsByRank;
     //go through the handOfCards
     for (Card newCard: handOfCards) {
         cardsByRank.push_back(newCard.rank);
@@ -213,19 +204,5 @@ std::vector<int> sortCardsByRanks(std::vector<Card>& handOfCards) {
     return cardsByRank;
 }
 
-//create a sort function for the suits
-std::vector<std::string> sortCardsBySuits(std::vector<Card>& handOfCards) {
-    //create a string varible to save the sorted card suits
-    std::vector<std::string> cardsBySuit = {};
-    //go through the handOfCards
-    for (Card newCard: handOfCards) {
-        cardsBySuit.push_back(newCard.suit);
-    }
-    
-    //take the hand of cards and sort them
-    std::sort(cardsBySuit.begin(), cardsBySuit.end());
-    
-    return cardsBySuit;
-}
 
 
