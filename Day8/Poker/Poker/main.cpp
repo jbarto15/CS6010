@@ -10,39 +10,9 @@
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-//    std::vector<Card> cards = {};
-//    deckOfCards(cards);
-    //printDeckOfCards(cards);
     
-    //create a hand of cards
-    //createHandOfCards(cards);
-    
-
-    
-    //std::vector<Card> testDeck = {};
-    //std::vector<Card> testDeck;
-
-    //testDeckOne(testDeck);
-    //printDeckOfFiveCards(testDeck);
-    
-    //check if isFlush function is working with testDeckOne function
-    //std::cout << isFlush(testDeckOne(testDeck));
-    
-    //try a randomized deck in isFlush
-    //std::cout << isFlush(deckOfCards(cards));
-    
-    //printing out whether or not isStraight function is true
-    //std::cout << isStraight(testDeckOne(testDeck));
-    
-    //printing out whether or not isStraightFlush function is true
-    //std::cout << isStraightFlush(testDeckOne(testDeck));
-    
-    //call isRoyalFlush function and print it
-    //std::cout << isHandRoyalFlush(testHandOne(testDeck)) << std::endl;
-    
-    //call isHandFullHouse and print it
-    //std::cout << isHandFullHouse(testHandOne(testDeck)) << std::endl;
-    
+    //seed for random number generator
+    std::srand(5);
     
     //create empty vector of cards
     std::vector<Card> cards = {};
@@ -61,33 +31,33 @@ int main(int argc, const char * argv[]) {
     int totalNumberOfHands = 0;
 
     //create a for loop that will shuffle the deck a lot of times and then keep track of the number of times each function returns true
-    for (int i = 0; i < 10000; i++) {
+    for (int i = 0; i < 900; i++) {
         shuffleDeckOfCards(cards);
         createHandOfCards(cards);
         std::vector<Card> newHand = createHandOfCards(cards);
         for(Card cd : newHand){
-            std::cout << "Rank " << cd.rank << " Suit " << cd.suit << std::endl;
+            //std::cout << "Rank " << cd.rank << " Suit " << cd.suit << std::endl;
         }
-        std::cout << " New 5" << std:: endl;
-        if (isHandFlush((cards))) {
+        //std::cout << " New 5" << std:: endl;
+        if (isHandFlush((newHand))) {
             numOfHandFlush += 1;
-        } else if (isHandStraight(cards)) {
+        } else if (isHandStraight(newHand)) {
             numOfHandStraight += 1;
-        } else if (isHandStraightFlush(cards)) {
+        } else if (isHandStraightFlush(newHand)) {
             numOfHandStraightFlush += 1;
-        } else if (isHandRoyalFlush(cards)) {
+        } else if (isHandRoyalFlush(newHand)) {
             numOfHandRoyalFlush += 1;
-        } else if (isHandFullHouse(cards)) {
+        } else if (isHandFullHouse(newHand)) {
             numOfHandFullHouse += 1;
         }
         totalNumberOfHands += 1;
     }
     
-    std::cout << numOfHandFlush << std::endl;
-    std::cout << numOfHandStraight << std::endl;
-    std::cout << numOfHandStraightFlush << std::endl;
-    std::cout << numOfHandRoyalFlush << std::endl;
-    std::cout << numOfHandFullHouse << std::endl;
+    std::cout << "Number of Flush: " << numOfHandFlush << std::endl;
+    std::cout << "Number of Straight: " << numOfHandStraight << std::endl;
+    std::cout << "Number of Straight-Flush: " << numOfHandStraightFlush << std::endl;
+    std::cout << "Number of Royal-Flush: " << numOfHandRoyalFlush << std::endl;
+    std::cout << "Number of Full-House: " << numOfHandFullHouse << std::endl;
     
     //percentage of hands that are a flush and print percentage
     float percentageOfHandsFlush = float ((numOfHandFlush) / float (totalNumberOfHands)) * 100;

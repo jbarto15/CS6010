@@ -66,10 +66,12 @@ std::vector<Card> createHandOfCards(std::vector<Card>& deckOfCards) {
 
 //implementation of the shuffle a deck of cards function
 void shuffleDeckOfCards (std::vector<Card>& deckOfCards) {
+    //set the seed
+    
     for (unsigned long int i = deckOfCards.size() - 1; i > 0; i--) {
         //j is a random generated number
-        std::srand(5);
         int j = rand() % (i + 1);
+        //here I'm creating an integer variable j. I'm assigning it to
         //i want to swap j with i
         //swap array elements i and j
         Card temp = deckOfCards[i];
@@ -87,7 +89,7 @@ std::vector<Card> testHandOne(std::vector<Card>& testDeck) {
     //create vector of the card numbers 1 through 5
     std::vector<int> allRanks = {10, 11, 12, 13, 14};
     
-//    use a for loop and a nested for loop to create a type card with the type of suit and the rank
+    //use a for loop and a nested for loop to create a type card with the type of suit and the rank
     for (int i = 0; i < typeOfSuit.size(); i++) {
         for (int j = 0; j < allRanks.size(); j++) {
             Card newCard = {typeOfSuit[i], allRanks[j]};
@@ -128,7 +130,6 @@ bool isHandFlush(std::vector<Card>& handOfCards) {
             return false;
         }
     }
-    std::cout << "isHandFlush = true \n";
     return true;
 }
 
@@ -144,14 +145,12 @@ bool isHandStraight(std::vector<Card>& handOfCards) {
             return false;
         }
     }
-    std::cout<<"isHandStraight = true";
     return true;
 }
 
 
 //implementation of the isStraightFlush function: is this hand both a straight and a //flush?
 bool isHandStraightFlush(std::vector<Card>& handOfCards) {
-  
     //return the results of isFlush and isStraight, if both of them are true //isStraightFlush will be true
     return (isHandFlush(handOfCards) && isHandStraight(handOfCards));
 }
@@ -168,7 +167,6 @@ bool isHandRoyalFlush(std::vector<Card>& handOfCards) {
     //check if lowest card in the sorted deck is equal to 10
     if (sortedByRank[0] == 10) {
         isLowestCardRankTen = true;
-        std::cout<<"lowest card = 10";
     }
     
     // Return whether it's a royal flush
@@ -203,6 +201,7 @@ std::vector<int> sortCardsByRanks(std::vector<Card>& handOfCards) {
     
     return cardsByRank;
 }
+
 
 
 
