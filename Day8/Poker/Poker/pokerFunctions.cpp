@@ -49,8 +49,8 @@ void printDeckOfCards(std::vector<Card> deckOfCards) {
             std::cout << "Ace\n";
         }
         else {
-                std::cout << newCard.rank << std::endl;
-            }
+            std::cout << newCard.rank << std::endl;
+        }
     }
 }
 
@@ -68,7 +68,7 @@ std::vector<Card> createHandOfCards(std::vector<Card>& deckOfCards) {
 void shuffleDeckOfCards (std::vector<Card>& deckOfCards) {
     //set the seed
     
-    for (unsigned long int i = deckOfCards.size() - 1; i > 0; i--) {
+    for (unsigned long i = deckOfCards.size() - 1; i > 0; i--) {
         //j is a random generated number
         int j = rand() % (i + 1);
         //here I'm creating an integer variable j. I'm assigning it to

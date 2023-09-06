@@ -12,7 +12,7 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     
     //seed for random number generator
-    std::srand(5);
+    std::srand(time(0));
     
     //create empty vector of cards
     std::vector<Card> cards = {};
