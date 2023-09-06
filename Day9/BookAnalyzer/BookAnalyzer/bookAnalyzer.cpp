@@ -227,48 +227,4 @@ int findPositionOfKeyWord(std::string keyword, std::vector<char> allCharactersOf
     return positionOfKeyWord;
 }
 
-////function finding the percentage of where the key word occurs
-//void percentageOfWhereKeyWordOccursInFile(std::string& keyWord, int unsigned long& totalNumOfCharactersInFile, std::vector<char>& charactersOfEntireBook) {
-//
-//
-//    //create a vector of characters
-//    std::vector<char> vectorOfKeyWordCharacters;
-//
-//    //parse the keyWord into characters
-//    for (char keyWordCharacter: keyWord) {
-//        vectorOfKeyWordCharacters.push_back(keyWordCharacter);
-//    }
-//
-//    //variable that will store the position of the first character in the word. Set to -1 because we don't want it storing any character at first
-//    int positionOfCharacterOfKeyWord = -1;
-//
-//    //variable to store if the character in the book is the same as the one in the key word
-//    bool keyWordFound = true;
-//
-//    //search for the characters of the key word in all of the characters of the book
-//    for (int i = 0; i < charactersOfEntireBook.size(); i++) {
-//        if (charactersOfEntireBook[i] == vectorOfKeyWordCharacters[0]) {
-//            positionOfCharacterOfKeyWord = i;
-//            std::cout << "character position: " << positionOfCharacterOfKeyWord << std::endl;
-//        }
-//        for (int j = 1; j < vectorOfKeyWordCharacters.size(); j++) {
-//            if (vectorOfKeyWordCharacters[j] == charactersOfEntireBook[i + j]) {
-//                keyWordFound = true;
-////                std::cout << "at " << positionOfCharacterOfKeyWord / totalNumOfCharactersInFile << "%: " << keyWord << std::endl;
-//
-//            } else {
-//                keyWordFound = false;
-//                break;
-//            }
-//        }
-//
-//        while (keyWordFound) {
-//            std::cout << "at " << positionOfCharacterOfKeyWord / totalNumOfCharactersInFile << "%: " << keyWord << std::endl;
-//        }
-//    }
-//
-////    std::cout << "First character position: " << positionOfFirstCharacerOfKeyWord << std::endl;
-//
-//
-//
-//}
+

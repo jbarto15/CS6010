@@ -60,7 +60,5 @@ std::vector<char> allCharactersOfText(std::vector<std::string>& textOfEntireBook
 //function to find the position of the key words first character
 int findPositionOfKeyWord(std::string keyword, std::vector<char> allCharactersOfText);
 
-////function finding the percentage of where the key word occurs
-//void percentageOfWhereKeyWordOccursInFile(std::string& keyWord, int unsigned long& totalNumOfCharactersInFile, std::vector<char>& charactersOfEntireBook);
 
 #endif /* bookAnalyzer_hpp */

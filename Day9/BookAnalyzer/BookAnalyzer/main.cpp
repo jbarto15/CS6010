@@ -82,9 +82,6 @@ int main(int argc, const char * argv[]) {
     //call the keyword and statistics function
     giveKeyWordStatisticsAndInformation(keyWordFromUser, totalNumOfCharacters, allWordsOfBook);
     
-//    //print out the percentage of where the word occurs
-//    percentageOfWhereKeyWordOccursInFile(keyWordFromUser, totalNumOfCharactersInFile, allCharactersOfBook);
-    
     
     return 0;
 }
