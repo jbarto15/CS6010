@@ -15,5 +15,16 @@
 int stringToInt(std::string& stringOfDigits, int base);
 
 
+//Convert an int to its decimal representation as a string
+std::string toDecimalAsString(int number);
+
+
+//Convert an int to its binary string representation
+std::string toBinaryAsString(int number);
+
+
+//Convert an int to its hexadecimal string representation.
+std::string toHexAsString(int number);
+
 
 #endif /* numberConverter_hpp */

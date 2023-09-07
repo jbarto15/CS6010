@@ -34,8 +34,13 @@ int stringToInt(std::string& stringOfDigits, int base) {
             numericValue = (stringOfDigits[i]) - '0';
             std::cout << "Numeric value: " << numericValue << std::endl;
         } else if (base == 16) {
-            numericValue = (stringOfDigits[i] - 'a' + 10);
-            std::cout << "Numeric value: " << numericValue << std::endl;
+            if (stringOfDigits[i] - '0' >= 0 && stringOfDigits[i] - '0' < 10) {
+                numericValue = (stringOfDigits[i]) - '0';
+            }
+            if (stringOfDigits[i] >= 'a' && stringOfDigits[i] <= 'z') {
+                numericValue = (stringOfDigits[i] - 'a' + 10);
+                std::cout << "Numeric value: " << numericValue << std::endl;
+            }
         }
         
         //take numeric value generated and multiply it by the base raised to the appropriate power
@@ -54,3 +59,38 @@ int stringToInt(std::string& stringOfDigits, int base) {
 
 
 //if (stringOfDigits[i] >= 'a' && stringOfDigits[i] <= 'z') {
+
+
+
+//Part 2
+//Next, we'll write functions that work similarly to std::to_string(). Write 3 functions that:
+
+//Convert an int to its decimal representation as a string
+std::string toDecimalAsString(int number) {
+        std::string decimalToString = std::to_string(number);
+        //number + '0';
+    
+    
+    return decimalToString;
+}
+
+//Convert an int to its binary string representation
+std::string toBinaryAsString(int number) {
+    std::string binaryAsString;
+    
+    return binaryAsString;
+}
+
+
+//Convert an int to its hexadecimal string representation.
+std::string toHexAsString(int number) {
+    std::string hexAsString;
+    
+    return hexAsString;
+}
+
+
+//For example, intToDecimalString( 10 ) == "10" and intToHexadecimalString( -10 ) == "-A"
+
+
+//Write tests for your functions to demonstrate that they work correctly. Note that a good test is that those operations are inverses: stringToInt( intToHexadecimal( anything ), 16 ) == anything for any valid input.

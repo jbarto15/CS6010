@@ -29,9 +29,10 @@ int main(int argc, const char * argv[]) {
     
     
     //call string to integer function
-    std::cout << stringToInt(userInput, base);
+    std::cout << stringToInt(userInput, base) << std::endl;
     
-    
+    //call decimal to string function
+    std::cout << toDecimalAsString(78);
     
     
     
