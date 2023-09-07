@@ -207,56 +207,17 @@ void giveKeyWordStatisticsAndInformation(std::string& keyWord, int& totalNumOfCh
     //use a loop to find the keyword
     for (int i = 0; i < textOfEntireBook.size(); i++) {
         totalCount += textOfEntireBook[i].length();
-        std::cout << "Total Count: " << totalCount << std::endl;
         
         if (keyWord == textOfEntireBook[i] && i >= 0 && i < textOfEntireBook.size()) {
             wordToLeft = textOfEntireBook[i - 1];
             wordToRight = textOfEntireBook[i + 1];
             positionOfKeyWord = totalCount - (keyWord.size() - 1);
-            std::cout << "position of key word: " << positionOfKeyWord << std::endl;
             percentage = (positionOfKeyWord / totalNumOfCharactersInFile) * 100;
-            std::cout << "position of keyword: " << positionOfKeyWord << std::endl;
-            std::cout << "total number of characters: " << totalNumOfCharactersInFile << std::endl;
-            std::cout << "percentage: " << percentage << std::endl;
             std::cout << " at " << percentage << "%: " << wordToLeft + " " << keyWord + " " << wordToRight << std::endl;
         }
     }
 }
 
 
-//function creating a vector of characters
-std::vector<char> allCharactersOfText(std::vector<std::string>& textOfEntireBook) {
-    //variable to store the vector of characters
-    std::vector<char> allCharactersOfText;
-    
-    //loop to create character vector
-    for (std::string strings: textOfEntireBook) {
-        for (char c: allCharactersOfText) {
-            allCharactersOfText.push_back(c);
-        }
-    }
-    return allCharactersOfText;
-}
-
-//this function doesn't work yet
-//function to find the position of the key words first character
-int findPositionOfKeyWord(std::string keyword, std::vector<char> allCharactersOfText) {
-    //variable that will store position
-    int positionOfKeyWord = 0;
-    //variable that will store the characters of keyword
-    std::vector<char> charactersOfKeyWord;
-    //loop to loop through the key word and make it a vector of characters
-    for (char c: keyword) {
-        charactersOfKeyWord.push_back(c);
-    }
-    
-    for (int i = 0; i < charactersOfKeyWord.size(); i++) {
-        if (charactersOfKeyWord[i] == keyword[i]) {
-            positionOfKeyWord = i;
-            break;
-        }
-    }
-    return positionOfKeyWord;
-}
 
 

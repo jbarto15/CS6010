@@ -41,10 +41,6 @@ int main(int argc, const char * argv[]) {
         //std::cout << "Read in: " << word << "\n";
         allWordsOfBook.push_back(word);
     }
-    
-    for (std::string book: allWordsOfBook) {
-        std::cout<< book << std::endl;
-    }
 
     
     //print out Book Title
@@ -60,7 +56,7 @@ int main(int argc, const char * argv[]) {
     std::cout << "Number of characters: " << calculateTotalNumOfCharactersInFile(allWordsOfBook) << std::endl;
     
     //print out the shortest word in the file and the longest word
-    std::cout << "The shortest word is: " << findShortestWordInBook(allWordsOfBook) << " and the longest word is: " << findLongestWordInBook(allWordsOfBook) << std::endl;
+    std::cout << "The shortest word is: " << findShortestWordInBook(allWordsOfBook) << "\nThe longest word is: " << findLongestWordInBook(allWordsOfBook) << std::endl;
     
     
     //ask fo a key word
