@@ -14,13 +14,13 @@
 int main(int argc, const char * argv[]) {
     // insert code here...
     
-//    //use argv to allow the user to pass a filename and keyword to look for
-//    std::string filename = argv[1];
-//    std::string keyWordFromUser = argv[2];
+    //use argv to allow the user to pass a filename and keyword to look for
+    std::string filename = argv[1];
+    std::string keyWordFromUser = argv[2];
     
     //create stream variable that will input the book
-    std::ifstream inputBookStream;//("frankenstein.txt");
-    inputBookStream.open("/Users/joshbarton/Desktop/CS6010/Day9/testBookAnalyzer.txt");
+    std::ifstream inputBookStream;
+    inputBookStream.open(filename);
 
     //check to see if book stream opened properly
     if( inputBookStream.fail() ) {
@@ -59,13 +59,13 @@ int main(int argc, const char * argv[]) {
     std::cout << "The shortest word is: " << findShortestWordInBook(allWordsOfBook) << "\nThe longest word is: " << findLongestWordInBook(allWordsOfBook) << std::endl;
     
     
-    //ask fo a key word
-    std::cout << "Please enter a word to search for:" << std::endl;
-    
-    //create a keyword variable that will store the input from the user
-    std::string keyWordFromUser;
-    //get the keyword from the user
-    std::cin >> keyWordFromUser;
+//    //ask fo a key word
+//    std::cout << "Please enter a word to search for:" << std::endl;
+//
+//    //create a keyword variable that will store the input from the user
+//    std::string keyWordFromUser;
+//    //get the keyword from the user
+//    std::cin >> keyWordFromUser;
     
     
     
