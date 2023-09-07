@@ -15,8 +15,8 @@ int main(int argc, const char * argv[]) {
     // insert code here...
     
 //    //use argv to allow the user to pass a filename and keyword to look for
-//    std::string filename = argv[0];
-//    std::string keyWordFromUser = argv[1];
+//    std::string filename = argv[1];
+//    std::string keyWordFromUser = argv[2];
     
     //create stream variable that will input the book
     std::ifstream inputBookStream;//("frankenstein.txt");
@@ -32,9 +32,6 @@ int main(int argc, const char * argv[]) {
     
     //create a string varible that each word of the file text will be read into
     std::string word;
-
-    //stream in the book to the variable
-    inputBookStream >> word;
     
     //create a vector to store the words from the book
     std::vector<std::string> allWordsOfBook;
@@ -43,6 +40,10 @@ int main(int argc, const char * argv[]) {
     while (inputBookStream >> word) {
         //std::cout << "Read in: " << word << "\n";
         allWordsOfBook.push_back(word);
+    }
+    
+    for (std::string book: allWordsOfBook) {
+        std::cout<< book << std::endl;
     }
 
     
@@ -76,7 +77,7 @@ int main(int argc, const char * argv[]) {
     std::cout << "The word " << keyWordFromUser << " appears " << findHowManyTimesKeyWordAppears(keyWordFromUser, allWordsOfBook) << " times:" << std::endl;
     
     //assign variable to the return value of calculate total num of characters function
-    unsigned long totalNumOfCharacters = calculateTotalNumOfCharactersInFile(allWordsOfBook);
+    int totalNumOfCharacters = calculateTotalNumOfCharactersInFile(allWordsOfBook);
     
 
     //call the keyword and statistics function

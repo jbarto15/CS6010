@@ -31,10 +31,10 @@ std::string findBookAuthor(std::vector<std::string>& textOfEntireBook);
 
 
 //function to calculate the total number of words in the file
-unsigned long calculateTotalNumOfWordsInFile(std::vector<std::string>& textOfEntireBook);
+int calculateTotalNumOfWordsInFile(std::vector<std::string>& textOfEntireBook);
 
 //function to calculate the total number of characters in the file
-unsigned long calculateTotalNumOfCharactersInFile(std::vector<std::string>& textOfEntireBook);
+int calculateTotalNumOfCharactersInFile(std::vector<std::string>& textOfEntireBook);
 
 
 //function to find the shortest word in the book
@@ -51,7 +51,7 @@ int findHowManyTimesKeyWordAppears(std::string& keyWord, std::vector<std::string
 
 
 //function that prints out the statistics
-void giveKeyWordStatisticsAndInformation(std::string& keyWord, unsigned long& totalNumOfCharactersInFile, std::vector<std::string>& textOfEntireBook);
+void giveKeyWordStatisticsAndInformation(std::string& keyWord, int& totalNumOfCharactersInFile, std::vector<std::string>& textOfEntireBook);
 
 //function creating a vector of characters
 std::vector<char> allCharactersOfText(std::vector<std::string>& textOfEntireBook);

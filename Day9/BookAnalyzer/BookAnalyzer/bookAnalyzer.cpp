@@ -46,6 +46,8 @@ int findReleaseDateIndex(std::vector<std::string>& textOfEntireBook) {
 
 //function to find the title of the book
 std::string findBookTitle(std::vector<std::string>& textOfEntireBook) {
+    //initialize title position variable
+    int titlePosition = -1;
     
     //variable for book title to be stored in
     std::string bookTitle;
@@ -53,11 +55,19 @@ std::string findBookTitle(std::vector<std::string>& textOfEntireBook) {
     //vector variable to store the words after title until author
     std::vector<std::string> vectorOfWordsMakingTheTitle;
     
+    //store actual title index
+    titlePosition = findTitleIndex(textOfEntireBook);
+    
     //loop through the text starting at title and go until author
-    for (int i = findTitleIndex(textOfEntireBook); i < findAuthorIndex(textOfEntireBook); i++) {
-        //go through the loop and save the following words into a vector of strings
-        vectorOfWordsMakingTheTitle.push_back(textOfEntireBook[i]);
+    if (titlePosition != -1) {
+        for (int i = titlePosition; i < findAuthorIndex(textOfEntireBook); i++) {
+            //go through the loop and save the following words into a vector of strings
+            vectorOfWordsMakingTheTitle.push_back(textOfEntireBook[i]);
+        }
+    } else {
+        bookTitle = "Title: unknown";
     }
+    
     //access all the words in the vector
     for (int i = 0; i < vectorOfWordsMakingTheTitle.size(); i++) {
         bookTitle += vectorOfWordsMakingTheTitle[i] + " ";
@@ -70,16 +80,25 @@ std::string findBookTitle(std::vector<std::string>& textOfEntireBook) {
 
 //function to find the author of the book
 std::string findBookAuthor(std::vector<std::string>& textOfEntireBook) {
+    //initialize title position variable
+    int authorPosition = -1;
+    
     //variable for book author to be stored in
     std::string bookAuthor;
     
     //vector variable to store the words after title until author
     std::vector<std::string> vectorOfWordsMakingTheAuthor;
     
+    
+    //store actual author index
+    authorPosition = findAuthorIndex(textOfEntireBook);
     //loop through the text starting at title and go until author
-    for (int i = findAuthorIndex(textOfEntireBook); i < findReleaseDateIndex(textOfEntireBook); i++) {
+    if (authorPosition != -1)
+    for (int i = authorPosition; i < findReleaseDateIndex(textOfEntireBook); i++) {
         //go through the loop and save the following words into a vector of strings
         vectorOfWordsMakingTheAuthor.push_back(textOfEntireBook[i]);
+    } else {
+        bookAuthor = "Author: unknown";
     }
     //access all the words in the vector
     for (int i = 0; i < vectorOfWordsMakingTheAuthor.size(); i++) {
@@ -93,9 +112,9 @@ std::string findBookAuthor(std::vector<std::string>& textOfEntireBook) {
 
 
 //function to calculate the total number of words in the file
-int unsigned long calculateTotalNumOfWordsInFile(std::vector<std::string>& textOfEntireBook) {
+int calculateTotalNumOfWordsInFile(std::vector<std::string>& textOfEntireBook) {
     //create variable that will return the total number of words in file
-    int unsigned long totalNumOfWordsInFile = textOfEntireBook.size();
+    int totalNumOfWordsInFile = textOfEntireBook.size();
     
     return totalNumOfWordsInFile;
 }
@@ -103,15 +122,14 @@ int unsigned long calculateTotalNumOfWordsInFile(std::vector<std::string>& textO
 
 
 //function to calculate the total number of characters in the file
-unsigned long calculateTotalNumOfCharactersInFile(std::vector<std::string>& textOfEntireBook) {
+int calculateTotalNumOfCharactersInFile(std::vector<std::string>& textOfEntireBook) {
     //create totalNumOfCharacters variable
-    unsigned long totalNumOfCharacters = 0;
+    int totalNumOfCharacters = 0;
     
     //for each loop to go through the text of the entire book and put individual characters into the character vector
     for (int i = 0; i < textOfEntireBook.size(); i++) {
             totalNumOfCharacters += textOfEntireBook[i].length();
         }
-    
     return totalNumOfCharacters;
 }
 
@@ -172,20 +190,34 @@ int findHowManyTimesKeyWordAppears(std::string& keyWord, std::vector<std::string
 }
 
 
-void giveKeyWordStatisticsAndInformation(std::string& keyWord, unsigned long& totalNumOfCharactersInFile, std::vector<std::string>& textOfEntireBook) {
+void giveKeyWordStatisticsAndInformation(std::string& keyWord, int& totalNumOfCharactersInFile, std::vector<std::string>& textOfEntireBook) {
     //variable for word to the left and word to the right
     std::string wordToLeft;
     std::string wordToRight;
     
     //variable to calculate the percentage
-    double percentage = 0;
+    float percentage = 0;
+    
+    //variable to save the position of the keyword
+    float positionOfKeyWord = 0;
+    
+    //create counter variable that will count the length of each word in the entire book
+    int totalCount = 0;
     
     //use a loop to find the keyword
     for (int i = 0; i < textOfEntireBook.size(); i++) {
-        if (keyWord == textOfEntireBook[i] && i > 0 && i < textOfEntireBook.size()) {
+        totalCount += textOfEntireBook[i].length();
+        std::cout << "Total Count: " << totalCount << std::endl;
+        
+        if (keyWord == textOfEntireBook[i] && i >= 0 && i < textOfEntireBook.size()) {
             wordToLeft = textOfEntireBook[i - 1];
             wordToRight = textOfEntireBook[i + 1];
-            percentage = (50 / calculateTotalNumOfCharactersInFile(textOfEntireBook)) * 100;
+            positionOfKeyWord = totalCount - (keyWord.size() - 1);
+            std::cout << "position of key word: " << positionOfKeyWord << std::endl;
+            percentage = (positionOfKeyWord / totalNumOfCharactersInFile) * 100;
+            std::cout << "position of keyword: " << positionOfKeyWord << std::endl;
+            std::cout << "total number of characters: " << totalNumOfCharactersInFile << std::endl;
+            std::cout << "percentage: " << percentage << std::endl;
             std::cout << " at " << percentage << "%: " << wordToLeft + " " << keyWord + " " << wordToRight << std::endl;
         }
     }
