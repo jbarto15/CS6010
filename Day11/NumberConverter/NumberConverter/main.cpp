@@ -28,11 +28,17 @@ int main(int argc, const char * argv[]) {
     std::cin >> base;
     
     
+    int number = 78;
     //call string to integer function
-    std::cout << stringToInt(userInput, base) << std::endl;
+    stringToInt(userInput, base);
     
     //call decimal to string function
-    std::cout << toDecimalAsString(78);
+    toDecimalAsString(number);
+    
+    int nine = 9;
+    
+    
+    assert(nine + '0' == 57);
     
     
     

@@ -14,7 +14,10 @@
 
 //function that will convert a string of digits to an integer
 int stringToInt(std::string& stringOfDigits, int base) {
-    //convert each char into an integer
+    //convert the string to lowercase
+    std::transform(stringOfDigits.begin(), stringOfDigits.end(), stringOfDigits.begin(), ::tolower);
+    
+    //variable to store the numeric value of a character
     int numericValue = stringOfDigits[0];
 
     //variable for multiplication of numeric value times the base raised to the proper power
@@ -27,39 +30,40 @@ int stringToInt(std::string& stringOfDigits, int base) {
     for (int i = 0 ; i < stringOfDigits.length() ; i++) {
         //if statement that checks if base is 10. If so, convert each character to integer
         if (base == 10) {
+            if (stringOfDigits[i] == '-') {
+                continue;
+            }
             numericValue = (stringOfDigits[i]) - '0';
-            std::cout << "Numeric value: " << numericValue << std::endl;
-            
         } else if (base == 2) {
             numericValue = (stringOfDigits[i]) - '0';
-            std::cout << "Numeric value: " << numericValue << std::endl;
+            //std::cout << "Numeric value: " << numericValue << std::endl;
         } else if (base == 16) {
             if (stringOfDigits[i] - '0' >= 0 && stringOfDigits[i] - '0' < 10) {
                 numericValue = (stringOfDigits[i]) - '0';
             }
             if (stringOfDigits[i] >= 'a' && stringOfDigits[i] <= 'z') {
                 numericValue = (stringOfDigits[i] - 'a' + 10);
-                std::cout << "Numeric value: " << numericValue << std::endl;
+                //std::cout << "Numeric value: " << numericValue << std::endl;
             }
         }
+        
+        //if statement to handle if decimal number is negative for base 10
+        if (base == 10 && stringOfDigits[0] == '-') {
+            numericValue *= -1;
+        }
+        
         
         //take numeric value generated and multiply it by the base raised to the appropriate power
         numericValueTimesBase = numericValue * pow(base, (stringOfDigits.length() - 1) - i);
         
         //sum all the values of the numeric value times base variable to get the total sum
         sumOfValueTimesBase += numericValueTimesBase;
-        
-        std::cout << "Sum: " << sumOfValueTimesBase << std::endl;
     }
-    
-    
+    //print out the sum
+    std::cout << "Sum: " << sumOfValueTimesBase << std::endl;
     
     return sumOfValueTimesBase;
 }
-
-
-//if (stringOfDigits[i] >= 'a' && stringOfDigits[i] <= 'z') {
-
 
 
 //Part 2
@@ -67,9 +71,22 @@ int stringToInt(std::string& stringOfDigits, int base) {
 
 //Convert an int to its decimal representation as a string
 std::string toDecimalAsString(int number) {
-        std::string decimalToString = std::to_string(number);
+        std::string decimalToString = "hello";
         //number + '0';
     
+    //variable to store the number of digits
+    int numOfDigitsInNumber = 0;
+    
+    //vector that will store each digit
+    std::vector<int> storeDigits;
+    
+    //create a loop that will divide the number by 10 to figure out num of digits
+    while (number >= 1) {
+        number = number / 10;
+        numOfDigitsInNumber += 1;
+        }
+    
+    std::cout << "Number of Digits: " << numOfDigitsInNumber << std::endl;
     
     return decimalToString;
 }
@@ -94,3 +111,6 @@ std::string toHexAsString(int number) {
 
 
 //Write tests for your functions to demonstrate that they work correctly. Note that a good test is that those operations are inverses: stringToInt( intToHexadecimal( anything ), 16 ) == anything for any valid input.
+
+
+
