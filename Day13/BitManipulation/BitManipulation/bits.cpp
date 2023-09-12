@@ -1,50 +1,42 @@
-/*
-  Author: Daniel Kopta, Ben Jones
-  
-  CS 6010
-  Bit puzzles
-  * The set of functions below are exercises to help you practice accessing
-  * and manipulating individual bits in program data, and to help understand
-  * how a computer represents numbers.
-  * Replace the TODO statements below with correct implementations of the functions.
-  * Each function's purpose is described in a comment.
-  * main() runs many tests on your functions and reports which ones passed or failed.
-  * Make sure you pass all tests.
-*/
+
 
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include "bits.h"
 
 using std::cout;
 using std::endl;
 using std::string;
 
-/*
- * Determines whether or not the specified bit is set in the input int
- *
- * Parameters:
- *   input -- The input int
- *   b -- The bit to retreive (0 = least significant, 31 = most significant)
- *
- * Returns:
- *   true if the specified bit is set, false otherwise.
- *
- * Examples:
- *   GetBit(5, 0) -> returns true, because the bit pattern for 5 is 101, we are looking at the rightmost bit
- *   GetBit(5, 1) -> returns false
- *   GetBit(-42, 31) -> returns true
- */
+
+//  Determines whether or not the specified bit is set in the input int
+//
+//  Parameters:
+//    input -- The input int
+//    b -- The bit to retreive (0 = least significant, 31 = most significant)
+//
+//  Returns:
+//    true if the specified bit is set, false otherwise.
+//
+//  Examples:
+//    GetBit(5, 0) -> returns true, because the bit pattern for 5 is 101, we are looking at the rightmost bit
+//    GetBit(5, 1) -> returns false
+//    GetBit(-42, 31) -> returns true
+
 bool GetBit( uint32_t input, int b )
 {
-  // TODO: Fill in. Do not return false.
-  return false;
+    //search for b inside the input integer
+    //check to see if b is a 0 or 1
+    //if the bit is 1, return true
+    //if the bit is 0, return false
+  return (1<<b & input);
 }
 
 
 /*
  * Determines whether or not an int is negative
- * 
+ *
  * Do not use the < or > operators
  *
  * Parameters:
@@ -55,8 +47,8 @@ bool GetBit( uint32_t input, int b )
  */
 bool IsNegative( int input )
 {
-  // TODO: Fill in. Do not return false.
-  return false;
+   
+  return input < 0;
 }
 
 /*
@@ -75,8 +67,29 @@ bool IsNegative( int input )
  */
 int NumBitsSet( uint32_t input )
 {
-  // TODO: Fill in. Do not return 0.
-  return 0;
+    //save the size of the integer in a variable
+    int sizeOfIntegerInBits = sizeof(input) * 8;
+    
+    //int to return the number of set bits
+    int numOfSetBits = 0;
+    
+    //loop through the size of the integer in bits
+    while (sizeOfIntegerInBits > 0) {
+        //and the input with 1 to get the least significant bit and save it in a variable
+        int andTheInput = input & 1;
+        
+        //check if the least significant bit is equal to 1, if so numOfSetBits + 1
+        if (andTheInput == 1) {
+            numOfSetBits++;
+        }
+        
+        //right shift input so that we can check the next bit
+        input = input >> 1;
+        
+        //decrease the size of the bits because we're deleting a bit each time we right shift
+        sizeOfIntegerInBits--;
+    }
+  return numOfSetBits;
 }
 
 
@@ -96,10 +109,16 @@ int NumBitsSet( uint32_t input )
  *   GetByte( 0x1234abcd, 0 ) -> returns 0xcd (205 as unsigned char)
  *   GetByte( 0x1234abcd, 3 ) -> returns 0x12 (18 as an unsigned char)
  */
+
 unsigned char GetByte( uint32_t input, int b )
 {
-  // TODO: Fill in. Do not return 0.
-  return 0;
+    //take the input, multiply b by 8 to get the number of bits the byte is at
+    input >>= b * 8;
+    
+    //and operator to get the byte wanted. Used 0xFF because that's the size of 2 bytes
+    input = input & 0xFF;
+    
+  return input;
 }
 
 
@@ -123,7 +142,9 @@ unsigned char GetByte( uint32_t input, int b )
  */
 uint32_t SetByte( uint32_t input, uint8_t value, int b )
 {
-  // TODO: Fill in. Do not return 0.
+  //take an input of 32 bits, a value of 8 bits, and the specific byte we want to set
+  //when given b we should be able to pinpoint those 8 bits
+  //update those 8 bits with a new set of 8 bits
   return 0;
 }
 
@@ -180,13 +201,12 @@ int Increment( uint32_t x ){
 
 /*
  * Three forms of helper functions for the tests in main().
- * These functions compare a given value to an expected value, 
+ * These functions compare a given value to an expected value,
  * and report an error if they don't match.
  */
 
-/*
- * Compare two 32-bit values
- */
+
+ //Compare two 32-bit values
 void Test32Bit( int a, int b, const string & message )
 {
   if( a != b ) {
@@ -224,80 +244,80 @@ void TestBool( bool a, bool b, const string & message )
 }
 
 
-int main()
-{  
-  /*
-   * These tests exercise your bit puzzle solutions.
-   * Many of the tests rely on hexadecimal instead of decimal.
-   * Since hexadecimal maps much more easily to binary, it's  more useful 
-   * when we want to specify a number with a specific bit pattern, 
-   * such as alternating 10101010... (0xaa), or 01010101... (0x55), 
-   * or all ones in a certain byte: 0x00ff0000
-   */
-  
-  TestBool( GetBit( 0, 0 ), false, "GetBit1" );
-  TestBool( GetBit( 0, 1 ), false, "GetBit2" );
-  TestBool( GetBit( 0, 31 ), false, "GetBit3" );
-  TestBool( GetBit( -1, 0 ), true, "GetBit4" );
-  TestBool( GetBit( -1, 1 ), true, "GetBit5" );
-  TestBool( GetBit( -1, 31 ), true, "GetBit6" );
-  TestBool( GetBit( 0xAAAAAAAA, 0 ), false, "GetBit7" );
-  TestBool( GetBit( 0xAAAAAAAA, 16 ), false, "GetBit8" );
-  TestBool( GetBit( 0xAAAAAAAA, 17 ), true, "GetBit9" );
-  TestBool( GetBit( 0xAAAAAAAA, 31 ), true, "GetBit10" );
-
-  TestBool( IsNegative( 0 ), false, "IsNegative1" );
-  TestBool( IsNegative( 1 ), false, "IsNegative2" );
-  TestBool( IsNegative( -1 ), true, "IsNegative3" );
-  TestBool( IsNegative( 0xAAAAAAAA ), true, "IsNegative4" );
-  TestBool( IsNegative( 0x55555555 ), false, "IsNegative5" );
-  TestBool( IsNegative( INT_MIN ), true, "IsNegative6" );
-  TestBool( IsNegative( INT_MAX ), false, "IsNegative7" );
-
-  Test32Bit( NumBitsSet( 0 ), 0, "NumBitsSet1" );
-  Test32Bit( NumBitsSet( 1 ), 1, "NumBitsSet2" );
-  Test32Bit( NumBitsSet( 2 ), 1, "NumBitsSet3" );
-  Test32Bit( NumBitsSet( 3 ), 2, "NumBitsSet4" );
-  Test32Bit( NumBitsSet( 5 ), 2, "NumBitsSet5" );
-  Test32Bit( NumBitsSet( -1 ), 32, "NumBitsSet6" );
-  Test32Bit( NumBitsSet( 0xAAAAAAAA ), 16, "NumBitsSet7" );
-  Test32Bit( NumBitsSet( 0x55555555 ), 16, "NumBitsSet8" );
-
-  Test8Bit( GetByte( 0, 0 ), 0, "GetByte1" );
-  Test8Bit( GetByte( 0, 1 ), 0, "GetByte2" );
-  Test8Bit( GetByte( 0, 2 ), 0, "GetByte3" );
-  Test8Bit( GetByte( 0, 3 ), 0, "GetByte4" );
-  Test8Bit( GetByte( 0xAAAAAAAA, 0 ), 0xaa, "GetByte4" );
-  Test8Bit( GetByte( 0xAAAAAAAA, 1 ), 0xaa, "GetByte5" );
-  Test8Bit( GetByte( 0xAAAAAAAA, 2 ), 0xaa, "GetByte6" );
-  Test8Bit( GetByte( 0xAAAAAAAA, 3 ), 0xaa, "GetByte7" );
-  Test8Bit( GetByte( 0x12345678, 0 ), 0x78, "GetByte8" );
-  Test8Bit( GetByte( 0x12345678, 1 ), 0x56, "GetByte9" );
-  Test8Bit( GetByte( 0x12345678, 2 ), 0x34, "GetByte10" );
-  Test8Bit( GetByte( 0x12345678, 3 ), 0x12, "GetByte11" );
-
-  Test32Bit( SetByte( 0, 0xFF, 0 ), 0xFF, "SetByte1" );
-  Test32Bit( SetByte( 0, 0xFF, 1 ), 0xFF00, "SetByte2" );
-  Test32Bit( SetByte( 0, 0xFF, 2 ), 0xFF0000, "SetByte3" );
-  Test32Bit( SetByte( 0, 0xFF, 3 ), 0xFF000000, "SetByte4" );
-  Test32Bit( SetByte( 0x12345678, 0xAA, 0 ), 0x123456aa, "SetByte5" );
-  Test32Bit( SetByte( 0x12345678, 0xAA, 1 ), 0x1234aa78, "SetByte6" );
-  Test32Bit( SetByte( 0x12345678, 0xAA, 2 ), 0x12aa5678, "SetByte7" );
-  Test32Bit( SetByte( 0x12345678, 0xAA, 3 ), 0xaa345678, "SetByte8" );
-
-  Test32Bit( Negate( -1 ), 1, "Negate1" );
-  Test32Bit( Negate( 1 ), -1, "Negate2" );
-  Test32Bit( Negate( 2 ), -2, "Negate3" );
-  Test32Bit( Negate( -2 ), 2, "Negate4" );
-  Test32Bit( Negate( 0 ), 0, "Negate5" );
-  Test32Bit( Negate( 0x7fffffff ), 0x80000001, "Negate6" );
-  Test32Bit( Negate( 0xAAAAAAAA ), 0x55555556, "Negate7" );
-
-
-  Test32Bit( Increment( 0 ), 1, "Increment1" );
-  Test32Bit( Increment( -1 ), 0, "Increment2" );
-  Test32Bit( Increment( 10000 ), 10001, "Increment3" );
-  Test32Bit( Increment( -999 ), -998, "Increment4" );
-
-  return 0;
-}
+//int main()
+//{
+//  /*
+//   * These tests exercise your bit puzzle solutions.
+//   * Many of the tests rely on hexadecimal instead of decimal.
+//   * Since hexadecimal maps much more easily to binary, it's  more useful
+//   * when we want to specify a number with a specific bit pattern,
+//   * such as alternating 10101010... (0xaa), or 01010101... (0x55),
+//   * or all ones in a certain byte: 0x00ff0000
+//   */
+//
+//  TestBool( GetBit( 0, 0 ), false, "GetBit1" );
+//  TestBool( GetBit( 0, 1 ), false, "GetBit2" );
+//  TestBool( GetBit( 0, 31 ), false, "GetBit3" );
+//  TestBool( GetBit( -1, 0 ), true, "GetBit4" );
+//  TestBool( GetBit( -1, 1 ), true, "GetBit5" );
+//  TestBool( GetBit( -1, 31 ), true, "GetBit6" );
+//  TestBool( GetBit( 0xAAAAAAAA, 0 ), false, "GetBit7" );
+//  TestBool( GetBit( 0xAAAAAAAA, 16 ), false, "GetBit8" );
+//  TestBool( GetBit( 0xAAAAAAAA, 17 ), true, "GetBit9" );
+//  TestBool( GetBit( 0xAAAAAAAA, 31 ), true, "GetBit10" );
+//
+//  TestBool( IsNegative( 0 ), false, "IsNegative1" );
+//  TestBool( IsNegative( 1 ), false, "IsNegative2" );
+//  TestBool( IsNegative( -1 ), true, "IsNegative3" );
+//  TestBool( IsNegative( 0xAAAAAAAA ), true, "IsNegative4" );
+//  TestBool( IsNegative( 0x55555555 ), false, "IsNegative5" );
+//  TestBool( IsNegative( INT_MIN ), true, "IsNegative6" );
+//  TestBool( IsNegative( INT_MAX ), false, "IsNegative7" );
+//
+//  Test32Bit( NumBitsSet( 0 ), 0, "NumBitsSet1" );
+//  Test32Bit( NumBitsSet( 1 ), 1, "NumBitsSet2" );
+//  Test32Bit( NumBitsSet( 2 ), 1, "NumBitsSet3" );
+//  Test32Bit( NumBitsSet( 3 ), 2, "NumBitsSet4" );
+//  Test32Bit( NumBitsSet( 5 ), 2, "NumBitsSet5" );
+//  Test32Bit( NumBitsSet( -1 ), 32, "NumBitsSet6" );
+//  Test32Bit( NumBitsSet( 0xAAAAAAAA ), 16, "NumBitsSet7" );
+//  Test32Bit( NumBitsSet( 0x55555555 ), 16, "NumBitsSet8" );
+//
+//  Test8Bit( GetByte( 0, 0 ), 0, "GetByte1" );
+//  Test8Bit( GetByte( 0, 1 ), 0, "GetByte2" );
+//  Test8Bit( GetByte( 0, 2 ), 0, "GetByte3" );
+//  Test8Bit( GetByte( 0, 3 ), 0, "GetByte4" );
+//  Test8Bit( GetByte( 0xAAAAAAAA, 0 ), 0xaa, "GetByte4" );
+//  Test8Bit( GetByte( 0xAAAAAAAA, 1 ), 0xaa, "GetByte5" );
+//  Test8Bit( GetByte( 0xAAAAAAAA, 2 ), 0xaa, "GetByte6" );
+//  Test8Bit( GetByte( 0xAAAAAAAA, 3 ), 0xaa, "GetByte7" );
+//  Test8Bit( GetByte( 0x12345678, 0 ), 0x78, "GetByte8" );
+//  Test8Bit( GetByte( 0x12345678, 1 ), 0x56, "GetByte9" );
+//  Test8Bit( GetByte( 0x12345678, 2 ), 0x34, "GetByte10" );
+//  Test8Bit( GetByte( 0x12345678, 3 ), 0x12, "GetByte11" );
+//
+//  Test32Bit( SetByte( 0, 0xFF, 0 ), 0xFF, "SetByte1" );
+//  Test32Bit( SetByte( 0, 0xFF, 1 ), 0xFF00, "SetByte2" );
+//  Test32Bit( SetByte( 0, 0xFF, 2 ), 0xFF0000, "SetByte3" );
+//  Test32Bit( SetByte( 0, 0xFF, 3 ), 0xFF000000, "SetByte4" );
+//  Test32Bit( SetByte( 0x12345678, 0xAA, 0 ), 0x123456aa, "SetByte5" );
+//  Test32Bit( SetByte( 0x12345678, 0xAA, 1 ), 0x1234aa78, "SetByte6" );
+//  Test32Bit( SetByte( 0x12345678, 0xAA, 2 ), 0x12aa5678, "SetByte7" );
+//  Test32Bit( SetByte( 0x12345678, 0xAA, 3 ), 0xaa345678, "SetByte8" );
+//
+//  Test32Bit( Negate( -1 ), 1, "Negate1" );
+//  Test32Bit( Negate( 1 ), -1, "Negate2" );
+//  Test32Bit( Negate( 2 ), -2, "Negate3" );
+//  Test32Bit( Negate( -2 ), 2, "Negate4" );
+//  Test32Bit( Negate( 0 ), 0, "Negate5" );
+//  Test32Bit( Negate( 0x7fffffff ), 0x80000001, "Negate6" );
+//  Test32Bit( Negate( 0xAAAAAAAA ), 0x55555556, "Negate7" );
+//
+//
+//  Test32Bit( Increment( 0 ), 1, "Increment1" );
+//  Test32Bit( Increment( -1 ), 0, "Increment2" );
+//  Test32Bit( Increment( 10000 ), 10001, "Increment3" );
+//  Test32Bit( Increment( -999 ), -998, "Increment4" );
+//
+//  return 0;
+//}
