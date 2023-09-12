@@ -39,5 +39,11 @@ int main(int argc, const char * argv[]) {
     //call hex to string function
     std::cout << "Hex as String: " << toHexAsString(stringToInt(userInput, base)) << std::endl;
     
+    
+    //test
+    //assert(toHexAsString(255) == "ff");
+
+    
+    
     return 0;
 }

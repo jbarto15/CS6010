@@ -26,7 +26,7 @@ int stringToInt(std::string& stringOfDigits, int base) {
     //check if the string has a negative sign at the beginning
     if (stringOfDigits[0] == '-') {
         isNegative = true;
-        //remove the negative sign from the string
+        //remove the negative sign from the string and create new string
         stringOfDigits = stringOfDigits.substr(1);
     }
     
@@ -178,7 +178,5 @@ std::string toHexAsString(int number) {
     
     return hexAsString;
 }
-
-//Write tests for your functions to demonstrate that they work correctly. Note that a good test is that those operations are inverses: stringToInt( intToHexadecimal( anything ), 16 ) == anything for any valid input.
 
 
