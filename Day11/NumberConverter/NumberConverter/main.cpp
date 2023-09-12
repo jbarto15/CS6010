@@ -32,14 +32,12 @@ int main(int argc, const char * argv[]) {
     
     //call decimal to string function
     std::cout << "Decimal as String: " << toDecimalAsString(stringToInt(userInput, base)) << std::endl;
-    
+
     //call binary to string function
     std::cout << "Binary as String: " << toBinaryAsString(stringToInt(userInput, base)) << std::endl;
-    
+
     //call hex to string function
     std::cout << "Hex as String: " << toHexAsString(stringToInt(userInput, base)) << std::endl;
-    
-    
     
     return 0;
 }
