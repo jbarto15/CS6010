@@ -36,14 +36,12 @@ int stringToInt(std::string& stringOfDigits, int base) {
             numericValue = (stringOfDigits[i]) - '0';
         } else if (base == 2) {
             numericValue = (stringOfDigits[i]) - '0';
-            //std::cout << "Numeric value: " << numericValue << std::endl;
         } else if (base == 16) {
             if (stringOfDigits[i] - '0' >= 0 && stringOfDigits[i] - '0' < 10) {
                 numericValue = (stringOfDigits[i]) - '0';
             }
             if (stringOfDigits[i] >= 'a' && stringOfDigits[i] <= 'z') {
                 numericValue = (stringOfDigits[i] - 'a' + 10);
-                //std::cout << "Numeric value: " << numericValue << std::endl;
             }
         }
         
@@ -51,6 +49,17 @@ int stringToInt(std::string& stringOfDigits, int base) {
         if (base == 10 && stringOfDigits[0] == '-') {
             numericValue *= -1;
         }
+        
+        //if statement to handle if binary number is negative for base 2
+        if (base == 2 && stringOfDigits[0] == '-') {
+            numericValue *= -1;
+        }
+        
+        //if statement to handle if hex number is negative for base 16
+        if (base == 16 && stringOfDigits[0] == '-') {
+            numericValue *= -1;
+        }
+        
         
         
         //take numeric value generated and multiply it by the base raised to the appropriate power
@@ -60,40 +69,66 @@ int stringToInt(std::string& stringOfDigits, int base) {
         sumOfValueTimesBase += numericValueTimesBase;
     }
     //print out the sum
-    std::cout << "Sum: " << sumOfValueTimesBase << std::endl;
+    //std::cout << "Sum: " << sumOfValueTimesBase << std::endl;
     
     return sumOfValueTimesBase;
 }
 
 
 //Part 2
-//Next, we'll write functions that work similarly to std::to_string(). Write 3 functions that:
 
 //Convert an int to its decimal representation as a string
 std::string toDecimalAsString(int number) {
-        std::string decimalToString = "hello";
-        //number + '0';
+    //condition that changes the number to positive
+    if (number < 0) {
+        number *= -1;
+    }
+    //variable that will return the string result
+    std::string decimalToString;
     
-    //variable to store the number of digits
-    int numOfDigitsInNumber = 0;
+    //vector of characters variable
+    std::vector<char> integersOfNumber;
     
-    //vector that will store each digit
-    std::vector<int> storeDigits;
-    
-    //create a loop that will divide the number by 10 to figure out num of digits
-    while (number >= 1) {
+    //while loop that goes through the number divided by 10 until the number is no longer greater than zero
+    while (number > 0) {
+        int remainder = number % 10;
         number = number / 10;
-        numOfDigitsInNumber += 1;
-        }
+        char value = remainder + '0';
+        integersOfNumber.push_back(value);
+    }
     
-    std::cout << "Number of Digits: " << numOfDigitsInNumber << std::endl;
+    //for loop that reorders the vector into the correct string
+    for (int i = integersOfNumber.size() - 1; i >= 0; i--) {
+        decimalToString += integersOfNumber[i];
+    }
     
     return decimalToString;
 }
 
 //Convert an int to its binary string representation
 std::string toBinaryAsString(int number) {
+    //condition that changes the number to positive
+    if (number < 0) {
+        number *= -1;
+    }
+    
+    //string to return the binary as a string
     std::string binaryAsString;
+    //vector of characters variable
+    std::vector<char> integersOfNumber;
+    
+    //while loop that goes through the number divided by 10 until the number is no longer greater than zero
+    while (number > 0) {
+        int remainder = number % 2;
+        number = number / 2;
+        char value = remainder + '0';
+        integersOfNumber.push_back(value);
+    }
+    
+    //for loop that reorders the vector into the correct string
+    for (int i = integersOfNumber.size() - 1; i >= 0; i--) {
+        binaryAsString += integersOfNumber[i];
+    }
     
     return binaryAsString;
 }
@@ -101,16 +136,39 @@ std::string toBinaryAsString(int number) {
 
 //Convert an int to its hexadecimal string representation.
 std::string toHexAsString(int number) {
+    //condition that changes the number to positive
+    if (number < 0) {
+        number *= -1;
+    }
+    
     std::string hexAsString;
+    
+    //vector of characters variable
+    std::vector<char> integersOfNumber;
+    
+    //variable to store the character
+    char character;
+    
+    //while loop that goes through the number divided by 10 until the number is no longer greater than zero
+    while (number > 0) {
+        int remainder = number % 16;
+        number = number / 16;
+        if (remainder >= 0 && remainder < 10) {
+            character = remainder + '0';
+            integersOfNumber.push_back(character);
+        } else if (remainder >= 'a' && remainder <= 'z') {
+            character = remainder + 'a' - 10;
+            integersOfNumber.push_back(character);
+        }
+    }
+    
+    //for loop that reorders the vector into the correct string
+    for (int i = integersOfNumber.size() - 1; i >= 0; i--) {
+        hexAsString += integersOfNumber[i];
+    }
     
     return hexAsString;
 }
 
 
-//For example, intToDecimalString( 10 ) == "10" and intToHexadecimalString( -10 ) == "-A"
-
-
 //Write tests for your functions to demonstrate that they work correctly. Note that a good test is that those operations are inverses: stringToInt( intToHexadecimal( anything ), 16 ) == anything for any valid input.
-
-
-

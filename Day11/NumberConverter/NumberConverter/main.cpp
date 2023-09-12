@@ -27,18 +27,17 @@ int main(int argc, const char * argv[]) {
     //get a base from the user
     std::cin >> base;
     
-    
-    int number = 78;
     //call string to integer function
-    stringToInt(userInput, base);
+    std::cout << "Sum: " << stringToInt(userInput, base) << std::endl;
     
     //call decimal to string function
-    toDecimalAsString(number);
+    std::cout << "Decimal as String: " << toDecimalAsString(stringToInt(userInput, base)) << std::endl;
     
-    int nine = 9;
+    //call binary to string function
+    std::cout << "Binary as String: " << toBinaryAsString(stringToInt(userInput, base)) << std::endl;
     
-    
-    assert(nine + '0' == 57);
+    //call hex to string function
+    std::cout << "Hex as String: " << toHexAsString(stringToInt(userInput, base)) << std::endl;
     
     
     
