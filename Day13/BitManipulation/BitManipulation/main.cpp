@@ -11,8 +11,6 @@
 int main(int argc, const char * argv[]) {
     //tests should go in here
     
-    std::cout << "Num Of Bits Set: " << NumBitsSet(10) << std::endl;
-    
     TestBool( GetBit( 0, 0 ), false, "GetBit1" );
     TestBool( GetBit( 0, 1 ), false, "GetBit2" );
     TestBool( GetBit( 0, 31 ), false, "GetBit3" );
@@ -58,6 +56,31 @@ int main(int argc, const char * argv[]) {
     Test8Bit( GetByte( 0x12345678, 3 ), 0x12, "GetByte11" );
     
     
+    Test32Bit( SetByte( 0, 0xFF, 0 ), 0xFF, "SetByte1" );
+    Test32Bit( SetByte( 0, 0xFF, 1 ), 0xFF00, "SetByte2" );
+    Test32Bit( SetByte( 0, 0xFF, 2 ), 0xFF0000, "SetByte3" );
+    Test32Bit( SetByte( 0, 0xFF, 3 ), 0xFF000000, "SetByte4" );
+    Test32Bit( SetByte( 0x12345678, 0xAA, 0 ), 0x123456aa, "SetByte5" );
+    Test32Bit( SetByte( 0x12345678, 0xAA, 1 ), 0x1234aa78, "SetByte6" );
+    Test32Bit( SetByte( 0x12345678, 0xAA, 2 ), 0x12aa5678, "SetByte7" );
+    Test32Bit( SetByte( 0x12345678, 0xAA, 3 ), 0xaa345678, "SetByte8" );
+    
+    
+    
+    Test32Bit( Negate( -1 ), 1, "Negate1" );
+    Test32Bit( Negate( 1 ), -1, "Negate2" );
+    Test32Bit( Negate( 2 ), -2, "Negate3" );
+    Test32Bit( Negate( -2 ), 2, "Negate4" );
+    Test32Bit( Negate( 0 ), 0, "Negate5" );
+    Test32Bit( Negate( 0x7fffffff ), 0x80000001, "Negate6" );
+    Test32Bit( Negate( 0xAAAAAAAA ), 0x55555556, "Negate7" );
+    
+    
+    
+    Test32Bit( Increment( 0 ), 1, "Increment1" );
+    Test32Bit( Increment( -1 ), 0, "Increment2" );
+    Test32Bit( Increment( 10000 ), 10001, "Increment3" );
+    Test32Bit( Increment( -999 ), -998, "Increment4" );
     
     return 0;
 }

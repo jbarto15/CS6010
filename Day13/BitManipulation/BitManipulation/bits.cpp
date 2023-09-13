@@ -47,8 +47,8 @@ bool GetBit( uint32_t input, int b )
  */
 bool IsNegative( int input )
 {
-   
-  return input < 0;
+  //use an and operator to create a mask. use 1 as the value for the mask and shift it 31 times so that it is located at the left most bit. If input is negative there will be a 1 at that location. Using an and operation will leave the 1 there if the input has a 1 at that value
+  return (input & (1 << 31)) != 0;
 }
 
 /*
@@ -142,10 +142,16 @@ unsigned char GetByte( uint32_t input, int b )
  */
 uint32_t SetByte( uint32_t input, uint8_t value, int b )
 {
-  //take an input of 32 bits, a value of 8 bits, and the specific byte we want to set
-  //when given b we should be able to pinpoint those 8 bits
-  //update those 8 bits with a new set of 8 bits
-  return 0;
+    //create 4 masks for the input
+    uint32_t masks [4] = {0xffffff00, 0xffff00ff, 0xff00ffff, 0x00ffffff};
+    
+    //use and operator to zero out the byte (b)
+    input = input & masks[b];
+    
+    //use or operator to change back to original input but with the specified value
+    input = input | (value << (b * 8));
+    
+  return input;
 }
 
 
@@ -175,10 +181,22 @@ uint32_t SetByte( uint32_t input, uint8_t value, int b )
  */
 int Negate( int input )
 {
-  // Note, it may help to do the challenge question (see below) before implementing this one...
+    //variable to store the bit flip of input
+    int flipBits = ~input;
+    
+    //create a mask variable
+    uint32_t mask = 1;
+    
+    //loop through x as long as the mask & x != 0. Once mask & x is equal to zero we know we have reached the first 0 and we should stop adding
+    while ((mask & flipBits) != 0) {
+        flipBits^= mask;
+        mask <<= 1;
+    }
+    
+    flipBits^= mask;
 
-  // TODO: Fill in. Do not return 0.
-  return 0;
+  
+  return flipBits;
 }
 
 
@@ -189,7 +207,20 @@ int Negate( int input )
  * This function should return x + 1 but should only make use of bitwise operators and == or !=
 */
 int Increment( uint32_t x ){
-  return 0;
+    //create a mask variable
+    uint32_t mask = 1;
+    
+    //loop through x as long as the mask & x operation does not equal zero. Once mask & x is equal to zero we know we have reached the first 0 and we should stop adding
+    while ((mask & x) != 0) {
+        //
+        x^= mask;
+        mask <<= 1;
+    }
+    
+    x^= mask;
+    
+    
+    return x;
 }
 
 
