@@ -13,6 +13,7 @@ void MyVector::freeVector(MyVector& vector) {
     delete [] vector._myArray;
 }
 
+
 //method that will push back a value in the vector
 void MyVector::push_back(int value) {
     //check if size + 1 == capacity, if so, increase the capacity * 2
@@ -25,10 +26,13 @@ void MyVector::push_back(int value) {
     _size ++;
 }
 
-void MyVector::pop_back(int value) {
-    //
 
+//method that will take the last element of the vector and delete it
+void MyVector::pop_back() {
+    //take away the last element by decreasing the size of the vector by 1
+    _myArray[_size] = _size - 1;
 }
+
 
 //method that gets a value from the vector
 int MyVector::get(int value, size_t position) {
@@ -41,13 +45,18 @@ int MyVector::get(int value, size_t position) {
     return _myArray[position];
 }
 
-void MyVector::set(int value, size_t position) {
 
+//method that sets a specific position in the vector to a new value
+void MyVector::set(int value, size_t position) {
+    //check to see if the position is a valid position
     if (position > 0 && position < _size) {
+        //if the position is valid we want to assign that value to the appropriate position in the vector
         _myArray[position] = value;
     }
 }
 
+
+//method that grows the vector
 void MyVector::growVector() {
     //create a new array (temp) on the heap for the new vector
     int* temp = new int [_capacity * 2];
@@ -71,10 +80,16 @@ void MyVector::growVector() {
     
 }
 
+
+//method that gets the size of the vector
 size_t MyVector::getSize() {
+    //simply return the size of the vector
     return _size;
 }
 
-size_t MyVector::getCapacity(MyVector& vector) {
+
+//method that gets the capacity of the vector
+size_t MyVector::getCapacity() {
+    //simply return the size of the vector
     return _capacity;
 }
