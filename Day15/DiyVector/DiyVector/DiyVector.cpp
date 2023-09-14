@@ -9,17 +9,21 @@
 
 
 void MyVector::freeVector(MyVector& vector) {
-    delete [] vector.myArray;
+    delete [] vector._myArray;
 }
 
-MyVector MyVector::pushBack(MyVector& vector) {
-    //return variable that will return the new MyVector after the push back
-    MyVector newVector;
+void MyVector::pushBack(int value) {
+    //check if size + 1 == capacity, if so, increase the capacity * 2
+    if (_size + 1 == _capacity) {
+        growVector();
+    }
     
-    return newVector;
+    _myArray[_size] = value;
+    _size ++;
 }
 
 MyVector MyVector::popBack(MyVector& vector) {
+    
     
 }
 
@@ -31,14 +35,33 @@ int MyVector::set(MyVector& vector, int index) {
     
 }
 
-MyVector MyVector::growVector(MyVector& vector) {
+void MyVector::growVector() {
+    //create a new array (temp) on the heap for the new vector
+    int* temp = new int [_capacity * 2];
+    
+    //copy myArray into temp
+    for (int i = 0; i < _size; i++) {
+        temp[i] = _myArray[i];
+    }
+    
+    //delete the first array so that we don't leak data
+    delete [] _myArray;
+    
+    //point data at whatever temp is pointing at
+    _myArray = temp;
+    
+    //set temp to null so that it's not a dangling pointer
+    temp = nullptr;
+    
+    //update capacity
+    _capacity *= 2;
     
 }
 
-int MyVector::getSize(MyVector& vector) {
-    
+size_t MyVector::getSize() {
+    return _size;
 }
 
-int MyVector::getCapacity(MyVector& vector) {
-    
+size_t MyVector::getCapacity(MyVector& vector) {
+    return _capacity;
 }

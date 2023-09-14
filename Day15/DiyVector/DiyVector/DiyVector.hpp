@@ -15,27 +15,41 @@
 
 class MyVector {
 private:
-    int* myArray;
-    int capacity;
-    int size;
+    int* _myArray;
+    size_t _size, _capacity;
+    void growVector();
     
 public:
     void freeVector(MyVector& vector);
-    MyVector pushBack(MyVector& vector);
+    void pushBack(int value);
     MyVector popBack(MyVector& vector);
     int get(MyVector& vector, int index);
     int set(MyVector& vector, int index);
-    MyVector growVector(MyVector& vector);
-    int getSize(MyVector& vector);
-    int getCapacity(MyVector& vector);
+    size_t getSize();
+    size_t getCapacity(MyVector& vector);
     
     
 
-    MyVector(int* _myArray, int _capacity, int _size) {
-        myArray = _myArray;
-        capacity = _capacity;
-        size = _size;
+    MyVector(size_t size) {
+        if (size > 0) {
+            _myArray = new int [size];
+            _capacity = size * 2;
+            _size = size;
+        }
     }
+    
+    MyVector(MyVector &vect) {
+        _capacity = vect._capacity;
+        _size = vect._size;
+        _myArray = new int [vect._capacity];
+        
+        for (int i=0; i<vect._size;i++)
+            _myArray[i]=vect._myArray[i];
+
+    }
+    
+    
+
 };
 
 //makeVector(initialCapacity ) -- should return a vector with the given capacity and a size of 0
