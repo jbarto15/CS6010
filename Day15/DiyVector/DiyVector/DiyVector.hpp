@@ -12,6 +12,7 @@
 #include <vector>
 #include <string>
 #include <cassert>
+#include <iostream>
 
 class MyVector {
 private:
@@ -21,31 +22,30 @@ private:
     
 public:
     void freeVector(MyVector& vector);
-    void pushBack(int value);
-    MyVector popBack(MyVector& vector);
-    int get(MyVector& vector, int index);
-    int set(MyVector& vector, int index);
+    void push_back(int value);
+    void pop_back(int value);
+    int get(int value, size_t position);
+    void set(int value, size_t position);
     size_t getSize();
     size_t getCapacity(MyVector& vector);
     
     
-
-    MyVector(size_t size) {
-        if (size > 0) {
-            _myArray = new int [size];
-            _capacity = size * 2;
-            _size = size;
+    //constructor
+    MyVector(size_t capacity) {
+        if (capacity > 0) {
+            std::cout << "Hello from the constructor" << std::endl;
+            _myArray = new int [capacity];
+            _capacity = capacity;
+            _size = 0;
         }
     }
     
-    MyVector(MyVector &vect) {
-        _capacity = vect._capacity;
-        _size = vect._size;
-        _myArray = new int [vect._capacity];
-        
-        for (int i=0; i<vect._size;i++)
-            _myArray[i]=vect._myArray[i];
-
+    //destructor
+    ~MyVector() {
+        std::cout << "Hello from the destructor" << std::endl;
+        _size = 0;
+        _capacity = 0;
+        delete [] _myArray;
     }
     
     
