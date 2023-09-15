@@ -10,35 +10,31 @@
 
 int main(int argc, const char * argv[]) {
     
-    //test for push back method
+    //create an object of MyVector
     MyVector v1(10);
-    v1.push_back(3);
-    v1.push_back(6);
-    v1.push_back(12);
     
-    //use print method to see if the element is getting pushed back
-    v1.printVector(v1);
+    
+    //test for push back method
+    testPushBack(v1);
+    
+    //test print method
+    testPrint(v1);
     
     //test for pop back method
-    v1.pop_back();
-    
-    v1.printVector(v1);
-    
-    v1.push_back(7);
-    
-    v1.printVector(v1);
+    testPopBack(v1);
     
     
     //test for get method
-    std::cout << "Element 0 of vector: " << v1.get(2, 0) << std::endl;
-    
-    std::cout << "Element 1 of vector: " << v1.get(2, 1) << std::endl;
+    testGet(v1);
     
     
     //test for set method
-    v1.set(198, 2);
+    testSet(v1);
     
-    v1.printVector(v1);
+    
+    //use the copy constructor
+    MyVector v2(v1);
+    
     
     
     return 0;

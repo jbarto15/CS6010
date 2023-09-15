@@ -31,13 +31,15 @@ void MyVector::push_back(int value) {
 void MyVector::pop_back() {
     //take away the last element by decreasing the size of the vector by 1
     _size--;
+//    std::cout << "after pop back: \n" << _size;
+//    print();
 }
 
 
 //method that gets a value from the vector
-int MyVector::get(int value, size_t position) const {
+int MyVector::get(size_t position) const {
     //check to see if the position is in the valid range of the size of the array. If not, crash the program
-    assert(position < _size);
+   assert(position < _size);
     //check to see if the data array pointer is not null. If it is null, crash the program
     assert(_myArray != nullptr);
     
@@ -51,7 +53,9 @@ void MyVector::set(int value, size_t position) const {
     //check to see if the position is a valid position
     if (position > 0 && position < _size) {
         //if the position is valid we want to assign that value to the appropriate position in the vector
+        std::cout <<"\n before: "<< _myArray[position];
         _myArray[position] = value;
+        std::cout <<"\n after: "<< _myArray[position]<<"\n";
     }
 }
 
@@ -96,7 +100,7 @@ size_t MyVector::getCapacity() const {
 
 
 //method that prints the contents of the vector
-void MyVector::printVector(MyVector& vector) const {
+void MyVector::print() {
     //go through the elements of the vector and print them
     for (int i = 0; i < _size; i++) {
         std::cout << "Element: " << _myArray[i] << std::endl;
@@ -107,10 +111,67 @@ void MyVector::printVector(MyVector& vector) const {
 
 //OPERATORS
 
-//operator plus function
-MyVector operator+(const MyVector& lhs, const MyVector& rhs) {
-    MyVector result;
+////operator plus function
+//MyVector operator+(const MyVector& lhs, const MyVector& rhs) const {
+//    MyVector result;
+//
+//    assert((lhs.getSize()) == (rhs.getSize()) && "Size mismatch in operator");
+//    size_t size = lhs.getSize();
+//
+//    for (size_t i = 0; i < size; i++) {
+//        result.push_back(lhs.get(i) + rhs.get(i));
+//    }
+//
+//    return result;
+//}
+
+
+////operator equals function
+//MyVector operator=(const MyVector& lhs, const MyVector& rhs) {
+//
+//}
+
+
+
+//TEST FUNCTIONS
+void testFreeVector(MyVector& vector) {
     
-    
-    return result;
 }
+
+void testPushBack(MyVector& vector) {
+    //test for push back method
+    vector.push_back(3);
+    vector.push_back(6);
+    vector.push_back(12);
+    assert(vector.get(2) == 12);
+}
+
+void testPopBack(MyVector& vector) {
+    vector.pop_back();
+    //assert that the size of the vector has decreased by 1
+}
+
+//fix this one
+void testGet(MyVector& vector) {
+    vector.set(3, 0);
+    assert(vector.get(0) == 3);
+    vector.print();
+}
+
+void testSet(MyVector& vector){
+    vector.set(198, 1);
+    assert(vector.get(1) == 198);
+}
+
+void testGetSize(MyVector& vector) {
+    
+}
+
+void testGetCapacity(MyVector& vector) {
+    
+}
+
+void testPrint(MyVector& vector) {
+    vector.print();
+}
+                

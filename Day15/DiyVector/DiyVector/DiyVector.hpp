@@ -24,11 +24,11 @@ public:
     void freeVector(MyVector& vector);
     void push_back(int value);
     void pop_back();
-    int get(int value, size_t position) const;
+    int get(size_t position) const;
     void set(int value, size_t position) const;
     size_t getSize() const;
     size_t getCapacity() const;
-    void printVector(MyVector& vector) const;
+    void print();
     
     
     //constructor
@@ -51,17 +51,75 @@ public:
         }
     }
     
+    //copy constructor
+    MyVector(MyVector& vector) {
+        std::cout << "Hello from the copy constructor" << std::endl;
+        _size = vector.getSize();
+        _capacity = vector.getCapacity();
+        _myArray = new int[_capacity];
+
+        for(int i = 0; i < _size; i++) {
+            _myArray[i] = vector._myArray[i];
+        }
+        
+    }
+    
     //destructor
     ~MyVector() {
         std::cout << "Hello from the destructor" << std::endl;
         _size = 0;
         _capacity = 0;
         delete [] _myArray;
+    
     }
 };
 
 
-MyVector operator+(const MyVector& lhs, const MyVector& rhs);
+////operator equals function
+//MyVector operator=(const MyVector& lhs, const MyVector& rhs);
+//
+//
+////operator plus function
+//MyVector operator+(const MyVector& lhs, const MyVector& rhs);
+//
+//
+////operator [] function
+//int operator[](MyVector& vector);
+
+//operator==
+
+
+//operator!=
+
+//operator<
+
+//operator<=
+
+//operator>=
+
+//operator >
+
+
+//TEST FUNCTIONS
+void testFreeVector(MyVector& vector);
+
+void testPushBack(MyVector& vector);
+
+void testPopBack(MyVector& vector);
+
+void testGet(MyVector& vector);
+
+void testSet(MyVector& vector);
+
+void testGetSize(MyVector& vector);
+
+void testGetCapacity(MyVector& vector);
+
+void testPrint(MyVector& vector);
+
+
+
+
 
 
 #endif /* DiyVector_hpp */
