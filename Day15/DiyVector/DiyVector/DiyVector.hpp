@@ -24,10 +24,11 @@ public:
     void freeVector(MyVector& vector);
     void push_back(int value);
     void pop_back();
-    int get(int value, size_t position);
-    void set(int value, size_t position);
-    size_t getSize();
-    size_t getCapacity();
+    int get(int value, size_t position) const;
+    void set(int value, size_t position) const;
+    size_t getSize() const;
+    size_t getCapacity() const;
+    void printVector(MyVector& vector) const;
     
     
     //constructor
@@ -40,6 +41,16 @@ public:
         }
     }
     
+    //additional constructor that gives it an array of data
+    MyVector(int* data) {
+        if (_capacity > 0) {
+            std::cout << "Hello from the array constructor" << std::endl;
+            _myArray = data;
+            _capacity = 10;
+            _size = 0;
+        }
+    }
+    
     //destructor
     ~MyVector() {
         std::cout << "Hello from the destructor" << std::endl;
@@ -48,6 +59,9 @@ public:
         delete [] _myArray;
     }
 };
+
+
+MyVector operator+(const MyVector& lhs, const MyVector& rhs);
 
 
 #endif /* DiyVector_hpp */
