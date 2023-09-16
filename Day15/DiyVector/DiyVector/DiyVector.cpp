@@ -8,12 +8,6 @@
 #include "DiyVector.hpp"
 
 
-//method that will delete the data in the array
-void MyVector::freeVector(MyVector& vector) {
-    delete [] vector._myArray;
-}
-
-
 //method that will push back a value in the vector
 void MyVector::push_back(int value) {
     //check if size + 1 == capacity, if so, increase the capacity * 2
@@ -153,7 +147,16 @@ MyVector& MyVector::operator=(const MyVector& rhs) {
     if (this == &rhs) {
         return *this;
     }
-    // Copy the data from rhs to _myArray
+    
+    //create new memory for the new array
+    if (_capacity < rhs._size) {
+        delete [] _myArray;
+        _myArray = new int [rhs._size];
+        _capacity = rhs._size * 2;
+    }
+    
+    //copy the data from rhs to _myArray
+    _size = rhs._size;
         for (int i = 0; i < _size; i++) {
                 _myArray[i] = rhs._myArray[i];
         }

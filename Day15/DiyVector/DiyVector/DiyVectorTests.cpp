@@ -10,10 +10,6 @@
 
 
 //TEST FUNCTIONS
-void testFreeVector(MyVector& vector) {
-    
-}
-
 void testPushBack(MyVector& vector) {
     //test for push back method
     vector.push_back(3);
@@ -40,11 +36,11 @@ void testSet(MyVector& vector){
 }
 
 void testGetSize(MyVector& vector) {
-    
+    assert(vector.getSize() == 4);
 }
 
 void testGetCapacity(MyVector& vector) {
-    
+    assert(vector.getCapacity() == 8);
 }
 
 void testPrint(MyVector& vector) {
@@ -53,8 +49,8 @@ void testPrint(MyVector& vector) {
   
 //OPERATOR TESTS
 
-void testOperatorPlus(MyVector& vector1, MyVector& vector2) {
-    
+void testOperatorPlus(MyVector& vector1, MyVector& vector2, MyVector& vector3) {
+    assert(vector1 + vector2 == vector3);
 }
 
 
@@ -64,7 +60,7 @@ void testOperatorGet(MyVector& vector) {
 
 
 void testOperatorAssignment(MyVector& vector1, MyVector& vector2) {
-    //assert(vector1 = vector2);
+    assert(vector1 == vector2 && "Operator = is not working!");
 }
 
 

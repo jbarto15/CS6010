@@ -56,25 +56,13 @@ public:
     
     //constructor with no parameters
     MyVector() {
-            std::cout << "Hello from the constructor" << std::endl;
             _myArray = new int [_capacity];
             _capacity = 10;
             _size = 0;
     }
     
-    //additional constructor that gives it an array of data
-    MyVector(int* data) {
-        if (_capacity > 0) {
-            std::cout << "Hello from the array constructor" << std::endl;
-            _myArray = data;
-            _capacity = 10;
-            _size = 0;
-        }
-    }
-    
     //copy constructor
     MyVector(MyVector& vector) {
-        std::cout << "Hello from the copy constructor" << std::endl;
         _size = vector.getSize();
         _capacity = vector.getCapacity();
         _myArray = new int[_capacity];
@@ -87,7 +75,6 @@ public:
     
     // Constructor that initializes the vector from a std::vector<int>
     MyVector(const std::vector<int>& data) {
-        std::cout << "Hello from the std::vector constructor!" << '\n';
         // Initialize the capacity and size based on the size of the input vector
         _capacity = data.size() * 2;
         _size = data.size();
@@ -104,7 +91,6 @@ public:
     
     //destructor
     ~MyVector() {
-        std::cout << "Hello from the destructor" << std::endl;
         _size = 0;
         _capacity = 0;
         delete [] _myArray;
@@ -132,7 +118,7 @@ void testPrint(MyVector& vector);
 
 //OPERATOR TESTS
 
-void testOperatorPlus(MyVector& vector1, MyVector& vector2);
+void testOperatorPlus(MyVector& vector1, MyVector& vector2, MyVector& vector3);
 
 void testOperatorGet(MyVector& vector);
 
