@@ -49,7 +49,7 @@ int main(int argc, const char * argv[]) {
     testOperatorPlus(v1, v2);
     
     //test operator get value
-    testOperatorGet(v1);
+    testOperatorGet(v4);
     
     //test operator assignment
     testOperatorAssignment(v1, v3);
@@ -58,7 +58,19 @@ int main(int argc, const char * argv[]) {
     testOperatorEquals(v1, v2);
     
     //test operator does not equal
-    testOperatorDoesNotEqual(v1, v4);
+    testOperatorDoesNotEqual(v5, v4);
+    
+    //test operator less than
+    testOperatorLessThan(v5, v4);
+    
+    //test operator less than or equal to
+    testOperatorLessThanOrEqual(v4, v4);
+    
+    //test operator greater than or equal to
+    testOperatorGreaterThanOrEqual(v5, v4);
+    
+    //test operator greater than
+    testOperatorGreaterThan(v4, v5);
     
     
     
