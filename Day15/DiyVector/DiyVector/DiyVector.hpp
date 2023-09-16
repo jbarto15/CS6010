@@ -38,17 +38,10 @@ public:
     MyVector& operator=(const MyVector& rhs);
     bool operator==(const MyVector& rhs) const;
     bool operator!=(const MyVector& rhs) const;
-
-
-    //operator!=
-
-    //operator<
-
-    //operator<=
-
-    //operator>=
-
-    //operator >
+    bool operator<(const MyVector& rhs) const;
+    bool operator<=(const MyVector& rhs) const;
+    bool operator>=(const MyVector& rhs) const;
+    bool operator>(const MyVector& rhs) const;
     
     
     //constructor
@@ -119,6 +112,26 @@ void testGetSize(MyVector& vector);
 void testGetCapacity(MyVector& vector);
 
 void testPrint(MyVector& vector);
+
+//OPERATOR TESTS
+
+void testOperatorPlus(MyVector& vector1, MyVector& vector2);
+
+void testOperatorGet(MyVector& vector);
+
+void testOperatorAssignment(MyVector& vector1, MyVector& vector2);
+
+void testOperatorEquals(MyVector& vector1, MyVector& vector2);
+
+void testOperatorDoesNotEqual(MyVector& vector1, MyVector& vector2);
+
+void testOperatorLessThan(MyVector& vector1, MyVector& vector2);
+
+void testOperatorLessThanOrEqual(MyVector& vector1, MyVector& vector2);
+
+void testOperatorGreaterThanOrEqual(MyVector& vector1, MyVector& vector2);
+
+void testOperatorGreaterThan(MyVector& vector1, MyVector& vector2);
 
 
 

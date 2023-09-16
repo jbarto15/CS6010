@@ -45,15 +45,21 @@ int main(int argc, const char * argv[]) {
     std::cout << "v1 contents: " << std::endl;
     v1.print();
     
-    std::cout << "Second element of v1: " << v1[1] << std::endl;
     
-    if (v1 == v2) {
-        std::cout << "Operator == is working!" << std::endl;
-    }
+    //test operator plus
+    testOperatorPlus(v1, v2);
     
-    if (v1 != v3) {
-        std::cout << "Operator != is working!" << std::endl;
-    }
+    //test operator get value
+    testOperatorGet(v1);
+    
+    //test operator assignment
+    testOperatorAssignment(v1, v3);
+    
+    //test operator equals
+    testOperatorEquals(v1, v2);
+    
+    //test operator does not equal
+    testOperatorDoesNotEqual(v1, v3);
     
     
     
