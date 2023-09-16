@@ -212,7 +212,6 @@ int Increment( uint32_t x ){
     
     //loop through x as long as the mask & x operation does not equal zero. Once mask & x is equal to zero we know we have reached the first 0 and we should stop adding
     while ((mask & x) != 0) {
-        //
         x^= mask;
         mask <<= 1;
     }

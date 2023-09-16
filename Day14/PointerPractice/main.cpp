@@ -26,7 +26,7 @@ for (int i = 0; i < vec1.capacity; i++) {
 }
 
 
-//print out returned sum of the arrayModSum funciton
+//print out returned sum of the arrayModSum function
 std::cout << "Sum: " << arrayModSum(vec1, 5) << std::endl;
 
 //delete vec1
