@@ -85,6 +85,23 @@ public:
         
     }
     
+    // Constructor that initializes the vector from a std::vector<int>
+    MyVector(const std::vector<int>& data) {
+        std::cout << "Hello from the std::vector constructor!" << '\n';
+        // Initialize the capacity and size based on the size of the input vector
+        _capacity = data.size() * 2;
+        _size = data.size();
+
+        // Allocate memory for the internal array
+        _myArray = new int[_capacity];
+
+        // Copy the data from the input vector to the internal array
+        for (size_t i = 0; i < _size; i++) {
+            _myArray[i] = data[i];
+        }
+    }
+
+    
     //destructor
     ~MyVector() {
         std::cout << "Hello from the destructor" << std::endl;

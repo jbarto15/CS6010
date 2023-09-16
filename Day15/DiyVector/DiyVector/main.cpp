@@ -13,6 +13,13 @@ int main(int argc, const char * argv[]) {
     //create an object of MyVector
     MyVector v1(10);
     
+    //create an object of MyVector sending in a vector of data
+    std::vector<int> data1 = {3, 6, 12, 198};
+    MyVector v4(data1);
+    
+    std::vector<int> data2 = {3, 4, 12, 198};
+    MyVector v5(data2);
+    
     
     //test for push back method
     testPushBack(v1);
@@ -37,14 +44,6 @@ int main(int argc, const char * argv[]) {
     
     MyVector v3;
     
-    v3 = v2 + v1;
-    
-    std::cout << "v2 contents: " << std::endl;
-    v2.print();
-    
-    std::cout << "v1 contents: " << std::endl;
-    v1.print();
-    
     
     //test operator plus
     testOperatorPlus(v1, v2);
@@ -59,7 +58,7 @@ int main(int argc, const char * argv[]) {
     testOperatorEquals(v1, v2);
     
     //test operator does not equal
-    testOperatorDoesNotEqual(v1, v3);
+    testOperatorDoesNotEqual(v1, v4);
     
     
     
