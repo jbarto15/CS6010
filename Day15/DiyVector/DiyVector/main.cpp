@@ -11,7 +11,7 @@
 int main(int argc, const char * argv[]) {
     
     //create an object of MyVector
-    MyVector v1(10);
+    MyVector<int> v1(10);
     
     //create objects of MyVector sending in a vector of data
     std::vector<int> data1 = {3, 6, 12, 198};
@@ -56,7 +56,7 @@ int main(int argc, const char * argv[]) {
     //use the copy constructor
     MyVector v2(v1);
     
-    MyVector v3(10);
+    MyVector<int> v3(10);
     
     
     //test operator plus
@@ -90,6 +90,19 @@ int main(int argc, const char * argv[]) {
     
     v3.print();
     
+    
+    //test with doubles
+    std::vector<double> doubles = {1.0, 2.0, 3.0, 4.0, 5.0};
+    MyVector<double> v8(doubles);
+    
+    v8.print();
+    
+    
+    //test with strings
+    std::vector<std::string> names = {"Josh", "Brittney", "Caleb"};
+    MyVector<std::string> v9(names);
+    
+    v9.print();
     
     
     return 0;
