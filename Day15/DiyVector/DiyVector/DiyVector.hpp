@@ -31,6 +31,13 @@ public:
     void print();
     
     
+    
+    //operators
+    MyVector operator+(const MyVector& rhs);
+    int& operator[](size_t index);
+    MyVector& operator=(const MyVector& rhs);
+    
+    
     //constructor
     MyVector(size_t capacity) {
         if (capacity > 0) {
@@ -39,6 +46,14 @@ public:
             _capacity = capacity;
             _size = 0;
         }
+    }
+    
+    //constructor with no parameters
+    MyVector() {
+            std::cout << "Hello from the constructor" << std::endl;
+            _myArray = new int [_capacity];
+            _capacity = 10;
+            _size = 0;
     }
     
     //additional constructor that gives it an array of data
@@ -75,16 +90,8 @@ public:
 };
 
 
-////operator equals function
-//MyVector operator=(const MyVector& lhs, const MyVector& rhs);
-//
-//
-////operator plus function
-//MyVector operator+(const MyVector& lhs, const MyVector& rhs);
-//
-//
-////operator [] function
-//int operator[](MyVector& vector);
+
+
 
 //operator==
 

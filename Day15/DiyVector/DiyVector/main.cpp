@@ -35,6 +35,18 @@ int main(int argc, const char * argv[]) {
     //use the copy constructor
     MyVector v2(v1);
     
+    MyVector v3;
+    
+    v3 = v2 + v1;
+    
+    std::cout << "v3 contents: " << std::endl;
+    v3.print();
+    
+    std::cout << "v1 contents: " << std::endl;
+    v1.print();
+    
+    std::cout << "Second element of v1: " << v1[1] << std::endl;
+    
     
     
     return 0;

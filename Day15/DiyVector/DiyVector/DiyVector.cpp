@@ -53,9 +53,7 @@ void MyVector::set(int value, size_t position) const {
     //check to see if the position is a valid position
     if (position > 0 && position < _size) {
         //if the position is valid we want to assign that value to the appropriate position in the vector
-        std::cout <<"\n before: "<< _myArray[position];
         _myArray[position] = value;
-        std::cout <<"\n after: "<< _myArray[position]<<"\n";
     }
 }
 
@@ -111,26 +109,62 @@ void MyVector::print() {
 
 //OPERATORS
 
-////operator plus function
-//MyVector operator+(const MyVector& lhs, const MyVector& rhs) const {
-//    MyVector result;
-//
-//    assert((lhs.getSize()) == (rhs.getSize()) && "Size mismatch in operator");
-//    size_t size = lhs.getSize();
-//
-//    for (size_t i = 0; i < size; i++) {
-//        result.push_back(lhs.get(i) + rhs.get(i));
-//    }
-//
-//    return result;
-//}
+//operator plus function
+MyVector operator+(const MyVector& lhs, const MyVector& rhs) {
+    MyVector result;
+
+    assert((lhs.getSize()) == (rhs.getSize()) && "Size mismatch in operator");
+    size_t size = lhs.getSize();
+
+    for (size_t i = 0; i < size; i++) {
+        result.push_back(lhs.get(i) + rhs.get(i));
+    }
 
 
-////operator equals function
-//MyVector operator=(const MyVector& lhs, const MyVector& rhs) {
-//
-//}
+    return result;
+}
 
+
+//operator plus function, concatenate {
+MyVector MyVector::operator+(const MyVector& rhs) {
+    if (rhs.getSize() == 0)
+        return *this;
+        
+    // Create a new MyVector as a result of the concatenation
+    MyVector result;
+
+    // Copy the elements from the current object (this) to result
+    for (int i = 0; i < getSize(); i++) {
+        result.push_back(get(i));
+    }
+
+    // Copy the elements from rhs to result
+    for (int i = 0; i < rhs.getSize(); i++) {
+        result.push_back(rhs.get(i));
+    }
+
+    // Return a reference to the result
+    return result;
+}
+
+//operator equals function
+MyVector& MyVector::operator=(const MyVector& rhs) {
+    //check to see if rhs and _myArray are the same
+    if (this == &rhs) {
+        return *this;
+    }
+    // Copy the data from rhs to _myArray
+        for (int i = 0; i < _size; i++) {
+                _myArray[i] = rhs._myArray[i];
+        }
+    return *this;
+}
+
+//operator [] function, returns an address
+int& MyVector::operator[](size_t index) {
+    assert(index < _size && "Out of bounds in operator[]!");
+    return _myArray[index];
+}
 
 
 //TEST FUNCTIONS
