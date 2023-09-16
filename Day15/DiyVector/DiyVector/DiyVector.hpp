@@ -36,6 +36,19 @@ public:
     MyVector operator+(const MyVector& rhs);
     int& operator[](size_t index);
     MyVector& operator=(const MyVector& rhs);
+    bool operator==(const MyVector& rhs) const;
+    bool operator!=(const MyVector& rhs) const;
+
+
+    //operator!=
+
+    //operator<
+
+    //operator<=
+
+    //operator>=
+
+    //operator >
     
     
     //constructor
@@ -88,23 +101,6 @@ public:
     
     }
 };
-
-
-
-
-
-//operator==
-
-
-//operator!=
-
-//operator<
-
-//operator<=
-
-//operator>=
-
-//operator >
 
 
 //TEST FUNCTIONS

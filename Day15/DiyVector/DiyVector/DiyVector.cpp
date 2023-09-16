@@ -167,6 +167,39 @@ int& MyVector::operator[](size_t index) {
 }
 
 
+//equals operator
+bool MyVector::operator==(const MyVector& rhs) const {
+    // Check if sizes of the vectors are equal
+        if (_size != rhs._size) {
+            return false;
+        }
+    //check if each element in the vector is the same
+    for (int i = 0; i < _size; i++) {
+        if (_myArray[i] != rhs._myArray[i]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+
+//does not equal operator
+bool MyVector::operator!=(const MyVector& rhs) const {
+    // Check if sizes of the vectors are not equal
+        if (_size != rhs._size) {
+            return true;
+        }
+    
+    //check if each element in the vector is not the same
+    for (int i = 0; i < _size; i++) {
+        if (_myArray[i] != rhs._myArray[i]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
 //TEST FUNCTIONS
 void testFreeVector(MyVector& vector) {
     

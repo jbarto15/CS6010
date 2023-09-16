@@ -39,13 +39,21 @@ int main(int argc, const char * argv[]) {
     
     v3 = v2 + v1;
     
-    std::cout << "v3 contents: " << std::endl;
-    v3.print();
+    std::cout << "v2 contents: " << std::endl;
+    v2.print();
     
     std::cout << "v1 contents: " << std::endl;
     v1.print();
     
     std::cout << "Second element of v1: " << v1[1] << std::endl;
+    
+    if (v1 == v2) {
+        std::cout << "Operator == is working!" << std::endl;
+    }
+    
+    if (v1 != v3) {
+        std::cout << "Operator != is working!" << std::endl;
+    }
     
     
     
