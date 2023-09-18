@@ -116,8 +116,11 @@ void MyVector<T>::push_back(T value) {
 template<typename T>
 //method that will take the last element of the vector and delete it
 void MyVector<T>::pop_back() {
-    //take away the last element by decreasing the size of the vector by 1
-    _size--;
+    //check if vector size is not zero
+    if (_size > 0) {
+        //take away the last element by decreasing the size of the vector by 1
+        _size--;
+    }
 }
 
 
@@ -130,7 +133,8 @@ T MyVector<T>::get(size_t position) const {
         return _myArray[position];
     }
     else {
-        return -1;
+        std::cout<< "Invalid Position" << std::endl;
+        exit(1);
     }
 }
 

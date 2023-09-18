@@ -102,7 +102,13 @@ int main(int argc, const char * argv[]) {
     std::vector<std::string> names = {"Josh", "Brittney", "Caleb"};
     MyVector<std::string> v9(names);
     
+    //test with characters
+    std::vector<char> characters = {'a', 'b', 'c', 'd'};
+    MyVector<char> v10(characters);
+    
     v9.print();
+    v10.print();
+    
     
     
     return 0;
