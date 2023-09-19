@@ -57,8 +57,8 @@ public:
     
     //constructor with no parameters
     MyVector() {
-            _myArray = new T [_capacity];
             _capacity = 10;
+            _myArray = new T [_capacity];
             _size = 0;
     }
     
@@ -76,14 +76,14 @@ public:
     
     // Constructor that initializes the vector from a std::vector<int>
     MyVector(const std::vector<T>& data) {
-        // Initialize the capacity and size based on the size of the input vector
+        //Initialize the capacity and size based on the size of the input vector
         _capacity = data.size() * 2;
         _size = data.size();
 
-        // Allocate memory for the internal array
+        //Allocate memory for the internal array
         _myArray = new T[_capacity];
 
-        // Copy the data from the input vector to the internal array
+        //Copy the data from the input vector to the internal array
         for (size_t i = 0; i < _size; i++) {
             _myArray[i] = data[i];
         }
@@ -95,6 +95,7 @@ public:
         _size = 0;
         _capacity = 0;
         delete [] _myArray;
+        _myArray = nullptr;
     
     }
 };
@@ -208,6 +209,7 @@ void MyVector<T>::print() {
 //operator plus function
 template<typename T>
 MyVector<T> operator+(const MyVector<T>& lhs, const MyVector<T>& rhs) {
+    //create a new MyVector as a result of the concatenation
     MyVector<T> result;
 
     assert((lhs.getSize()) == (rhs.getSize()) && "Size mismatch in operator");
@@ -228,20 +230,20 @@ MyVector<T> MyVector<T>::operator+(const MyVector<T>& rhs) {
     if (rhs.getSize() == 0)
         return *this;
         
-    // Create a new MyVector as a result of the concatenation
+    //create a new MyVector as a result of the concatenation
     MyVector<T> result;
 
-    // Copy the elements from the current object (this) to result
+    //copy the elements from the current object (this) to result
     for (int i = 0; i < getSize(); i++) {
         result.push_back(get(i));
     }
 
-    // Copy the elements from rhs to result
+    //copy the elements from rhs to result
     for (int i = 0; i < rhs.getSize(); i++) {
         result.push_back(rhs.get(i));
     }
 
-    // Return a reference to the result
+    // Return the result
     return result;
 }
 
@@ -323,14 +325,11 @@ bool MyVector<T>::operator<(const MyVector<T>& rhs) const {
     
     //check if each element in the vector is not the same
     for (int i = 0; i < _size; i++) {
-        if (_myArray[i] < rhs._myArray[i]) {
-            return true;
+        if (_myArray[i] > rhs._myArray[i]) {
+            return false;
         }
-        else if (_myArray[i] > rhs._myArray[i]) {
-                return false;
-            }
     }
-    return false;
+    return true;
 }
 
 
@@ -344,14 +343,11 @@ bool MyVector<T>::operator<=(const MyVector<T>& rhs) const {
     
     //check if each element in the vector is not the same
     for (int i = 0; i < _size; i++) {
-        if (_myArray[i] < rhs._myArray[i] || _myArray[i] == rhs._myArray[i]) {
-            return true;
+        if (_myArray[i] > rhs._myArray[i] || _myArray[i] != rhs._myArray[i]) {
+            return false;
         }
-        else if (_myArray[i] > rhs._myArray[i]) {
-                return false;
-            }
     }
-    return false;
+    return true;
 }
 
 
@@ -365,14 +361,11 @@ bool MyVector<T>::operator>=(const MyVector<T>& rhs) const {
     
     //check if each element in the vector is not the same
     for (int i = 0; i < _size; i++) {
-        if (_myArray[i] > rhs._myArray[i] || _myArray[i] == rhs._myArray[i]) {
-            return true;
+        if (_myArray[i] < rhs._myArray[i] || _myArray[i] != rhs._myArray[i]) {
+            return false;
         }
-        else if (_myArray[i] < rhs._myArray[i]) {
-                return false;
-            }
     }
-    return false;
+    return true;
 }
 
 
@@ -386,14 +379,11 @@ bool MyVector<T>::operator>(const MyVector<T>& rhs) const {
     
     //check if each element in the vector is not the same
     for (int i = 0; i < _size; i++) {
-        if (_myArray[i] > rhs._myArray[i]) {
-            return true;
+        if (_myArray[i] < rhs._myArray[i]) {
+            return false;
         }
-        else if (_myArray[i] < rhs._myArray[i]) {
-                return false;
-            }
     }
-    return false;
+    return true;
 }
 
 

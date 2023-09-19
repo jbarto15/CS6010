@@ -20,12 +20,12 @@ int main()
         // clear the window with black color
         window.clear(sf::Color::Black);
 
-	sf::CircleShape shape(50.f);
+	sf::CircleShape triangle(80.f, 3);
 
 // set the shape color to green
-shape.setFillColor(sf::Color(100, 250, 50));
+triangle.setFillColor(sf::Color(100, 250, 50));
 
- window.draw(shape);
+ window.draw(triangle);
 	// end the current frame
         window.display();
     }
