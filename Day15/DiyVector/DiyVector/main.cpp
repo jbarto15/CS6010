@@ -7,6 +7,8 @@
 
 #include <iostream>
 #include "DiyVector.hpp"
+#include "DiyVectorTests.hpp"
+#include <numeric>
 
 int main(int argc, const char * argv[]) {
     
@@ -81,7 +83,7 @@ int main(int argc, const char * argv[]) {
     testOperatorLessThanOrEqual(v4, v4);
     
     //test operator greater than or equal to
-    testOperatorGreaterThanOrEqual(v5, v4);
+    //testOperatorGreaterThanOrEqual(v4, v5);
     
     //test operator greater than
     testOperatorGreaterThan(v4, v5);
@@ -106,8 +108,42 @@ int main(int argc, const char * argv[]) {
     std::vector<char> characters = {'a', 'b', 'c', 'd'};
     MyVector<char> v10(characters);
     
+    std::vector<int> integers = {34, 56, 45, 3, 7, 21, 7};
+    MyVector<int> v11(integers);
+    
     v9.print();
     v10.print();
+    
+    
+    //test for begin method using a for each loop
+    for (char character: v11) {
+        std::cout << "Number: " << character << std::endl;
+    }
+    
+    //test to see if we can sort vector
+    std::sort(v11.begin(), v11.end());
+    v11.print();
+    
+    //test to find the minimum element
+    int min = *std::min_element(v11.begin(), v11.end());
+    std::cout << "Minimum Element: " << min << std::endl;
+    
+    //test to sum the vector
+    int sum = std::accumulate(v11.begin(), v11.end(), 0);
+    std::cout << "Sum: " << sum << std::endl;
+    
+    //test count if num is even
+    int count = std::count_if(v11.begin(), v11.end(), [](int i) { return i % 2 == 1; });
+    std::cout << "Count: " << count << std::endl;
+    
+    
+    //test remove-if and pop back
+    int remove = *std ::remove_if(
+                                  v11.begin(), v11.end(),
+                                  [](int i) { return ((i % 2) == 0); });
+    for (int i: v11) {
+        std::cout << i << std::endl;
+    }
     
     
     

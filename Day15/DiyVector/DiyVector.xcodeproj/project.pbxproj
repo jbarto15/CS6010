@@ -30,6 +30,7 @@
 		60109FD92AB1443D000CFB4F /* DiyVector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DiyVector.cpp; sourceTree = "<group>"; };
 		60109FDA2AB1443D000CFB4F /* DiyVector.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DiyVector.hpp; sourceTree = "<group>"; };
 		60109FDC2AB6081C000CFB4F /* DiyVectorTests.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = DiyVectorTests.cpp; sourceTree = "<group>"; };
+		60109FF92ABA20E7000CFB4F /* DiyVectorTests.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = DiyVectorTests.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +66,7 @@
 				60109FD22AB143F7000CFB4F /* main.cpp */,
 				60109FD92AB1443D000CFB4F /* DiyVector.cpp */,
 				60109FDA2AB1443D000CFB4F /* DiyVector.hpp */,
+				60109FF92ABA20E7000CFB4F /* DiyVectorTests.hpp */,
 				60109FDC2AB6081C000CFB4F /* DiyVectorTests.cpp */,
 			);
 			path = DiyVector;
