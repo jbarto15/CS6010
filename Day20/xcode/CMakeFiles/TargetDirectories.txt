@@ -1,0 +1,3 @@
+/Users/joshbarton/desktop/CS6010/Day20/xcode/CMakeFiles/testSFML.dir
+/Users/joshbarton/desktop/CS6010/Day20/xcode/CMakeFiles/ALL_BUILD.dir
+/Users/joshbarton/desktop/CS6010/Day20/xcode/CMakeFiles/ZERO_CHECK.dir

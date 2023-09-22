@@ -30,12 +30,13 @@ void MyVector::pop_back() {
 
 //method that gets a value from the vector
 int MyVector::get(size_t position) const {
-    //check to see if the position is in the valid range of the size of the array. If not, crash the program
+    //check to see if the position is in the valid range of the size of the array. If not, return a non valid number
     if (position < _size && _myArray != nullptr) {
         //return the position in the array
         return _myArray[position];
     }
     else {
+        //add an exit thing here and not just -1
         return -1;
     }
 }

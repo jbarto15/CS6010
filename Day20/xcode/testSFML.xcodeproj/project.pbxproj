@@ -1,0 +1,776 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		C550B1DAA75C4C68BED888C3 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 65817292DE5443F19EB8529D /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				15153D576ABD8096D5399511 /* Generate CMakeFiles/ALL_BUILD */,
+			);
+			dependencies = (
+				2175D8EBA3BB4DFE99D2E4F6 /* PBXTargetDependency */,
+				B02FC20D23284A8284B018D7 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		C9D0A9E25428483D9E7D72A5 /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 1C6885F967AB429D84F56959 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				F2A73AE2DE2ACD7F13C2B194 /* Generate CMakeFiles/ZERO_CHECK */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		23B431AC91214C79820D5E1F /* /Users/joshbarton/desktop/CS6010/Day20/src/world.cpp */ = {isa = PBXBuildFile; fileRef = 76C8F91555D44D169EEF96BE /* /Users/joshbarton/desktop/CS6010/Day20/src/world.cpp */; };
+		302891EDBB654414A06301FA /* /Users/joshbarton/desktop/CS6010/Day20/src/world.hpp */ = {isa = PBXBuildFile; fileRef = 5564AD66FF1E4456B4FA6FB0 /* /Users/joshbarton/desktop/CS6010/Day20/src/world.hpp */; };
+		30E50EA2905141B1A0340788 /* /Users/joshbarton/desktop/CS6010/Day20/src/rectangle.cpp */ = {isa = PBXBuildFile; fileRef = 4BFF124595CB4F078D0A0590 /* /Users/joshbarton/desktop/CS6010/Day20/src/rectangle.cpp */; };
+		49D5B812359A464B865E58D0 /* /Users/joshbarton/desktop/CS6010/Day20/src/rectangle.hpp */ = {isa = PBXBuildFile; fileRef = 1DD152F256434805A1272269 /* /Users/joshbarton/desktop/CS6010/Day20/src/rectangle.hpp */; };
+		5E3C6C9AD6534E9CBC5B6149 /* /Users/joshbarton/desktop/CS6010/Day20/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 39725292C1C04E3C8818BEF9 /* /Users/joshbarton/desktop/CS6010/Day20/CMakeLists.txt */; };
+		5F8E4148697740DF8586C1C9 /* /Users/joshbarton/desktop/CS6010/Day20/src/circles.hpp */ = {isa = PBXBuildFile; fileRef = B5A0363C075147E09EECEBD2 /* /Users/joshbarton/desktop/CS6010/Day20/src/circles.hpp */; };
+		6637AD9BE08E45D6BF5AC1CD /* /Users/joshbarton/desktop/CS6010/Day20/src/triangle.cpp */ = {isa = PBXBuildFile; fileRef = FAE65C3F03E848F6902AE08D /* /Users/joshbarton/desktop/CS6010/Day20/src/triangle.cpp */; };
+		6F80BB95A1294E20944FCDB3 /* /Users/joshbarton/desktop/CS6010/Day20/src/circles.cpp */ = {isa = PBXBuildFile; fileRef = 8BA5C55A0CC24760B6EF8E6B /* /Users/joshbarton/desktop/CS6010/Day20/src/circles.cpp */; };
+		7DB9D1EB96E345C191CE81FF /* /Users/joshbarton/desktop/CS6010/Day20/src/helloSFML.cpp */ = {isa = PBXBuildFile; fileRef = A3BBD5D4A3704C54AFCA461F /* /Users/joshbarton/desktop/CS6010/Day20/src/helloSFML.cpp */; };
+		7F0E37FC9C234F9F8EBB954C /* /Users/joshbarton/desktop/CS6010/Day20/src/collisions.cpp */ = {isa = PBXBuildFile; fileRef = A5D3569CF741429C854C74DA /* /Users/joshbarton/desktop/CS6010/Day20/src/collisions.cpp */; };
+		A1A61F8F3390425B8DA2CF98 /* /Users/joshbarton/desktop/CS6010/Day20/src/collisions.hpp */ = {isa = PBXBuildFile; fileRef = 755BE8097E7A4AA0B0E02296 /* /Users/joshbarton/desktop/CS6010/Day20/src/collisions.hpp */; };
+		E8AE5E3F48844B9BACF5846E /* /Users/joshbarton/desktop/CS6010/Day20/src/triangle.hpp */ = {isa = PBXBuildFile; fileRef = 6F36F877523E40F78C9AF460 /* /Users/joshbarton/desktop/CS6010/Day20/src/triangle.hpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		CAC2369679334B3CA66F7EF3 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		D7586F3652CF4A6A8FD86DD6 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		DA589F4127034C67894A3228 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		FD6C5B5F311445E78E2F851E /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		43712C8D821A478EB96FC96C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E297AFA980BD40AD84C60425 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9D0A9E25428483D9E7D72A5;
+			remoteInfo = ZERO_CHECK;
+		};
+		6FA5223F8C1348C198575E29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E297AFA980BD40AD84C60425 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 127C3449542B465DBA04693E;
+			remoteInfo = testSFML;
+		};
+		B75593D8E3AB492F9E76A499 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E297AFA980BD40AD84C60425 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9D0A9E25428483D9E7D72A5;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1DD152F256434805A1272269 /* /Users/joshbarton/desktop/CS6010/Day20/src/rectangle.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = rectangle.hpp; path = src/rectangle.hpp; sourceTree = SOURCE_ROOT; };
+		39725292C1C04E3C8818BEF9 /* /Users/joshbarton/desktop/CS6010/Day20/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		4BFF124595CB4F078D0A0590 /* /Users/joshbarton/desktop/CS6010/Day20/src/rectangle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = rectangle.cpp; path = src/rectangle.cpp; sourceTree = SOURCE_ROOT; };
+		5564AD66FF1E4456B4FA6FB0 /* /Users/joshbarton/desktop/CS6010/Day20/src/world.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = world.hpp; path = src/world.hpp; sourceTree = SOURCE_ROOT; };
+		6F36F877523E40F78C9AF460 /* /Users/joshbarton/desktop/CS6010/Day20/src/triangle.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = triangle.hpp; path = src/triangle.hpp; sourceTree = SOURCE_ROOT; };
+		755BE8097E7A4AA0B0E02296 /* /Users/joshbarton/desktop/CS6010/Day20/src/collisions.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = collisions.hpp; path = src/collisions.hpp; sourceTree = SOURCE_ROOT; };
+		76C8F91555D44D169EEF96BE /* /Users/joshbarton/desktop/CS6010/Day20/src/world.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = world.cpp; path = src/world.cpp; sourceTree = SOURCE_ROOT; };
+		8BA5C55A0CC24760B6EF8E6B /* /Users/joshbarton/desktop/CS6010/Day20/src/circles.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = circles.cpp; path = src/circles.cpp; sourceTree = SOURCE_ROOT; };
+		92ED03AD1EB7483F95011F11 /* /Users/joshbarton/desktop/CS6010/Day20/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		A3BBD5D4A3704C54AFCA461F /* /Users/joshbarton/desktop/CS6010/Day20/src/helloSFML.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = helloSFML.cpp; path = src/helloSFML.cpp; sourceTree = SOURCE_ROOT; };
+		A5D3569CF741429C854C74DA /* /Users/joshbarton/desktop/CS6010/Day20/src/collisions.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = collisions.cpp; path = src/collisions.cpp; sourceTree = SOURCE_ROOT; };
+		B5A0363C075147E09EECEBD2 /* /Users/joshbarton/desktop/CS6010/Day20/src/circles.hpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = circles.hpp; path = src/circles.hpp; sourceTree = SOURCE_ROOT; };
+		F615759931ED401EAEA2D8DA /* testSFML */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = testSFML; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAE65C3F03E848F6902AE08D /* /Users/joshbarton/desktop/CS6010/Day20/src/triangle.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = triangle.cpp; path = src/triangle.cpp; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B648AF9A6E124433A17F6D43 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		069ADFD4BAB247B68408396B /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		1D6E8DBD49B045C0B38DF78B /* testSFML */ = {
+			isa = PBXGroup;
+			children = (
+				2FB262E5A8784F4C9434966F /* Source Files */,
+				9D5B6FD055994D8C92CE3678 /* Header Files */,
+				39725292C1C04E3C8818BEF9 /* /Users/joshbarton/desktop/CS6010/Day20/CMakeLists.txt */,
+			);
+			name = testSFML;
+			sourceTree = "<group>";
+		};
+		2FB262E5A8784F4C9434966F /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				8BA5C55A0CC24760B6EF8E6B /* /Users/joshbarton/desktop/CS6010/Day20/src/circles.cpp */,
+				A5D3569CF741429C854C74DA /* /Users/joshbarton/desktop/CS6010/Day20/src/collisions.cpp */,
+				A3BBD5D4A3704C54AFCA461F /* /Users/joshbarton/desktop/CS6010/Day20/src/helloSFML.cpp */,
+				4BFF124595CB4F078D0A0590 /* /Users/joshbarton/desktop/CS6010/Day20/src/rectangle.cpp */,
+				FAE65C3F03E848F6902AE08D /* /Users/joshbarton/desktop/CS6010/Day20/src/triangle.cpp */,
+				76C8F91555D44D169EEF96BE /* /Users/joshbarton/desktop/CS6010/Day20/src/world.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		6063322AD48244BF8A3A8518 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F615759931ED401EAEA2D8DA /* testSFML */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9D5B6FD055994D8C92CE3678 /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				B5A0363C075147E09EECEBD2 /* /Users/joshbarton/desktop/CS6010/Day20/src/circles.hpp */,
+				755BE8097E7A4AA0B0E02296 /* /Users/joshbarton/desktop/CS6010/Day20/src/collisions.hpp */,
+				1DD152F256434805A1272269 /* /Users/joshbarton/desktop/CS6010/Day20/src/rectangle.hpp */,
+				6F36F877523E40F78C9AF460 /* /Users/joshbarton/desktop/CS6010/Day20/src/triangle.hpp */,
+				5564AD66FF1E4456B4FA6FB0 /* /Users/joshbarton/desktop/CS6010/Day20/src/world.hpp */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+		A25732262EA44F76BBB13301 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				069ADFD4BAB247B68408396B /* CMake Rules */,
+				92ED03AD1EB7483F95011F11 /* /Users/joshbarton/desktop/CS6010/Day20/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		C55AFDD5E1DC4699A1301141 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7EC792CD0A0495882A0A995 = {
+			isa = PBXGroup;
+			children = (
+				1D6E8DBD49B045C0B38DF78B /* testSFML */,
+				A25732262EA44F76BBB13301 /* ALL_BUILD */,
+				6063322AD48244BF8A3A8518 /* Products */,
+				C55AFDD5E1DC4699A1301141 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		127C3449542B465DBA04693E /* testSFML */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 564BB00AB96044CD90A3B472 /* Build configuration list for PBXNativeTarget "testSFML" */;
+			buildPhases = (
+				1489053BA9444EBCAE1EB694 /* Sources */,
+				B648AF9A6E124433A17F6D43 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42A280011ECD44CBAC56CBD6 /* PBXTargetDependency */,
+			);
+			name = testSFML;
+			productName = testSFML;
+			productReference = F615759931ED401EAEA2D8DA /* testSFML */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E297AFA980BD40AD84C60425 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+			};
+			buildConfigurationList = 5884B60A214547C9A99BC1B6 /* Build configuration list for PBXProject "testSFML" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				D7586F3652CF4A6A8FD86DD6 /* Debug */,
+				FD6C5B5F311445E78E2F851E /* Release */,
+				DA589F4127034C67894A3228 /* MinSizeRel */,
+				CAC2369679334B3CA66F7EF3 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = D7EC792CD0A0495882A0A995;
+			projectDirPath = /Users/joshbarton/desktop/CS6010/Day20;
+			projectRoot = "";
+			targets = (
+				C550B1DAA75C4C68BED888C3 /* ALL_BUILD */,
+				C9D0A9E25428483D9E7D72A5 /* ZERO_CHECK */,
+				127C3449542B465DBA04693E /* testSFML */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		15153D576ABD8096D5399511 /* Generate CMakeFiles/ALL_BUILD */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ALL_BUILD";
+			outputPaths = (
+/Users/joshbarton/desktop/CS6010/Day20/xcode/CMakeFiles/ALL_BUILD			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/joshbarton/desktop/CS6010/Day20/xcode
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/joshbarton/desktop/CS6010/Day20/xcode
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/joshbarton/desktop/CS6010/Day20/xcode
+  echo Build\\ all\\ projects
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/joshbarton/desktop/CS6010/Day20/xcode
+  echo Build\\ all\\ projects
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+		3C0110FC8322DE7E50886E21 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		9B50530E35CC49C82C2FACCF = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		F2A73AE2DE2ACD7F13C2B194 /* Generate CMakeFiles/ZERO_CHECK */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate CMakeFiles/ZERO_CHECK";
+			outputPaths = (
+/Users/joshbarton/desktop/CS6010/Day20/xcode/CMakeFiles/ZERO_CHECK			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e
+if test \"$CONFIGURATION\" = \"Debug\"; then :
+  cd /Users/joshbarton/desktop/CS6010/Day20/xcode
+  make -f /Users/joshbarton/desktop/CS6010/Day20/xcode/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"Release\"; then :
+  cd /Users/joshbarton/desktop/CS6010/Day20/xcode
+  make -f /Users/joshbarton/desktop/CS6010/Day20/xcode/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"MinSizeRel\"; then :
+  cd /Users/joshbarton/desktop/CS6010/Day20/xcode
+  make -f /Users/joshbarton/desktop/CS6010/Day20/xcode/CMakeScripts/ReRunCMake.make
+fi
+if test \"$CONFIGURATION\" = \"RelWithDebInfo\"; then :
+  cd /Users/joshbarton/desktop/CS6010/Day20/xcode
+  make -f /Users/joshbarton/desktop/CS6010/Day20/xcode/CMakeScripts/ReRunCMake.make
+fi
+";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1489053BA9444EBCAE1EB694 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F80BB95A1294E20944FCDB3 /* /Users/joshbarton/desktop/CS6010/Day20/src/circles.cpp */,
+				7F0E37FC9C234F9F8EBB954C /* /Users/joshbarton/desktop/CS6010/Day20/src/collisions.cpp */,
+				7DB9D1EB96E345C191CE81FF /* /Users/joshbarton/desktop/CS6010/Day20/src/helloSFML.cpp */,
+				30E50EA2905141B1A0340788 /* /Users/joshbarton/desktop/CS6010/Day20/src/rectangle.cpp */,
+				6637AD9BE08E45D6BF5AC1CD /* /Users/joshbarton/desktop/CS6010/Day20/src/triangle.cpp */,
+				23B431AC91214C79820D5E1F /* /Users/joshbarton/desktop/CS6010/Day20/src/world.cpp */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2175D8EBA3BB4DFE99D2E4F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 127C3449542B465DBA04693E /* testSFML */;
+			targetProxy = 6FA5223F8C1348C198575E29 /* PBXContainerItemProxy */;
+		};
+		42A280011ECD44CBAC56CBD6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9D0A9E25428483D9E7D72A5 /* ZERO_CHECK */;
+			targetProxy = 43712C8D821A478EB96FC96C /* PBXContainerItemProxy */;
+		};
+		B02FC20D23284A8284B018D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9D0A9E25428483D9E7D72A5 /* ZERO_CHECK */;
+			targetProxy = B75593D8E3AB492F9E76A499 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		01BDE87AD0494331914CC7D4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Users/joshbarton/desktop/CS6010/Day20/xcode/build;
+			};
+			name = Release;
+		};
+		0A9E994741C2403D8604A8A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		297152ECE20646D7B75907FE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		3138CEED52164DFB8096B999 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/joshbarton/desktop/CS6010/Day20/xcode/Debug;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/opt/homebrew/lib,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "   '-std=c++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/opt/homebrew/lib/libsfml-graphics.2.6.0.dylib","/opt/homebrew/lib/libsfml-window.2.6.0.dylib","/opt/homebrew/lib/libsfml-system.2.6.0.dylib","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = testSFML;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = (/opt/homebrew/include,"$(inherited)");
+				TARGET_TEMP_DIR = "/Users/joshbarton/desktop/CS6010/Day20/xcode/build/testSFML.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Debug;
+		};
+		31F5D610D8F3472495424D62 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/joshbarton/desktop/CS6010/Day20/xcode/MinSizeRel;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/opt/homebrew/lib,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=c++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/opt/homebrew/lib/libsfml-graphics.2.6.0.dylib","/opt/homebrew/lib/libsfml-window.2.6.0.dylib","/opt/homebrew/lib/libsfml-system.2.6.0.dylib","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = testSFML;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = (/opt/homebrew/include,"$(inherited)");
+				TARGET_TEMP_DIR = "/Users/joshbarton/desktop/CS6010/Day20/xcode/build/testSFML.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		4A1DBD637345454A97E47B9E /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Users/joshbarton/desktop/CS6010/Day20/xcode/build;
+			};
+			name = RelWithDebInfo;
+		};
+		629F76A9C2314574BA90659A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		675F72C8E7FE45B69E2692FD /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SYMROOT = /Users/joshbarton/desktop/CS6010/Day20/xcode/build;
+			};
+			name = MinSizeRel;
+		};
+		6D33F39DFC6044AC81982ED6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/joshbarton/desktop/CS6010/Day20/xcode/Release;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/opt/homebrew/lib,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "    -DNDEBUG '-std=c++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/opt/homebrew/lib/libsfml-graphics.2.6.0.dylib","/opt/homebrew/lib/libsfml-window.2.6.0.dylib","/opt/homebrew/lib/libsfml-system.2.6.0.dylib","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = testSFML;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = (/opt/homebrew/include,"$(inherited)");
+				TARGET_TEMP_DIR = "/Users/joshbarton/desktop/CS6010/Day20/xcode/build/testSFML.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		888E69B15E8246ADA40820CD /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/joshbarton/desktop/CS6010/Day20/xcode/RelWithDebInfo;
+				EXECUTABLE_PREFIX = "";
+				EXECUTABLE_SUFFIX = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				LD_RUNPATH_SEARCH_PATHS = (/opt/homebrew/lib,"$(inherited)");
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_CPLUSPLUSFLAGS = "       -DNDEBUG '-std=c++17' ";
+				OTHER_LDFLAGS = (" -Wl,-search_paths_first -Wl,-headerpad_max_install_names","/opt/homebrew/lib/libsfml-graphics.2.6.0.dylib","/opt/homebrew/lib/libsfml-window.2.6.0.dylib","/opt/homebrew/lib/libsfml-system.2.6.0.dylib","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = testSFML;
+				SECTORDER_FLAGS = "";
+				SYSTEM_HEADER_SEARCH_PATHS = (/opt/homebrew/include,"$(inherited)");
+				TARGET_TEMP_DIR = "/Users/joshbarton/desktop/CS6010/Day20/xcode/build/testSFML.build/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		8DBCC4A4088F42E1B409AF45 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		BE7F088257CA4235A79B1EEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = arm64;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX13.3.sdk;
+				SYMROOT = /Users/joshbarton/desktop/CS6010/Day20/xcode/build;
+			};
+			name = Debug;
+		};
+		C64489F67A4D49B7AFEB631C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = Release;
+		};
+		CA6CB3294546449A899C1494 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		D590C06D2A00487D94563213 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		FD2D82E9E5CB4F04B270B64C /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = arm64;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'","$(inherited)");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = ("","$(inherited)");
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1C6885F967AB429D84F56959 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				297152ECE20646D7B75907FE /* Debug */,
+				C64489F67A4D49B7AFEB631C /* Release */,
+				CA6CB3294546449A899C1494 /* MinSizeRel */,
+				8DBCC4A4088F42E1B409AF45 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		564BB00AB96044CD90A3B472 /* Build configuration list for PBXNativeTarget "testSFML" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3138CEED52164DFB8096B999 /* Debug */,
+				6D33F39DFC6044AC81982ED6 /* Release */,
+				31F5D610D8F3472495424D62 /* MinSizeRel */,
+				888E69B15E8246ADA40820CD /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5884B60A214547C9A99BC1B6 /* Build configuration list for PBXProject "testSFML" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BE7F088257CA4235A79B1EEF /* Debug */,
+				01BDE87AD0494331914CC7D4 /* Release */,
+				675F72C8E7FE45B69E2692FD /* MinSizeRel */,
+				4A1DBD637345454A97E47B9E /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		65817292DE5443F19EB8529D /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A9E994741C2403D8604A8A9 /* Debug */,
+				629F76A9C2314574BA90659A /* Release */,
+				FD2D82E9E5CB4F04B270B64C /* MinSizeRel */,
+				D590C06D2A00487D94563213 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E297AFA980BD40AD84C60425 /* Project object */;
+}
